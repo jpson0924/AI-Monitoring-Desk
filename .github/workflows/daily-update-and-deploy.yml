@@ -1,0 +1,59 @@
+name: Daily Market Signal
+
+on:
+  schedule:
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ai-market-signal-desk-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate scripts
+        run: |
+          node --check app.js
+          node --check scripts/update-agenda-data.mjs
+
+      - name: Update agenda data
+        run: node scripts/update-agenda-data.mjs
+
+      - name: Build Pages artifact
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp index.html styles.css app.js agenda-data.js agenda-data.json signal-desk-screen-share.html signal-desk-screen-share.txt README.md dist/
+          cp -R history dist/history
+          touch dist/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

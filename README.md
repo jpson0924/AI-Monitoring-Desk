@@ -1,6 +1,6 @@
-# AI Monitoring Desk
+# Market Signal
 
-AI Monitoring Desk 정적 대시보드입니다. 브라우저에서 `index.html`을 열면 `agenda-data.js`를 먼저 읽고, 데이터 파일이 없거나 비어 있으면 `app.js`의 내장 샘플 데이터로 렌더링합니다.
+Market Signal 정적 대시보드입니다. 브라우저에서 `index.html`을 열면 `agenda-data.js`를 먼저 읽고, 데이터 파일이 없거나 비어 있으면 `app.js`의 내장 샘플 데이터로 렌더링합니다.
 
 ## Daily Update
 
@@ -24,7 +24,7 @@ node scripts/update-agenda-data.mjs
 
 다른 사람에게 공유하고 매일 자동 갱신되는 웹 버전으로 쓰려면 GitHub Pages 배포를 사용합니다. 이 저장소를 GitHub에 올리고, 저장소의 `Settings > Pages`에서 `Build and deployment` 소스를 `GitHub Actions`로 선택하세요.
 
-프로젝트에는 `.github/workflows/daily-update-and-deploy.yml`이 포함되어 있습니다. 이 워크플로는 매일 `08:00 KST`에 실행되어 `node scripts/update-agenda-data.mjs`로 최신 데이터를 만든 뒤 GitHub Pages에 다시 배포합니다. `Actions > Daily AI Monitoring Desk > Run workflow`를 누르면 즉시 수동 갱신도 할 수 있습니다.
+프로젝트에는 `.github/workflows/daily-update-and-deploy.yml`이 포함되어 있습니다. 이 워크플로는 매일 `08:00 KST`에 실행되어 `node scripts/update-agenda-data.mjs`로 최신 데이터를 만든 뒤 GitHub Pages에 다시 배포합니다. `Actions > Daily Market Signal > Run workflow`를 누르면 즉시 수동 갱신도 할 수 있습니다.
 
 공개 URL은 보통 아래 형식입니다.
 

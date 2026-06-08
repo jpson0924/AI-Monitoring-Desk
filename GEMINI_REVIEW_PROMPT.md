@@ -1,10 +1,10 @@
-# Gemini Review Request: AI Monitoring Desk
+# Gemini Review Request: Market Signal
 
 아래 프로젝트를 UI/UX, 코드 구조, 확장성 관점에서 리뷰해 주세요.
 
 ## 앱 개요
 
-앱 이름: AI Monitoring Desk
+앱 이름: Market Signal
 
 검색어 입력형 앱이 아니라, 외부 뉴스/RSS/테크 블로그를 주기적으로 수집한 뒤 현재 시점의 주요 기술 의제(Agenda)를 뽑아 시각화하는 정적 대시보드 프로토타입입니다.
 

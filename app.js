@@ -1,4 +1,4 @@
-const colors = ["#0f8f82", "#3563c8", "#d68419", "#c54b40", "#3f8f4f"];
+const colors = ["#3f5f8f", "#5a4f8f", "#b66b35", "#a6535c", "#52616b"];
 const appData = window.TECH_AGENDA_DATA || {};
 const publicShareUrl = String(window.AI_MONITORING_DESK_PUBLIC_URL || "").trim();
 const asArray = (value, fallback = []) => (Array.isArray(value) ? value : fallback);
@@ -31,9 +31,9 @@ const collectionQueue = asArray(appData.collectionQueue, [
   ["2026.05.26 10:30", "Korean portal tech desk refresh"]
 ]);
 let impactNotes = asArray(appData.impactNotes, [
-  ["제품", "에이전트 기능은 단일 기능 출시보다 권한, 로그, 실패 복구 UX를 포함한 운영 경험으로 평가됩니다.", "#0f8f82"],
-  ["시장", "모델 성능 경쟁은 여전히 중요하지만 연결성, 로컬 추론, 지역 규제가 구매 논리를 빠르게 바꾸고 있습니다.", "#d68419"],
-  ["전략", "파트너십 우선순위는 모델 공급자보다 데이터 소스, 업무 시스템, 보안 벤더까지 넓어져야 합니다.", "#3563c8"]
+  ["제품", "에이전트 기능은 단일 기능 출시보다 권한, 로그, 실패 복구 UX를 포함한 운영 경험으로 평가됩니다.", "#3f5f8f"],
+  ["시장", "모델 성능 경쟁은 여전히 중요하지만 연결성, 로컬 추론, 지역 규제가 구매 논리를 빠르게 바꾸고 있습니다.", "#b66b35"],
+  ["전략", "파트너십 우선순위는 모델 공급자보다 데이터 소스, 업무 시스템, 보안 벤더까지 넓어져야 합니다.", "#5a4f8f"]
 ]);
 const snapshots = asArray(appData.days, []);
 let activeSnapshotDate = metadata.snapshotDate || snapshots[0]?.date || "";
@@ -123,16 +123,16 @@ let companies = asArray(appData.companies, [
     id: "anthropic",
     name: "Anthropic",
     sector: "Model Provider",
-    color: "#0f8f82",
+    color: "#3f5f8f",
     short: "AN",
     focus: "MCP와 에이전트 개발면",
     updatedAt: "2026.05.26 09:10 KST",
     keywords: [
-      { label: "MCP", weight: 96, color: "#0f8f82" },
-      { label: "Claude Code", weight: 84, color: "#3563c8" },
-      { label: "Desktop Agent", weight: 70, color: "#d68419" },
-      { label: "Tool Use", weight: 64, color: "#3f8f4f" },
-      { label: "Safety Eval", weight: 48, color: "#c54b40" }
+      { label: "MCP", weight: 96, color: "#3f5f8f" },
+      { label: "Claude Code", weight: 84, color: "#5a4f8f" },
+      { label: "Desktop Agent", weight: 70, color: "#b66b35" },
+      { label: "Tool Use", weight: 64, color: "#52616b" },
+      { label: "Safety Eval", weight: 48, color: "#a6535c" }
     ],
     stack: [
       ["MCP 서버 확장", "외부 업무 시스템을 Claude 안으로 끌어오는 개발자 생태계 전략이 뚜렷합니다.", "96", "2026.05.26 09:10"],
@@ -145,16 +145,16 @@ let companies = asArray(appData.companies, [
     id: "openai",
     name: "OpenAI",
     sector: "Model Platform",
-    color: "#3563c8",
+    color: "#5a4f8f",
     short: "OA",
     focus: "에이전트 플랫폼과 멀티모달",
     updatedAt: "2026.05.26 09:05 KST",
     keywords: [
-      { label: "Agents SDK", weight: 90, color: "#3563c8" },
-      { label: "Realtime", weight: 76, color: "#0f8f82" },
-      { label: "Responses API", weight: 72, color: "#d68419" },
-      { label: "EvalOps", weight: 58, color: "#c54b40" },
-      { label: "Video Gen", weight: 51, color: "#3f8f4f" }
+      { label: "Agents SDK", weight: 90, color: "#5a4f8f" },
+      { label: "Realtime", weight: 76, color: "#3f5f8f" },
+      { label: "Responses API", weight: 72, color: "#b66b35" },
+      { label: "EvalOps", weight: 58, color: "#a6535c" },
+      { label: "Video Gen", weight: 51, color: "#52616b" }
     ],
     stack: [
       ["Agents SDK", "모델 호출보다 상태, 툴, 핸드오프를 관리하는 앱 프레임워크로 무게가 실립니다.", "90", "2026.05.26 09:05"],
@@ -167,16 +167,16 @@ let companies = asArray(appData.companies, [
     id: "google",
     name: "Google",
     sector: "Cloud & Search",
-    color: "#d68419",
+    color: "#b66b35",
     short: "GO",
     focus: "검색 재구성과 온디바이스",
     updatedAt: "2026.05.26 08:50 KST",
     keywords: [
-      { label: "Gemini", weight: 91, color: "#d68419" },
-      { label: "AI Overviews", weight: 79, color: "#3563c8" },
-      { label: "On-Device", weight: 74, color: "#0f8f82" },
-      { label: "TPU", weight: 61, color: "#c54b40" },
-      { label: "Workspace AI", weight: 49, color: "#3f8f4f" }
+      { label: "Gemini", weight: 91, color: "#b66b35" },
+      { label: "AI Overviews", weight: 79, color: "#5a4f8f" },
+      { label: "On-Device", weight: 74, color: "#3f5f8f" },
+      { label: "TPU", weight: 61, color: "#a6535c" },
+      { label: "Workspace AI", weight: 49, color: "#52616b" }
     ],
     stack: [
       ["검색 AI 재편", "검색 결과 페이지가 답변, 쇼핑, 광고 경험을 동시에 바꾸는 압력 지점입니다.", "91", "2026.05.26 08:50"],
@@ -189,16 +189,16 @@ let companies = asArray(appData.companies, [
     id: "naver",
     name: "Naver",
     sector: "Korea Platform",
-    color: "#3f8f4f",
+    color: "#52616b",
     short: "NV",
     focus: "소버린 AI와 검색 커머스",
     updatedAt: "2026.05.26 08:35 KST",
     keywords: [
-      { label: "HyperCLOVA X", weight: 88, color: "#3f8f4f" },
-      { label: "Sovereign AI", weight: 80, color: "#0f8f82" },
-      { label: "Search Commerce", weight: 66, color: "#d68419" },
-      { label: "Public Cloud", weight: 55, color: "#3563c8" },
-      { label: "Korean Data", weight: 50, color: "#c54b40" }
+      { label: "HyperCLOVA X", weight: 88, color: "#52616b" },
+      { label: "Sovereign AI", weight: 80, color: "#3f5f8f" },
+      { label: "Search Commerce", weight: 66, color: "#b66b35" },
+      { label: "Public Cloud", weight: 55, color: "#5a4f8f" },
+      { label: "Korean Data", weight: 50, color: "#a6535c" }
     ],
     stack: [
       ["소버린 AI", "국내 데이터와 공공 클라우드 요구를 묶어 로컬 AI 인프라 사업성을 강화합니다.", "80", "2026.05.26 08:35"],
@@ -211,16 +211,16 @@ let companies = asArray(appData.companies, [
     id: "microsoft",
     name: "Microsoft",
     sector: "Enterprise Stack",
-    color: "#c54b40",
+    color: "#a6535c",
     short: "MS",
     focus: "Copilot 운영면과 보안",
     updatedAt: "2026.05.26 09:00 KST",
     keywords: [
-      { label: "Copilot", weight: 94, color: "#c54b40" },
-      { label: "Graph Grounding", weight: 78, color: "#3563c8" },
-      { label: "Agent Builder", weight: 72, color: "#0f8f82" },
-      { label: "Security Copilot", weight: 62, color: "#d68419" },
-      { label: "Azure AI", weight: 54, color: "#3f8f4f" }
+      { label: "Copilot", weight: 94, color: "#a6535c" },
+      { label: "Graph Grounding", weight: 78, color: "#5a4f8f" },
+      { label: "Agent Builder", weight: 72, color: "#3f5f8f" },
+      { label: "Security Copilot", weight: 62, color: "#b66b35" },
+      { label: "Azure AI", weight: 54, color: "#52616b" }
     ],
     stack: [
       ["Copilot 확장", "업무 데이터와 Office UX를 한데 묶어 AI를 기본 업무 레이어로 밀고 있습니다.", "94", "2026.05.26 09:00"],
@@ -236,7 +236,7 @@ let keywordData = asArray(appData.keywordData, [
     id: "agent",
     label: "Agent",
     score: 98,
-    color: "#0f8f82",
+    color: "#3f5f8f",
     description: "툴 실행, 장시간 작업, 승인 게이트가 함께 언급됩니다.",
     brief: briefFromHot(1),
     signals: "에이전트 SDK 14건, 보안 정책 9건, 업무 자동화 사례 17건",
@@ -251,7 +251,7 @@ let keywordData = asArray(appData.keywordData, [
     id: "mcp",
     label: "MCP",
     score: 93,
-    color: "#3563c8",
+    color: "#5a4f8f",
     description: "외부 시스템 연결 표준으로 빠르게 제품 메시지화되고 있습니다.",
     brief: briefFromHot(0),
     signals: "서버 템플릿 18건, IDE 통합 7건, 보안 권한 논의 6건",
@@ -266,7 +266,7 @@ let keywordData = asArray(appData.keywordData, [
     id: "on-device",
     label: "On-Device",
     score: 86,
-    color: "#d68419",
+    color: "#b66b35",
     description: "모바일, PC, 브라우저에서 로컬 추론 메시지가 강화됩니다.",
     brief: briefFromHot(2),
     signals: "NPU 벤치마크 8건, 프라이버시 메시지 10건, SDK 릴리스 5건",
@@ -281,7 +281,7 @@ let keywordData = asArray(appData.keywordData, [
     id: "sovereign",
     label: "Sovereign AI",
     score: 79,
-    color: "#3f8f4f",
+    color: "#52616b",
     description: "정부, 통신, 클라우드가 로컬 데이터 주권을 사업화합니다.",
     brief: briefFromHot(3),
     signals: "공공 조달 5건, 로컬 클라우드 7건, 국가 AI 펀드 4건",
@@ -296,7 +296,7 @@ let keywordData = asArray(appData.keywordData, [
     id: "evalops",
     label: "EvalOps",
     score: 72,
-    color: "#c54b40",
+    color: "#a6535c",
     description: "모델 도입 이후의 품질 추적과 회귀 테스트가 중요해집니다.",
     brief: {
       background: "AI 기능이 프로덕션 워크플로에 들어가며 프롬프트 변경, 모델 교체, 툴 추가가 모두 품질 리스크가 됐습니다.",
@@ -315,7 +315,7 @@ let keywordData = asArray(appData.keywordData, [
     id: "ai-code",
     label: "AI Code",
     score: 69,
-    color: "#7a5a26",
+    color: "#8a6846",
     description: "코드 생성에서 저장소 운영과 검증 자동화로 관심이 이동합니다.",
     brief: briefFromHot(4),
     signals: "PR 자동화 7건, CI 수정 5건, IDE 확장 12건",
@@ -464,7 +464,7 @@ const sparklineBars = (keyword, index) => {
     return `<i style="height:${height}%"></i>`;
   }).join("");
 };
-const calmSignalColor = (index) => ["#0f766e", "#4361a8", "#b7791f", "#647067"][index % 4];
+const calmSignalColor = (index) => ["#3f5f8f", "#5a4f8f", "#b66b35", "#52616b"][index % 4];
 const parseKstDate = (value = "") => {
   const match = String(value).match(/(\d{4})\.(\d{2})\.(\d{2})\s+(\d{2}):(\d{2})/);
   if (!match) return null;
@@ -607,26 +607,32 @@ function renderActionBoard() {
   byId("actionBoard").innerHTML = [
     {
       label: "오늘 판단할 질문",
-      body: `${agendaTags || "핵심 뉴스"} 관점에서 제품 연동, 권한, 파트너십 영향을 먼저 체크하세요.`
+      body: `${agendaTags || "핵심 뉴스"} 신호가 ${truncateText(agendaTitle, 34)}로 연결됩니다. 오늘 회의에서는 제품 연동, 고객 제안, 파트너십 영향 중 어디에 먼저 반영할지 정하세요.`,
+      context: "사업 영향"
     },
     {
       label: "먼저 읽을 원문",
       body: primarySource
-        ? `${primarySource.media} · ${truncateText(primarySource.title, 34)}`
+        ? `${primarySource.media} 원문에서 발표 주체, 협력 범위, 적용 산업을 먼저 확인하세요. 제목: ${truncateText(primarySource.title, 42)}`
         : "오늘 수집분에서 직접 원문이 부족합니다. 뉴스 모달의 판단 근거와 수집 링크를 먼저 확인하세요.",
-      href: primarySource?.url
+      href: primarySource?.url,
+      context: "근거 확인"
     },
     {
       label: "회사 맥락으로 연결",
       body: companySignal
-        ? `${relatedCompany.name}: ${companySignal.label} · ${companySignal.sourceSummary || "근거 수집 중"}`
-        : "회사별 근거 레이더에서 직접 근거가 붙은 신호를 우선 확인합니다."
+        ? `${relatedCompany.name}의 ${companySignal.label} 신호와 비교하세요. ${companySignal.sourceSummary || "근거 수집 중"} 기준으로 영업 메시지나 제휴 후보를 업데이트할 수 있습니다.`
+        : "회사별 근거 레이더에서 직접 원문이 붙은 신호를 우선 확인합니다.",
+      context: "후속 액션"
     }
   ]
     .map(
       (item) => `
         <div class="action-item">
-          <b>${escapeHtml(item.label)}</b>
+          <span class="action-label">
+            <b>${escapeHtml(item.label)}</b>
+            <em>${escapeHtml(item.context || "체크")}</em>
+          </span>
           <p>${escapeHtml(item.body)}</p>
           ${item.href ? `<a href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">원문 열기</a>` : ""}
         </div>
@@ -656,6 +662,7 @@ function renderSourceLinks() {
 
 function renderHotList() {
   byId("hotList").innerHTML = hotAgendas
+    .slice(0, 4)
     .map((agenda, index) => {
       const hashtags = getAgendaKeywords(agenda);
       const sourceCount = getAgendaSourceCount(agenda);
@@ -773,65 +780,108 @@ function normalizeCompanyStackItem(entry, company) {
   };
 }
 
+function collectCompanySources(company) {
+  const rows = [];
+  company.keywords.forEach((keyword) => {
+    asArray(keyword.sources).forEach((source) => {
+      rows.push({
+        keyword: keyword.label,
+        takeaway: keyword.takeaway,
+        title: source.title || "회사 관련 원문",
+        media: source.media || source.source || "Source",
+        time: source.time || source.date || company.updatedAt,
+        url: source.url || source.link || "",
+        evidence: source.evidence || keyword.sourceSummary || "회사 최신 원문 신호"
+      });
+    });
+  });
+
+  company.stack.forEach((entry) => {
+    const item = normalizeCompanyStackItem(entry, company);
+    asArray(item.sources).forEach((source) => {
+      rows.push({
+        keyword: item.title,
+        takeaway: item.takeaway,
+        title: source.title || "회사 관련 원문",
+        media: source.media || source.source || "Source",
+        time: source.time || source.date || item.date || company.updatedAt,
+        url: source.url || source.link || "",
+        evidence: source.evidence || item.sourceSummary
+      });
+    });
+  });
+
+  const seen = new Set();
+  return rows
+    .filter((row) => {
+      const key = row.url || `${row.title}-${row.media}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return row.url || row.title;
+    })
+    .slice(0, 5);
+}
+
 function renderCompanyView() {
   const company = activeCompany();
   byId("companyName").textContent = company.name;
   byId("companySector").textContent = company.sector;
   byId("companyUpdated").textContent = `업데이트 ${company.updatedAt}`;
 
-  const totalWeight = company.keywords.reduce((sum, keyword) => sum + Math.max(1, Number(keyword.weight) || 1), 0);
-  const distribution = company.keywords.slice(0, 4);
-  byId("wordCloud").innerHTML = `
-    <div class="focus-distribution" aria-label="회사 추진 키워드 비중">
-      <span class="distribution-bars">
-        ${distribution
-          .map((keyword, index) => {
-            const share = Math.round((Math.max(1, keyword.weight) / totalWeight) * 100);
-            return `<i style="--share:${share}%; --segment-color:${calmSignalColor(index)}" title="${escapeHtml(keyword.label)} ${share}%"></i>`;
-          })
-          .join("")}
-      </span>
-      <span class="distribution-legend">
-        ${distribution
-          .map((keyword, index) => {
-            const share = Math.round((Math.max(1, keyword.weight) / totalWeight) * 100);
-            return `<em style="--segment-color:${calmSignalColor(index)}"><b></b>${escapeHtml(keyword.label)} ${share}%</em>`;
-          })
-          .join("")}
-      </span>
-    </div>
-    ${company.keywords
+  byId("wordCloud").innerHTML = company.keywords
       .map((keyword, index) => {
       const description = companyKeywordDescription(company, keyword);
       const score = Math.round(keyword.weight);
       const signalColor = calmSignalColor(index);
       return `
-        <button class="signal-row" type="button" data-keyword-label="${escapeHtml(keyword.label)}" style="--signal-color:${signalColor}; --signal-width:${score}%">
+        <button class="business-signal-card" type="button" data-keyword-label="${escapeHtml(keyword.label)}" style="--signal-color:${signalColor}">
           <span class="signal-main">
             <span class="signal-title">
               <b>${escapeHtml(keyword.label)}</b>
               <em>${score}</em>
             </span>
             <span class="signal-desc">${escapeHtml(description)}</span>
-            <span class="signal-meter" aria-hidden="true"><i></i></span>
           </span>
-          <span class="signal-side">
-            <span class="sparkline" aria-hidden="true">${sparklineBars(keyword, index)}</span>
-            <span class="signal-proof">${escapeHtml(keyword.sourceSummary || "원문 수집 대기")}</span>
+          <span class="signal-proof-block">
+            <b>어디서 나왔나</b>
+            <em>${escapeHtml(keyword.sourceSummary || "원문 수집 대기")}</em>
+          </span>
+          <span class="signal-proof-block action">
+            <b>활용 포인트</b>
+            <em>${escapeHtml(keyword.takeaway || "제품, 영업, 파트너십 관점에서 후속 확인이 필요합니다.")}</em>
           </span>
         </button>
       `;
     })
-    .join("")}
-  `;
-
-  byId("companyHeatmap").innerHTML = company.heat
-    .map((label, index) => {
-      const intensity = 22 + ((index * 17 + company.name.length * 9) % 58);
-      const color = colors[index % colors.length];
-      return `<div class="heat-cell" style="--intensity:${intensity}%; --cell-color:${color}"><span>${label}</span></div>`;
-    })
     .join("");
+
+  const companySources = collectCompanySources(company);
+  byId("companyNewsList").innerHTML = `
+    <div class="company-news-heading">
+      <b>최근 원문</b>
+      <span>${escapeHtml(company.name)} 관련 신호가 실제로 나온 기사와 블로그</span>
+    </div>
+    <div class="company-news-items">
+      ${
+        companySources.length
+          ? companySources
+              .map(
+                (source) => `
+                  <a class="company-news-item" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">
+                    <span class="news-meta">
+                      <b>${escapeHtml(source.media)}</b>
+                      <em>${escapeHtml(source.time)}</em>
+                    </span>
+                    <strong>${escapeHtml(source.title)}</strong>
+                    <span class="news-context">${escapeHtml(source.keyword)} · ${escapeHtml(source.evidence || "근거 원문")}</span>
+                  </a>
+                `
+              )
+              .join("")
+          : `<span class="empty-news">아직 직접 원문이 부족합니다. 수집 링크에서 회사명을 기준으로 재확인하세요.</span>`
+      }
+    </div>
+  `;
 
   byId("agendaStack").innerHTML = company.stack
     .map((entry, index) => {
@@ -917,7 +967,7 @@ function renderImpact() {
       const color = Array.isArray(note) ? note[2] : note.color;
       const action = Array.isArray(note) ? "" : note.action;
       return `
-        <div style="--accent:${escapeHtml(color || "#0f8f82")}">
+        <div style="--accent:${escapeHtml(color || "#3f5f8f")}">
           <span class="impact-action">${escapeHtml(action || "오늘 할 일")}</span>
           <b>${escapeHtml(title || "So What")}</b>
           <p>${escapeHtml(body || "")}</p>
@@ -1000,9 +1050,9 @@ function openBrief({
   byId("modalDate").textContent = date;
   byId("modalSignals").textContent = signals;
   byId("briefLines").innerHTML = [
-    ["발생 배경", safeBrief.background, "#0f8f82"],
-    ["시장의 반응", safeBrief.reaction, "#d68419"],
-    ["전략적 시사점", safeBrief.implication, "#3563c8"]
+    ["발생 배경", safeBrief.background, "#3f5f8f"],
+    ["시장의 반응", safeBrief.reaction, "#b66b35"],
+    ["전략적 시사점", safeBrief.implication, "#5a4f8f"]
   ]
     .map(
       ([label, body, color]) => `

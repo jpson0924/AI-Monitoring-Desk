@@ -139,17 +139,17 @@
     [
       "AI Code",
       "기업 도입 판단은 라인 수 증가보다 실패 복구, 테스트 통과율, 보안 리뷰 누락 감소 같은 운영 지표로 옮겨갑니다.",
-      "#7a5a26"
+      "#8a6846"
     ],
     [
       "On-Device",
       "서비스 사업자는 클라우드, 엣지, 로컬 모델을 상황별로 라우팅하는 제품 구조를 준비해야 합니다.",
-      "#d68419"
+      "#b66b35"
     ],
     [
       "Agent",
       "Agent 제품 경쟁은 자동화 범위뿐 아니라 권한 위임, 실패 복구, 승인 UX의 완성도로 갈립니다.",
-      "#0f8f82"
+      "#3f5f8f"
     ]
   ],
   "hotAgendas": [
@@ -633,7 +633,7 @@
       "id": "naver",
       "name": "Naver",
       "sector": "Korea Platform",
-      "color": "#3f8f4f",
+      "color": "#52616b",
       "short": "NV",
       "focus": "소버린 AI와 검색 커머스",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -641,7 +641,7 @@
         {
           "label": "소버린 AI 영업 확대",
           "weight": 47,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "공공, 금융, 통신 고객에게 국내 데이터와 로컬 클라우드를 묶은 AI 인프라 패키지를 제안합니다.",
           "termId": "sovereign",
           "sources": [
@@ -673,7 +673,7 @@
         {
           "label": "온디바이스 협력 가능성",
           "weight": 46,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "모바일, 브라우저, 차량 등 한국어 개인화가 필요한 접점에서 로컬 추론 파트너십 여지가 있습니다.",
           "termId": "on-device",
           "sources": [
@@ -705,7 +705,7 @@
         {
           "label": "한국어 데이터 해자",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "범용 모델 경쟁보다 한국어, 검색 로그, 커머스 문맥의 정밀도를 차별화 포인트로 삼습니다.",
           "termId": "evalops",
           "sources": [
@@ -737,7 +737,7 @@
         {
           "label": "검색 커머스 AI 전환",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "검색, 쇼핑, 광고 추천을 생성형 응답 안에서 재배치해 플랫폼 체류와 거래 전환을 노립니다.",
           "termId": "agent",
           "sources": [
@@ -892,7 +892,7 @@
         {
           "label": "창작·광고 자동화",
           "weight": 56.5,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "콘텐츠 제작, 광고 문안, 쇼핑 운영 자동화가 소상공인과 브랜드 고객의 지불 의사로 이어질 수 있습니다.",
           "termId": "ai-code",
           "sources": [],
@@ -902,7 +902,7 @@
         {
           "label": "카카오톡 AI 접점 확대",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "메신저, 채널, 커머스 안에서 AI가 예약, 상담, 추천 같은 실행 흐름으로 들어갈 여지가 큽니다.",
           "termId": "agent",
           "sources": [],
@@ -912,7 +912,7 @@
         {
           "label": "개인화 데이터 안전성",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "대화와 생활 데이터 기반 서비스가 커질수록 동의, 보관, 추천 품질 관리가 핵심 리스크가 됩니다.",
           "termId": "evalops",
           "sources": [],
@@ -922,7 +922,7 @@
         {
           "label": "로컬 플랫폼 방어",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "글로벌 AI 앱이 국내 생활 플랫폼 접점을 잠식하지 못하도록 로컬 맥락과 제휴 자산을 묶어야 합니다.",
           "termId": "sovereign",
           "sources": [],
@@ -981,7 +981,7 @@
       "id": "sktelecom",
       "name": "SK Telecom",
       "sector": "Telco AI",
-      "color": "#c54b40",
+      "color": "#a6535c",
       "short": "SK",
       "focus": "통신 AI와 데이터센터",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -989,7 +989,7 @@
         {
           "label": "반도체·디지털 트윈 협력",
           "weight": 51,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "제조 현장과 반도체 공정에 AI 시뮬레이션과 디지털 트윈을 붙여 B2B 레퍼런스를 만들고 있습니다.",
           "termId": "on-device",
           "sources": [
@@ -1021,7 +1021,7 @@
         {
           "label": "통신형 AI 에이전트",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "통화, 일정, 고객센터, 멤버십 접점을 묶어 통신사형 개인·기업 에이전트로 확장할 수 있습니다.",
           "termId": "agent",
           "sources": [
@@ -1053,7 +1053,7 @@
         {
           "label": "AI 데이터센터 사업화",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "GPU, 전력, 네트워크를 결합한 국내 AI 인프라 수요를 통신 자산으로 흡수하려는 흐름입니다.",
           "termId": "sovereign",
           "sources": [
@@ -1085,7 +1085,7 @@
         {
           "label": "엔터프라이즈 AX 패키징",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "기업 고객에게 모델보다 상담, 보안, 품질 운영을 묶은 AX 패키지로 판매하는 전략이 중요합니다.",
           "termId": "evalops",
           "sources": [
@@ -1232,7 +1232,7 @@
       "id": "samsung",
       "name": "Samsung",
       "sector": "Device & Chip",
-      "color": "#3563c8",
+      "color": "#5a4f8f",
       "short": "SS",
       "focus": "온디바이스 AI와 반도체",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -1240,7 +1240,7 @@
         {
           "label": "Galaxy AI 온디바이스화",
           "weight": 61,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "스마트폰의 실시간 번역, 요약, 개인화 기능이 로컬 추론과 프라이버시 메시지의 대표 접점입니다.",
           "termId": "on-device",
           "sources": [
@@ -1265,7 +1265,7 @@
         {
           "label": "AI 반도체 공급망",
           "weight": 56,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "HBM, 메모리, 파운드리 수요가 AI 서비스 원가와 공급 안정성을 좌우하는 사업 변수입니다.",
           "termId": "on-device",
           "sources": [
@@ -1290,7 +1290,7 @@
         {
           "label": "가전·로봇 AI 접점",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "TV, 가전, 로봇이 생활 공간의 AI 인터페이스가 되면 서비스 번들과 데이터 접점이 새로 열립니다.",
           "termId": "agent",
           "sources": [
@@ -1315,7 +1315,7 @@
         {
           "label": "기기 내 데이터 거버넌스",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "개인 데이터가 기기에서 처리될수록 모델 업데이트, 권한, 안전성 평가 체계가 구매 조건이 됩니다.",
           "termId": "evalops",
           "sources": [
@@ -1442,7 +1442,7 @@
         {
           "label": "EXAONE 산업 모델",
           "weight": 47,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "범용 챗봇보다 제조, 화학, 바이오 같은 그룹 산업 데이터를 잘 다루는 특화 모델 전략입니다.",
           "termId": "evalops",
           "sources": [],
@@ -1452,7 +1452,7 @@
         {
           "label": "제조 현장 자동화",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "품질 검사, 설비 이상 탐지, 작업자 지원을 AI 에이전트형 업무 흐름으로 바꾸는 영역입니다.",
           "termId": "agent",
           "sources": [],
@@ -1462,7 +1462,7 @@
         {
           "label": "기업 데이터 폐쇄망",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "민감한 산업 데이터는 클라우드보다 사내망과 전용 모델 운영 요구가 강해질 수 있습니다.",
           "termId": "sovereign",
           "sources": [],
@@ -1472,7 +1472,7 @@
         {
           "label": "멀티모달 R&D",
           "weight": 44,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "이미지, 센서, 문서 데이터를 함께 읽는 모델이 산업 AI 정확도와 자동화 범위를 넓힙니다.",
           "termId": "on-device",
           "sources": [],
@@ -1531,7 +1531,7 @@
       "id": "kt",
       "name": "KT",
       "sector": "Telco Cloud",
-      "color": "#7a5a26",
+      "color": "#8a6846",
       "short": "KT",
       "focus": "통신 AX와 공공 클라우드",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -1539,7 +1539,7 @@
         {
           "label": "AICC·상담 자동화",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "콜센터, 영업, 고객 응대를 AI가 처리하면서 통신사의 B2B AX 매출화가 빨라질 수 있습니다.",
           "termId": "agent",
           "sources": [],
@@ -1549,7 +1549,7 @@
         {
           "label": "공공·금융 AI 클라우드",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "국내 데이터 보관과 보안 요구가 강한 고객에게 로컬 클라우드와 모델 운영을 묶어 제안합니다.",
           "termId": "sovereign",
           "sources": [],
@@ -1559,7 +1559,7 @@
         {
           "label": "망 데이터 기반 품질 운영",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "네트워크와 고객 운영 데이터를 AI 서비스 품질, 장애 예측, 보안 운영으로 연결할 수 있습니다.",
           "termId": "evalops",
           "sources": [],
@@ -1569,7 +1569,7 @@
         {
           "label": "엣지 AI 접점",
           "weight": 44,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "통신망과 엣지 인프라를 활용하면 지연시간이 중요한 산업 현장 AI에 강점이 생깁니다.",
           "termId": "on-device",
           "sources": [],
@@ -1628,7 +1628,7 @@
       "id": "upstage",
       "name": "Upstage",
       "sector": "AI Startup",
-      "color": "#0f8f82",
+      "color": "#3f5f8f",
       "short": "UP",
       "focus": "문서 AI와 기업 LLM",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -1636,7 +1636,7 @@
         {
           "label": "개발자 워크플로 연동",
           "weight": 95,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "문서, 검색, API를 개발자 친화적으로 붙이면 기업 내부 AI 앱 생태계에 진입할 수 있습니다.",
           "termId": "ai-code",
           "sources": [
@@ -1654,7 +1654,7 @@
         {
           "label": "문서 AI 업무 자동화",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "계약서, 청구서, 내부 문서 처리 자동화는 기업이 바로 비용 절감을 체감하는 AI 영역입니다.",
           "termId": "agent",
           "sources": [
@@ -1672,7 +1672,7 @@
         {
           "label": "Solar LLM 기업 API",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "한국어와 기업 문서에 최적화된 모델 API로 글로벌 모델 의존도를 낮추는 선택지가 됩니다.",
           "termId": "sovereign",
           "sources": [
@@ -1690,7 +1690,7 @@
         {
           "label": "평가 기반 도입 설득",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "벤치마크와 PoC 결과를 구매 논리로 연결해야 스타트업의 엔터프라이즈 영업이 쉬워집니다.",
           "termId": "evalops",
           "sources": [
@@ -1781,7 +1781,7 @@
       "id": "rebellions",
       "name": "Rebellions",
       "sector": "AI Semiconductor",
-      "color": "#d68419",
+      "color": "#b66b35",
       "short": "RB",
       "focus": "국산 AI 가속기와 추론 원가",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -1789,7 +1789,7 @@
         {
           "label": "국산 AI 칩 공급",
           "weight": 49.45,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "국내 데이터센터의 추론 원가와 공급망 리스크를 낮추는 대안으로 AI 가속기 수요가 커집니다.",
           "termId": "on-device",
           "sources": [],
@@ -1799,7 +1799,7 @@
         {
           "label": "통신·클라우드 협력",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "통신사와 클라우드 사업자가 국산 칩을 채택하면 소버린 AI 인프라 논리가 강해집니다.",
           "termId": "sovereign",
           "sources": [],
@@ -1809,7 +1809,7 @@
         {
           "label": "모델 최적화 생태계",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "칩 성능은 모델 압축, 서빙, 벤치마크 툴과 묶일 때 실제 구매 이유가 됩니다.",
           "termId": "evalops",
           "sources": [],
@@ -1819,7 +1819,7 @@
         {
           "label": "온프레미스 AI 수요",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "보안이 민감한 기업은 사내망 추론과 전용 하드웨어를 함께 요구할 가능성이 높습니다.",
           "termId": "agent",
           "sources": [],
@@ -1878,7 +1878,7 @@
       "id": "furiosa",
       "name": "FuriosaAI",
       "sector": "AI Semiconductor",
-      "color": "#3f8f4f",
+      "color": "#52616b",
       "short": "FA",
       "focus": "저전력 추론 칩",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -1886,7 +1886,7 @@
         {
           "label": "저전력 추론 원가",
           "weight": 49.45,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "GPU 의존도가 높아질수록 전력 대비 추론 성능은 AI 서비스 마진의 핵심 지표가 됩니다.",
           "termId": "on-device",
           "sources": [],
@@ -1896,7 +1896,7 @@
         {
           "label": "서버 생태계 확장",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "국산 칩이 서버, 클라우드, SI 파트너와 묶여야 실제 도입 가능한 인프라 대안이 됩니다.",
           "termId": "sovereign",
           "sources": [],
@@ -1906,7 +1906,7 @@
         {
           "label": "벤치마크 신뢰 확보",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "칩 도입은 성능 수치보다 실제 모델 워크로드에서 검증된 벤치마크와 안정성이 중요합니다.",
           "termId": "evalops",
           "sources": [],
@@ -1916,7 +1916,7 @@
         {
           "label": "전용 AI 어플라이언스",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "보안과 지연시간이 중요한 현장형 AI 서비스는 전용 장비와 모델 번들로 팔릴 수 있습니다.",
           "termId": "agent",
           "sources": [],
@@ -1983,7 +1983,7 @@
         {
           "label": "콘텐츠 생성 워크플로",
           "weight": 61.5,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "이미지, 영상, 문서 생성 기능을 업무 흐름으로 묶을 때 단순 챗봇보다 체류와 전환이 커집니다.",
           "termId": "ai-code",
           "sources": [],
@@ -1993,7 +1993,7 @@
         {
           "label": "B2C AI 슈퍼앱",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "검색, 작성, 요약, 자동화를 한 앱 안에 묶어 일반 사용자 접점을 넓히는 전략입니다.",
           "termId": "agent",
           "sources": [],
@@ -2003,7 +2003,7 @@
         {
           "label": "소상공인 업무 자동화",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "마케팅 문구, 고객 응대, 예약, 콘텐츠 운영은 작지만 반복적인 지불 의사가 있는 영역입니다.",
           "termId": "agent",
           "sources": [],
@@ -2013,7 +2013,7 @@
         {
           "label": "사용자 데이터 신뢰",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "개인 업무 데이터를 다루는 서비스일수록 보관, 삭제, 추천 투명성 메시지가 중요합니다.",
           "termId": "evalops",
           "sources": [],
@@ -2072,7 +2072,7 @@
       "id": "fasoo",
       "name": "Fasoo AI",
       "sector": "Security AI",
-      "color": "#c54b40",
+      "color": "#a6535c",
       "short": "FS",
       "focus": "문서 보안과 기업 AX",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -2080,7 +2080,7 @@
         {
           "label": "문서 워크플로 자동화",
           "weight": 95,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "검토, 요약, 승인, 배포를 문서 보안 체계 안에서 자동화하면 기존 고객 기반을 확장할 수 있습니다.",
           "termId": "ai-code",
           "sources": [
@@ -2112,7 +2112,7 @@
         {
           "label": "문서 보안 AI",
           "weight": 47,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "기업 문서와 민감정보를 AI가 다룰 때 접근권한, 추적, 유출 방지가 구매 조건이 됩니다.",
           "termId": "evalops",
           "sources": [
@@ -2144,7 +2144,7 @@
         {
           "label": "글로벌 AX 영업",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "미국 법인과 파트너를 통해 제조, 금융, 공공 고객의 업무 자동화 수요를 공략합니다.",
           "termId": "agent",
           "sources": [
@@ -2176,7 +2176,7 @@
         {
           "label": "데이터 거버넌스 번들",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "AI 도입 전 데이터 분류, 권한, 보존 정책을 정리하는 보안 번들이 중요해집니다.",
           "termId": "sovereign",
           "sources": [
@@ -2323,7 +2323,7 @@
       "id": "openai",
       "name": "OpenAI",
       "sector": "Model Platform",
-      "color": "#3563c8",
+      "color": "#5a4f8f",
       "short": "OA",
       "focus": "에이전트 플랫폼과 멀티모달",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -2331,7 +2331,7 @@
         {
           "label": "개발 워크플로 장악",
           "weight": 98,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "코드 생성보다 이슈 분석, 테스트 수정, 리뷰까지 이어지는 저장소 운영면으로 확장하고 있습니다.",
           "termId": "ai-code",
           "sources": [
@@ -2356,7 +2356,7 @@
         {
           "label": "Agent Runtime 표준화",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "SDK, 툴 호출, 상태 관리를 묶어 에이전트 앱의 기본 실행 레이어를 장악하려는 흐름입니다.",
           "termId": "agent",
           "sources": [
@@ -2388,7 +2388,7 @@
         {
           "label": "평가 자동화 내재화",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "모델 교체와 프롬프트 변경 전후 품질 회귀를 플랫폼 안에서 검증하게 만드는 전략입니다.",
           "termId": "evalops",
           "sources": [
@@ -2420,7 +2420,7 @@
         {
           "label": "외부 툴 연결성 확보",
           "weight": 44,
-          "color": "#3563c8",
+          "color": "#5a4f8f",
           "description": "타사 업무 시스템과 데이터 소스를 모델 경험 안으로 끌어오는 연결 표준 경쟁에 대응합니다.",
           "termId": "mcp",
           "sources": [
@@ -2560,7 +2560,7 @@
       "id": "anthropic",
       "name": "Anthropic",
       "sector": "Model Provider",
-      "color": "#0f8f82",
+      "color": "#3f5f8f",
       "short": "AN",
       "focus": "MCP와 에이전트 개발면",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -2568,7 +2568,7 @@
         {
           "label": "Claude Code 운영화",
           "weight": 98,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "IDE 보조를 넘어 터미널, 저장소, 테스트 수정까지 맡는 개발 운영 도구로 포지셔닝합니다.",
           "termId": "ai-code",
           "sources": [
@@ -2586,7 +2586,7 @@
         {
           "label": "MCP 생태계 선점",
           "weight": 47,
-          "color": "#3563c8",
+          "color": "#5a4f8f",
           "description": "Claude가 업무 시스템과 연결되는 기본 통로를 MCP 서버와 커넥터 생태계로 넓히고 있습니다.",
           "termId": "mcp",
           "sources": [
@@ -2604,7 +2604,7 @@
         {
           "label": "권한 있는 Tool Use",
           "weight": 44,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "에이전트가 실제 업무를 실행할 때 승인, 권한 범위, 감사 로그를 제품 차별점으로 밀고 있습니다.",
           "termId": "agent",
           "sources": [
@@ -2622,7 +2622,7 @@
         {
           "label": "안전성 평가 메시지",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "기업 도입의 불안을 줄이기 위해 모델 성능보다 실패 경계와 평가 체계를 함께 강조합니다.",
           "termId": "evalops",
           "sources": [
@@ -2713,7 +2713,7 @@
       "id": "google",
       "name": "Google",
       "sector": "Cloud & Search",
-      "color": "#d68419",
+      "color": "#b66b35",
       "short": "GO",
       "focus": "검색 재구성과 온디바이스",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -2721,7 +2721,7 @@
         {
           "label": "Gemini 온디바이스화",
           "weight": 56,
-          "color": "#d68419",
+          "color": "#b66b35",
           "description": "Android와 Chrome 안에서 지연시간, 프라이버시, 로컬 개인화를 묶어 차별화하려는 흐름입니다.",
           "termId": "on-device",
           "sources": [
@@ -2746,7 +2746,7 @@
         {
           "label": "검색 수익모델 재설계",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "AI 답변, 쇼핑, 광고가 한 화면에 섞이면서 검색 UX와 수익 배분이 동시에 흔들리고 있습니다.",
           "termId": "agent",
           "sources": [
@@ -2771,7 +2771,7 @@
         {
           "label": "TPU 원가 우위 방어",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "모델 경쟁을 클라우드 인프라 비용과 TPU 스택 락인으로 연결해 장기 원가 경쟁력을 지키려 합니다.",
           "termId": "evalops",
           "sources": [
@@ -2796,7 +2796,7 @@
         {
           "label": "지역 AI 클라우드 패키징",
           "weight": 44,
-          "color": "#3f8f4f",
+          "color": "#52616b",
           "description": "각국 데이터 주권 요구에 맞춰 클라우드 리전, 파트너, 모델 제공 방식을 현지화합니다.",
           "termId": "sovereign",
           "sources": [
@@ -2915,7 +2915,7 @@
       "id": "microsoft",
       "name": "Microsoft",
       "sector": "Enterprise Stack",
-      "color": "#c54b40",
+      "color": "#a6535c",
       "short": "MS",
       "focus": "Copilot 운영면과 보안",
       "updatedAt": "2026.06.01 17:34 KST",
@@ -2923,7 +2923,7 @@
         {
           "label": "개발자 플랫폼 방어",
           "weight": 95,
-          "color": "#7a5a26",
+          "color": "#8a6846",
           "description": "GitHub와 Azure DevOps를 통해 코드 작성 이후 리뷰, 테스트, 배포 검증까지 묶어두려 합니다.",
           "termId": "ai-code",
           "sources": [
@@ -2941,7 +2941,7 @@
         {
           "label": "Copilot 업무 레이어화",
           "weight": 47,
-          "color": "#0f8f82",
+          "color": "#3f5f8f",
           "description": "Office, Teams, Windows의 반복 업무를 Copilot 액션으로 묶어 기업 기본 업무면을 넓힙니다.",
           "termId": "agent",
           "sources": [
@@ -2959,7 +2959,7 @@
         {
           "label": "Graph Grounding 강화",
           "weight": 44,
-          "color": "#3563c8",
+          "color": "#5a4f8f",
           "description": "메일, 문서, 일정, 권한 정보를 Graph로 묶어 기업 내부 문맥을 모델 응답의 핵심 자산으로 만듭니다.",
           "termId": "mcp",
           "sources": [
@@ -2977,7 +2977,7 @@
         {
           "label": "보안 Copilot 확장",
           "weight": 44,
-          "color": "#c54b40",
+          "color": "#a6535c",
           "description": "SOC, Defender, 감사 로그를 결합해 에이전트 도입에서 가장 먼저 예산이 붙는 보안 영역을 공략합니다.",
           "termId": "evalops",
           "sources": [
@@ -3086,7 +3086,7 @@
         "#coding",
         "#developer"
       ],
-      "color": "#7a5a26",
+      "color": "#8a6846",
       "description": "코드 생성에서 저장소 운영과 검증 자동화로 관심이 이동합니다.",
       "brief": {
         "background": "개발자가 생성형 코딩에 익숙해지면서 병목이 코드 작성에서 검증, 리뷰, 배포 신뢰성으로 이동했습니다.",
@@ -3144,7 +3144,7 @@
         "#ondevice",
         "#edgeai"
       ],
-      "color": "#d68419",
+      "color": "#b66b35",
       "description": "모바일, PC, 브라우저에서 로컬 추론 메시지가 강화됩니다.",
       "brief": {
         "background": "클라우드 추론 비용과 개인정보 규제가 맞물리며 일부 AI 기능을 기기 내부에서 처리하려는 압력이 커졌습니다.",
@@ -3202,7 +3202,7 @@
         "#agents",
         "#autonomous"
       ],
-      "color": "#0f8f82",
+      "color": "#3f5f8f",
       "description": "툴 실행, 장시간 작업, 승인 게이트가 함께 언급됩니다.",
       "brief": {
         "background": "AI Agent가 이메일, 코드, 브라우저, 업무 도구를 직접 다루기 시작하면서 실행 경계가 제품 설계의 중심이 됐습니다.",
@@ -3259,7 +3259,7 @@
         "#server",
         "#connector"
       ],
-      "color": "#3563c8",
+      "color": "#5a4f8f",
       "description": "외부 시스템 연결 표준으로 빠르게 제품 메시지화되고 있습니다.",
       "brief": {
         "background": "AI 앱이 단일 챗봇을 넘어 실제 업무 시스템과 연결되면서 표준화된 컨텍스트·툴 프로토콜 수요가 커졌습니다.",
@@ -3316,7 +3316,7 @@
         "#nationalai",
         "#localcloud"
       ],
-      "color": "#3f8f4f",
+      "color": "#52616b",
       "description": "정부, 통신, 클라우드가 로컬 데이터 주권을 사업화합니다.",
       "brief": {
         "background": "AI 인프라가 산업 경쟁력과 안보 이슈로 해석되면서 데이터와 컴퓨트를 국내 통제권 안에 두려는 요구가 커졌습니다.",
@@ -3374,7 +3374,7 @@
         "#evaluation",
         "#benchmark"
       ],
-      "color": "#c54b40",
+      "color": "#a6535c",
       "description": "모델 도입 이후의 품질 추적과 회귀 테스트가 중요해집니다.",
       "brief": {
         "background": "AI 기능이 프로덕션 워크플로에 들어가며 작은 변경도 품질과 규정 준수 리스크로 이어지게 됐습니다.",

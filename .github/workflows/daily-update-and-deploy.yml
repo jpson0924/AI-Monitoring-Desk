@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -37,6 +37,18 @@ jobs:
 
       - name: Update agenda data
         run: node scripts/update-agenda-data.mjs
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add agenda-data.js agenda-data.json history signal-desk-screen-share.html signal-desk-screen-share.txt
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update daily agenda data"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
 
       - name: Build Pages artifact
         run: |

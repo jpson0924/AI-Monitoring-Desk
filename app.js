@@ -353,7 +353,9 @@ const normalizeTimelineItem = (entry) => {
       title: entry[1],
       type: entry[2],
       url: entry[3] || "",
-      source: entry[4] || entry[2] || "Source"
+      source: entry[4] || entry[2] || "Source",
+      summary: entry[5] || "",
+      takeaway: entry[6] || ""
     };
   }
   return {
@@ -361,7 +363,9 @@ const normalizeTimelineItem = (entry) => {
     title: entry.title,
     type: entry.type || entry.source,
     url: entry.url || "",
-    source: entry.source || entry.type || "Source"
+    source: entry.source || entry.type || "Source",
+    summary: entry.summary || entry.context || "",
+    takeaway: entry.takeaway || entry.action || ""
   };
 };
 const normalizeTag = (value = "") =>
@@ -603,26 +607,37 @@ function renderActionBoard() {
   const companySignal = relatedCompany?.keywords?.[0];
   const agendaTitle = agenda?.title || "오늘의 핵심 의제";
   const agendaTags = getAgendaKeywords(agenda).slice(0, 2).join(" ");
+  const actionBrief = agenda?.actionBrief || {
+    topic: agendaTags || "핵심 AI 신호",
+    why: getAgendaReason(agenda),
+    decision: `${truncateText(agendaTitle, 46)} 이슈가 우리 제품, 고객 제안, 파트너십 우선순위를 바꾸는지 판단하세요.`,
+    nextStep: "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하고 담당 액션을 정하세요.",
+    sourceCheck: "기사 제목만 보지 말고 협력 범위, 적용 산업, 후속 일정이 있는지 확인하세요."
+  };
 
   byId("actionBoard").innerHTML = [
     {
-      label: "오늘 판단할 질문",
-      body: `${agendaTags || "핵심 뉴스"} 신호가 ${truncateText(agendaTitle, 34)}로 연결됩니다. 오늘 회의에서는 제품 연동, 고객 제안, 파트너십 영향 중 어디에 먼저 반영할지 정하세요.`,
-      context: "사업 영향"
+      label: "이슈 판정",
+      body: actionBrief.decision,
+      next: actionBrief.nextStep,
+      context: "왜 지금",
+      why: actionBrief.why
     },
     {
-      label: "먼저 읽을 원문",
+      label: "근거 확인",
       body: primarySource
-        ? `${primarySource.media} 원문에서 발표 주체, 협력 범위, 적용 산업을 먼저 확인하세요. 제목: ${truncateText(primarySource.title, 42)}`
+        ? `${primarySource.media} 원문에서 ${actionBrief.sourceCheck || "발표 주체, 협력 범위, 적용 산업을 확인하세요."}`
         : "오늘 수집분에서 직접 원문이 부족합니다. 뉴스 모달의 판단 근거와 수집 링크를 먼저 확인하세요.",
+      next: primarySource ? truncateText(primarySource.title, 64) : "원문 확보 후 다시 판단",
       href: primarySource?.url,
       context: "근거 확인"
     },
     {
-      label: "회사 맥락으로 연결",
+      label: "회사 전략 연결",
       body: companySignal
-        ? `${relatedCompany.name}의 ${companySignal.label} 신호와 비교하세요. ${companySignal.sourceSummary || "근거 수집 중"} 기준으로 영업 메시지나 제휴 후보를 업데이트할 수 있습니다.`
+        ? `${relatedCompany.name}의 ${companySignal.label} 신호와 비교하세요. ${companySignal.sourceSummary || "근거 수집 중"} 기준으로 경쟁사/파트너 영향도를 보세요.`
         : "회사별 근거 레이더에서 직접 원문이 붙은 신호를 우선 확인합니다.",
+      next: companySignal?.takeaway || "회사별 레이더에서 직접 근거가 붙은 전략 신호만 우선 확인",
       context: "후속 액션"
     }
   ]
@@ -633,7 +648,9 @@ function renderActionBoard() {
             <b>${escapeHtml(item.label)}</b>
             <em>${escapeHtml(item.context || "체크")}</em>
           </span>
+          ${item.why ? `<span class="action-why">${escapeHtml(item.why)}</span>` : ""}
           <p>${escapeHtml(item.body)}</p>
+          ${item.next ? `<span class="action-next"><b>오늘 할 일</b><em>${escapeHtml(item.next)}</em></span>` : ""}
           ${item.href ? `<a href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">원문 열기</a>` : ""}
         </div>
       `
@@ -791,7 +808,9 @@ function collectCompanySources(company) {
         media: source.media || source.source || "Source",
         time: source.time || source.date || company.updatedAt,
         url: source.url || source.link || "",
-        evidence: source.evidence || keyword.sourceSummary || "회사 최신 원문 신호"
+        evidence: source.evidence || keyword.sourceSummary || "회사 최신 원문 신호",
+        summary: source.summary || source.context || "",
+        takeaway: source.takeaway || keyword.takeaway || ""
       });
     });
   });
@@ -806,7 +825,9 @@ function collectCompanySources(company) {
         media: source.media || source.source || "Source",
         time: source.time || source.date || item.date || company.updatedAt,
         url: source.url || source.link || "",
-        evidence: source.evidence || item.sourceSummary
+        evidence: source.evidence || item.sourceSummary,
+        summary: source.summary || source.context || "",
+        takeaway: source.takeaway || item.takeaway || ""
       });
     });
   });
@@ -859,7 +880,7 @@ function renderCompanyView() {
   byId("companyNewsList").innerHTML = `
     <div class="company-news-heading">
       <b>최근 원문</b>
-      <span>${escapeHtml(company.name)} 관련 신호가 실제로 나온 기사와 블로그</span>
+      <span>${escapeHtml(company.name)} 전략 신호의 원문 요약과 활용 포인트</span>
     </div>
     <div class="company-news-items">
       ${
@@ -873,7 +894,8 @@ function renderCompanyView() {
                       <em>${escapeHtml(source.time)}</em>
                     </span>
                     <strong>${escapeHtml(source.title)}</strong>
-                    <span class="news-context">${escapeHtml(source.keyword)} · ${escapeHtml(source.evidence || "근거 원문")}</span>
+                    <span class="news-context"><b>기사 내용</b>${escapeHtml(source.summary || `${source.keyword} · ${source.evidence || "근거 원문"}`)}</span>
+                    <span class="news-context action"><b>활용</b>${escapeHtml(source.takeaway || source.evidence || "회사 전략과 연결해 후속 확인")}</span>
                   </a>
                 `
               )
@@ -934,7 +956,7 @@ function renderTimeline() {
     .map((entry, index) => {
       const item = normalizeTimelineItem(entry);
       const sourceLabel = item.source || item.type || "Source";
-      const summaryText = `${keyword.label} 관련 신호가 시장 내러티브와 기업 액션으로 연결되고 있습니다.`;
+      const summaryText = item.summary || `${keyword.label} 관련 신호가 시장 내러티브와 기업 액션으로 연결되고 있습니다.`;
       const cardBody = `
             <span class="timeline-meta">
               <span class="date-badge">${escapeHtml(item.time)} KST</span>
@@ -942,6 +964,7 @@ function renderTimeline() {
             </span>
             <h3>${escapeHtml(item.title)}</h3>
             <p>${escapeHtml(summaryText)}</p>
+            ${item.takeaway ? `<span class="timeline-takeaway">${escapeHtml(item.takeaway)}</span>` : ""}
             <span class="origin-label">${item.url ? "원문 열기" : "브리핑 보기"}</span>
       `;
 

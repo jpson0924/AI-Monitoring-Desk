@@ -348,23 +348,23 @@ const companies = [
     sector: "Korea Platform",
     color: "#3f8f4f",
     short: "NV",
-    focus: "소버린 AI와 검색 커머스",
+    focus: "AI 팩토리와 소버린 클라우드",
     terms: ["sovereign", "on-device", "agent", "evalops"],
     agendas: [
       {
-        label: "소버린 AI 영업 확대",
+        label: "AI 팩토리·GPU 조달 전선",
         term: "sovereign",
-        description: "공공, 금융, 통신 고객에게 국내 데이터와 로컬 클라우드를 묶은 AI 인프라 패키지를 제안합니다.",
-        heat: ["Public", "Finance", "Local Data", "Cloud"]
+        description: "정부 GPU 사업, 엔비디아 협력, 네이버클라우드 운영 역량이 국내 AI 인프라 영업 기회로 이어지는지 봐야 합니다.",
+        heat: ["AI Factory", "GPU", "NVIDIA", "Cloud"]
       },
       {
-        label: "한국어 데이터 해자",
+        label: "하이퍼클로바 산업 패키지",
         term: "evalops",
-        description: "범용 모델 경쟁보다 한국어, 검색 로그, 커머스 문맥의 정밀도를 차별화 포인트로 삼습니다.",
-        heat: ["Korean Data", "Search Log", "Commerce", "Quality"]
+        description: "한국어 모델과 검색·커머스 데이터를 산업별 업무 패키지로 묶어 글로벌 범용 모델과 차별화할 수 있습니다.",
+        heat: ["HyperCLOVA", "Korean Data", "Commerce", "Quality"]
       },
       {
-        label: "검색 커머스 AI 전환",
+        label: "검색·커머스 AI 수익화",
         term: "agent",
         description: "검색, 쇼핑, 광고 추천을 생성형 응답 안에서 재배치해 플랫폼 체류와 거래 전환을 노립니다.",
         heat: ["Search", "Shopping", "Ads", "Creator"]
@@ -428,16 +428,16 @@ const companies = [
         heat: ["A.", "Call", "Membership", "Agent"]
       },
       {
-        label: "AI 데이터센터 사업화",
+        label: "GW급 AIDC 사업화",
         term: "sovereign",
-        description: "GPU, 전력, 네트워크를 결합한 국내 AI 인프라 수요를 통신 자산으로 흡수하려는 흐름입니다.",
-        heat: ["AIDC", "GPU", "Network", "Power"]
+        description: "GPU, 전력, 네트워크를 결합한 대규모 AI 데이터센터 수요를 통신 자산으로 흡수하려는 흐름입니다.",
+        heat: ["AIDC", "GW Scale", "GPU", "Power"]
       },
       {
-        label: "반도체·디지털 트윈 협력",
+        label: "AI 팩토리·디지털 트윈 협력",
         term: "on-device",
-        description: "제조 현장과 반도체 공정에 AI 시뮬레이션과 디지털 트윈을 붙여 B2B 레퍼런스를 만들고 있습니다.",
-        heat: ["Digital Twin", "Semiconductor", "Factory", "NVIDIA"]
+        description: "제조 현장과 반도체 공정에 AI 시뮬레이션, 네트워크, 디지털 트윈을 붙여 B2B 레퍼런스를 만들 수 있습니다.",
+        heat: ["AI Factory", "Digital Twin", "Semiconductor", "NVIDIA"]
       },
       {
         label: "엔터프라이즈 AX 패키징",
@@ -463,16 +463,16 @@ const companies = [
         heat: ["Galaxy AI", "NPU", "Privacy", "Mobile"]
       },
       {
-        label: "AI 반도체 공급망",
+        label: "HBM 이후 AI 팩토리 공급망",
         term: "on-device",
-        description: "HBM, 메모리, 파운드리 수요가 AI 서비스 원가와 공급 안정성을 좌우하는 사업 변수입니다.",
-        heat: ["HBM", "Memory", "Foundry", "NPU"]
+        description: "HBM, 메모리, 파운드리 수요가 AI 팩토리 구축과 서비스 원가 안정성을 좌우하는 사업 변수입니다.",
+        heat: ["HBM", "Memory", "Foundry", "AI Factory"]
       },
       {
-        label: "가전·로봇 AI 접점",
+        label: "가전·로봇 피지컬 AI 접점",
         term: "agent",
-        description: "TV, 가전, 로봇이 생활 공간의 AI 인터페이스가 되면 서비스 번들과 데이터 접점이 새로 열립니다.",
-        heat: ["Home AI", "Robot", "TV", "Appliance"]
+        description: "TV, 가전, 로봇이 생활 공간의 AI 인터페이스가 되면 피지컬 AI 서비스 번들과 데이터 접점이 새로 열립니다.",
+        heat: ["Physical AI", "Robot", "TV", "Appliance"]
       },
       {
         label: "기기 내 데이터 거버넌스",
@@ -852,9 +852,122 @@ function cleanTitle(value) {
     .replace(/\s+/g, " ")
     .trim();
   if (cleaned.length <= 96) return cleaned;
-  const sentenceEnd = cleaned.slice(0, 120).search(/[.!?。]|다\./);
-  if (sentenceEnd > 28 && sentenceEnd < 96) return cleaned.slice(0, sentenceEnd + 1);
+  const sentenceMatch = cleaned.slice(0, 120).match(/[.!?。]|다\./);
+  if (sentenceMatch && sentenceMatch.index > 28 && sentenceMatch.index < 96) {
+    return cleaned.slice(0, sentenceMatch.index + sentenceMatch[0].length);
+  }
   return `${cleaned.slice(0, 92).trim()}...`;
+}
+
+function truncateSentence(value = "", max = 168) {
+  const text = decodeXml(value)
+    .replace(/^\[[^\]]+\]\s*/g, "")
+    .replace(/^[가-힣]{2,4}\s?기자\s*/g, "")
+    .replace(/\s+-\s+(?:v\.daum\.net|m\.news\.naver\.com|news\.naver\.com|네이버뉴스|naver news|google news|daum|다음뉴스)$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length <= max) return text;
+  const head = text.slice(0, max);
+  const sentenceEnds = [head.lastIndexOf("."), head.lastIndexOf("다."), head.lastIndexOf("?"), head.lastIndexOf("!")];
+  const sentenceEnd = Math.max(...sentenceEnds);
+  if (sentenceEnd > 72) return head.slice(0, sentenceEnd + 1).trim();
+  return `${head.replace(/[,\s·…~\-–—]+$/g, "").trim()}...`;
+}
+
+const articleFrames = [
+  {
+    pattern: /젠슨|jensen|huang|엔비디아|nvidia|피지컬\s*ai|로보틱스|로봇/i,
+    topic: "엔비디아·피지컬 AI 협력",
+    detail: "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다.",
+    why: "단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다.",
+    next: "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요.",
+    reaction: "국내 플랫폼, 통신, 제조 기업이 AI 팩토리와 피지컬 AI 협력 범위를 빠르게 비교하고 있습니다."
+  },
+  {
+    pattern: /ai\s*(?:반도체|칩)|hbm|gpu|npu|가속기|ai\s*팩토리|데이터센터|aipc/i,
+    topic: "AI 인프라·반도체 수급",
+    detail: "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다.",
+    why: "모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다.",
+    next: "GPU/NPU 조달안, 클라우드 단가, 서비스별 추론비 민감도를 업데이트하세요.",
+    reaction: "대기업과 스타트업이 엔비디아 의존도, 국산 칩 대안, 클라우드 조달 조건을 함께 검토하고 있습니다."
+  },
+  {
+    pattern: /과기정통부|정부|공공|정책|규제|조달|국산|소버린|k-ai/i,
+    topic: "정책·공공 조달",
+    detail: "정부 정책, 공공 조달, 국산 AI 인프라가 국내 AI 사업 기회로 연결되는 신호입니다.",
+    why: "예산과 조달 조건이 생기면 기술 우위보다 인증, 레퍼런스, 국내 데이터 처리 요건이 앞에 옵니다.",
+    next: "공공 제안서에 필요한 보안 인증, 국내 데이터 처리, 레퍼런스 항목을 점검하세요.",
+    reaction: "국내 플랫폼, SI, 클라우드 기업이 정책 예산과 산업별 레퍼런스를 묶어 영업 포인트로 삼고 있습니다."
+  },
+  {
+    pattern: /보안|kisa|개인정보|유출|위협|감사|권한|통제|복원력|사이버/i,
+    topic: "AI 보안·감사",
+    detail: "AI 도입 심사에서 권한 통제, 감사 로그, 보안 검증이 구매 조건으로 올라오는 신호입니다.",
+    why: "AI가 업무 시스템에 연결될수록 기능 데모보다 사고 대응과 통제 화면이 먼저 검토됩니다.",
+    next: "관리자 승인, 감사 로그, 데이터 반출 통제 화면을 영업 자료 앞단에 배치하세요.",
+    reaction: "기업 고객은 PoC 단계부터 보안 체크리스트와 운영 책임 범위를 요구하기 시작했습니다."
+  },
+  {
+    pattern: /ax|엔터프라이즈|파트너|협력|클라우드|도입|상용화|솔루션|lg cns|델|microsoft|anthropic|openai/i,
+    topic: "엔터프라이즈 AX 상용화",
+    detail: "AI가 실험용 챗봇을 넘어 파트너 영업, 클라우드 현대화, 업무 전환 패키지로 팔리는 신호입니다.",
+    why: "고객은 모델 이름보다 어느 업무에 붙고, 누가 운영하며, 어느 파트너가 책임지는지를 봅니다.",
+    next: "우리 제품의 적용 업무, 운영 책임, 파트너 번들 가능성을 1페이지로 정리하세요.",
+    reaction: "SI, 클라우드, 보안 파트너들이 모델 API를 실제 업무 전환 패키지로 재포장하고 있습니다."
+  }
+];
+
+function articleFrame(article) {
+  const haystack = `${article.title} ${article.summary} ${article.source}`;
+  return (
+    articleFrames.find((frame) => frame.pattern.test(haystack)) || {
+      topic: "AI 사업 신호",
+      detail: "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다.",
+      why: "제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다.",
+      next: "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요.",
+      reaction: "관련 기업들이 제품 메시지와 영업 포인트를 조정할 수 있는 신호로 해석됩니다."
+    }
+  );
+}
+
+function articleDetailSummary(article, businessRelevance) {
+  const frame = articleFrame(article);
+  const title = cleanTitle(stripKnownSourceSuffix(article.title, article.source));
+  const cleanedSummary = article.summary ? cleanTitle(stripKnownSourceSuffix(article.summary, article.source)) : "";
+  const compactSummary = cleanedSummary.replace(/\s/g, "");
+  const compactTitle = title.replace(/\s/g, "");
+  const sourceDetail =
+    cleanedSummary && cleanedSummary !== title && !compactSummary.startsWith(compactTitle)
+      ? truncateSentence(cleanedSummary, 142)
+      : truncateSentence(`${title} 이슈로, ${frame.detail}`, 184);
+  const reason = businessRelevance.reasons[0]?.label ? `판정 근거: ${businessRelevance.reasons[0].label}.` : "";
+  return truncateSentence(`${sourceDetail} ${reason}`, 190);
+}
+
+function articleActionBrief(article) {
+  const frame = articleFrame(article);
+  return {
+    topic: frame.topic,
+    why: frame.why,
+    decision: `${frame.topic} 이슈가 우리 제품, 고객 제안, 파트너십 우선순위를 바꾸는지 오늘 판정하세요.`,
+    nextStep: frame.next,
+    sourceCheck: "원문에서 발표 주체, 협력 범위, 실제 적용 산업, 후속 일정이 있는지 확인하세요."
+  };
+}
+
+function articleBriefForArticle(article, businessRelevance) {
+  const frame = articleFrame(article);
+  return {
+    background: articleDetailSummary(article, businessRelevance),
+    reaction: frame.reaction,
+    implication: frame.next
+  };
+}
+
+function hotReasonForArticle(article, businessRelevance) {
+  const frame = articleFrame(article);
+  const topReason = businessRelevance.reasons[0]?.label || "사업 임팩트";
+  return `${frame.topic} 관점의 기사이며 ${topReason} 신호가 감지돼 한국 AI 사업 임팩트 ${businessRelevance.score}점으로 분류했습니다.`;
 }
 
 function parseHtmlLinks(html, source) {
@@ -1177,6 +1290,92 @@ function sourcesForTerm(term, matches) {
   }));
 }
 
+function normalizedNeedles(values = []) {
+  return values
+    .flat()
+    .filter(Boolean)
+    .map((value) => String(value).toLowerCase().replace(/^#/, "").trim())
+    .filter((value) => value.length > 1);
+}
+
+function textHasNeedle(text, needles) {
+  return normalizedNeedles(needles).some((needle) => text.includes(needle));
+}
+
+function strategyNeedlesForAgenda(agenda, term) {
+  return normalizedNeedles([
+    agenda.label,
+    agenda.description,
+    agenda.heat,
+    term?.label,
+    term?.aliases
+  ]);
+}
+
+function articleMatchesCompanyAgenda(article, company, agenda, term) {
+  const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
+  const obviousNoise = /노조|파업|임금|longevity|hrv|건강관리|연예|스포츠|주가 급등락/i.test(haystack);
+  if (obviousNoise) return false;
+
+  const strategyNeedles = strategyNeedlesForAgenda(agenda, term);
+  const hasStrategyNeedle = textHasNeedle(haystack, strategyNeedles);
+  const agendaText = `${agenda.label} ${agenda.description} ${(agenda.heat || []).join(" ")}`.toLowerCase();
+  const agendaWantsInfra = /ai\s*factory|ai\s*팩토리|gpu|hbm|npu|데이터센터|aidc|반도체|공급망|로봇|로보틱스|피지컬|디지털\s*트윈/i.test(agendaText);
+  const infraFallback =
+    agendaWantsInfra &&
+    ["sovereign", "on-device"].includes(agenda.term) &&
+    /엔비디아|nvidia|gpu|hbm|npu|ai\s*팩토리|데이터센터|aidc|로봇|로보틱스/i.test(haystack);
+  const securityFallback =
+    agenda.term === "evalops" && /보안|감사|권한|복원력|사이버|평가|품질|guardrail/i.test(haystack);
+  const enterpriseFallback =
+    ["agent", "ai-code"].includes(agenda.term) && /agent|에이전트|ax|업무\s*자동화|개발\s*플랫폼|workflow|워크플로/i.test(haystack);
+  return isAiBusinessArticle(article) && (hasStrategyNeedle || infraFallback || securityFallback || enterpriseFallback);
+}
+
+function refineCompanyAgenda(company, agenda, sources) {
+  if (!sources.length) return agenda;
+  const haystack = `${agenda.label} ${agenda.description} ${sources.map((source) => source.title).join(" ")}`.toLowerCase();
+  const refinements = [
+    {
+      company: "naver",
+      pattern: /ai\s*팩토리|gpu|엔비디아|nvidia|소버린|클라우드/i,
+      label: "AI 팩토리·GPU 조달 전선",
+      description: "네이버의 클라우드·AI 운영 역량이 정부 GPU 사업, 엔비디아 협력, 소버린 AI 수요와 연결되는지 봐야 합니다.",
+      takeaway: "공공·대기업 제안에서 AI 팩토리 운영 경험, GPU 확보, 국내 데이터 처리 조건을 경쟁사와 비교하세요."
+    },
+    {
+      company: "sktelecom",
+      pattern: /nvidia|엔비디아|ai\s*인프라|aidc|gw급|데이터센터|ai\s*팩토리/i,
+      label: "엔비디아 AIDC 동맹",
+      description: "SKT가 네트워크와 데이터센터 자산을 엔비디아 GPU 인프라 수요와 결합해 B2B AI 인프라 사업으로 확장하는 신호입니다.",
+      takeaway: "AIDC, 전력, GPU 운영, 기업 AX 패키지를 묶은 제휴·영업 시나리오를 업데이트하세요."
+    },
+    {
+      company: "samsung",
+      pattern: /hbm|파운드리|메모리|ai\s*팩토리|로봇|엔비디아|nvidia/i,
+      label: "HBM 이후 AI 팩토리 공급망",
+      description: "삼성의 메모리·파운드리·디바이스 자산이 AI 팩토리, 로봇, 온디바이스 AI 수요와 어떻게 연결되는지 봐야 합니다.",
+      takeaway: "HBM, 파운드리, 온디바이스 NPU, 로봇 AI 접점을 제품·파트너십 관점에서 분리하세요."
+    },
+    {
+      company: "lgai",
+      pattern: /lg cns|anthropic|openai|클로드|ax|엔터프라이즈|si/i,
+      label: "멀티모델 AX SI 패키지",
+      description: "LG 계열의 AX 사업이 OpenAI, Anthropic 등 모델 파트너를 실제 기업 업무 전환 패키지로 묶는지 확인해야 합니다.",
+      takeaway: "고객별로 OpenAI형, Claude형, 사내 데이터형 패키지를 어떻게 구분해 팔지 비교하세요."
+    },
+    {
+      company: "kt",
+      pattern: /금융|공공|클라우드|aicc|ax|망|보안/i,
+      label: "금융·공공 AX 번들",
+      description: "KT의 통신망, 클라우드, 상담 자동화 자산이 규제 산업의 AX 예산과 맞물리는지 봐야 합니다.",
+      takeaway: "금융·공공 고객용 PoC에는 데이터 보관, 감사 로그, 상담 자동화 ROI를 함께 넣으세요."
+    }
+  ];
+  const match = refinements.find((item) => item.company === company.id && item.pattern.test(haystack));
+  return match ? { ...agenda, label: match.label, description: match.description, takeaway: match.takeaway } : agenda;
+}
+
 function sourcesForCompanyAgenda(company, agenda, termSignal, allArticles = []) {
   const matches = termSignal.matches || [];
   const productNeedles = {
@@ -1187,7 +1386,7 @@ function sourcesForCompanyAgenda(company, agenda, termSignal, allArticles = []) 
     kakao: ["Kakao", "카카오", "카카오톡", "KoGPT", "카나나"],
     sktelecom: ["SK Telecom", "SKT", "에이닷", "A.", "SK하이닉스", "SK hynix"],
     samsung: ["Samsung", "삼성", "Galaxy AI", "갤럭시 AI", "HBM"],
-    lgai: ["LG AI", "LG AI Research", "EXAONE", "엑사원", "LG"],
+    lgai: ["LG AI", "LG AI Research", "EXAONE", "엑사원", "LG", "LG CNS"],
     kt: ["KT", "케이티", "AICC", "믿음"],
     upstage: ["Upstage", "업스테이지", "Solar", "솔라"],
     rebellions: ["Rebellions", "리벨리온", "ATOM", "Rebel"],
@@ -1201,34 +1400,38 @@ function sourcesForCompanyAgenda(company, agenda, termSignal, allArticles = []) 
     .filter((value) => value.length > 2);
   const directMatches = matches.filter(({ article }) => {
     const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
-    return needles.some((needle) => haystack.includes(needle));
+    return needles.some((needle) => haystack.includes(needle)) && articleMatchesCompanyAgenda(article, company, agenda, termSignal);
   });
   const companyWideMatches = allArticles
     .map((article) => ({ article, score: 0 }))
     .filter(({ article }) => {
       const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
-      return needles.some((needle) => haystack.includes(needle));
+      return needles.some((needle) => haystack.includes(needle)) && articleMatchesCompanyAgenda(article, company, agenda, termSignal);
     });
-  const selected = (directMatches.length ? directMatches : companyWideMatches).slice(0, 3);
+  const selected = (directMatches.length ? directMatches : companyWideMatches)
+    .sort((a, b) => businessRelevanceForArticle(b.article).score - businessRelevanceForArticle(a.article).score || b.article.publishedAt - a.article.publishedAt)
+    .slice(0, 3);
   const evidence = directMatches.length
-    ? "회사/제품 직접 언급"
-    : "회사 최신 원문 신호";
+    ? "회사·전략 직접 언급"
+    : "회사 관련 AI 전략 기사";
 
   return selected.map(({ article }) => ({
     title: article.title,
     url: article.link,
     media: article.source,
     time: formatKst(article.publishedAt),
-    evidence
+    evidence,
+    summary: articleDetailSummary(article, businessRelevanceForArticle(article)),
+    takeaway: articleActionBrief(article).nextStep
   }));
 }
 
 function sourceSummaryForCompanyAgenda(sources, termSignal, company) {
   if (!sources.length) return `${company.name} 직접 원문 수집 대기`;
   const media = [...new Set(sources.map((source) => source.media))].slice(0, 2).join(", ");
-  const directCount = sources.filter((source) => source.evidence === "회사/제품 직접 언급").length;
+  const directCount = sources.filter((source) => source.evidence === "회사·전략 직접 언급").length;
   const companyCount = sources.filter(
-    (source) => source.evidence === "회사/제품 직접 언급" || source.evidence === "회사 최신 원문 신호"
+    (source) => source.evidence === "회사·전략 직접 언급" || source.evidence === "회사 관련 AI 전략 기사"
   ).length;
   const basis = directCount ? "직접 근거" : companyCount ? "회사 원문" : "시장 신호";
   return `${media} · ${basis} ${sources.length}건`;
@@ -1344,6 +1547,7 @@ function hashtagsForArticle(article) {
 
 function hotnessForArticle(article, generatedAt, businessRelevance) {
   const hours = Math.max(1, Math.round((generatedAt.getTime() - article.publishedAt.getTime()) / 36e5));
+  const frame = articleFrame(article);
   return {
     formula: "한국 AI 사업 임팩트 + 원문 최신성 + 출처 신뢰 + 후속 확인 필요성을 반영",
     reasons: [
@@ -1360,17 +1564,17 @@ function hotnessForArticle(article, generatedAt, businessRelevance) {
       {
         label: "원문 소스",
         value: article.source,
-        detail: `${article.source}에서 직접 수집한 기사 링크가 있습니다.`
+        detail: `${article.source}에서 직접 수집한 기사이며 ${frame.topic} 관점으로 분류했습니다.`
       },
       {
-        label: "직접 원문",
-        value: "1건",
-        detail: "기본 추적 의제가 아니라 실제 원문 기사 단위로 표시한 신호입니다."
+        label: "기사 내용",
+        value: frame.topic,
+        detail: frame.detail
       },
       {
-        label: "확인 필요",
-        value: "우선",
-        detail: "의제 클러스터가 약할 때는 원문을 먼저 읽고 판단하도록 노출합니다."
+        label: "오늘 확인",
+        value: "액션",
+        detail: frame.next
       }
     ]
   };
@@ -1378,15 +1582,11 @@ function hotnessForArticle(article, generatedAt, businessRelevance) {
 
 function buildNewsAgenda(article, generatedAt, index, businessRelevance = businessRelevanceForArticle(article, generatedAt)) {
   const relatedCompanies = relatedCompaniesForArticle(article);
-  const cleanedSummary = article.summary ? cleanTitle(stripKnownSourceSuffix(article.summary, article.source)) : "";
-  const compactSummary = cleanedSummary.replace(/\s/g, "");
-  const compactTitle = article.title.replace(/\s/g, "");
   const bucket = articleTopicBucket(article);
   const pinned = bucket === "nvidia-korea";
-  const summary =
-    cleanedSummary && cleanedSummary !== article.title && !compactSummary.startsWith(compactTitle)
-      ? cleanedSummary
-      : "최근 수집된 원문 신호입니다. 제목과 출처를 기준으로 우선 확인할 뉴스입니다.";
+  const summary = articleDetailSummary(article, businessRelevance);
+  const reason = hotReasonForArticle(article, businessRelevance);
+  const actionBrief = articleActionBrief(article);
   return {
     rank: index + 1,
     id: `news-${index + 1}-${hashId(article.link || article.title)}`,
@@ -1408,14 +1608,15 @@ function buildNewsAgenda(article, generatedAt, index, businessRelevance = busine
     metric: pinned ? "Pinned Hot" : "원문 1건",
     pinned,
     topicBucket: bucket,
-    reason: `${article.source} 최신 원문이며 한국 AI 사업 임팩트 ${businessRelevance.score}점으로 분류됐습니다.`,
-    whyHot: `${article.source} 최신 원문이며 한국 AI 사업 임팩트 ${businessRelevance.score}점으로 분류됐습니다.`,
+    reason,
+    whyHot: reason,
+    actionBrief,
     businessRelevance,
     hotness: hotnessForArticle(article, generatedAt, businessRelevance),
     keywords: hashtagsForArticle(article),
     hashtags: hashtagsForArticle(article),
     related_companies: relatedCompanies,
-    signals: `${article.source} 최신 원문 신호`,
+    signals: `${article.source} · ${actionBrief.topic}`,
     articles: [
       {
         title: article.title,
@@ -1424,11 +1625,7 @@ function buildNewsAgenda(article, generatedAt, index, businessRelevance = busine
         time: formatKst(article.publishedAt)
       }
     ],
-    brief: {
-      background: `${article.source}에서 수집된 최신 원문 신호입니다.`,
-      reaction: "관련 의제 클러스터가 충분하지 않을 때는 자동 해석보다 원문 확인 우선으로 표시합니다.",
-      implication: "회사별 근거 레이더나 키워드 타임라인과 연결해 제품, 투자, 리스크 관점의 후속 판단을 진행하세요."
-    }
+    brief: articleBriefForArticle(article, businessRelevance)
   };
 }
 
@@ -1625,27 +1822,36 @@ function buildCompanies(scoredTerms, generatedAt, articles = []) {
   const labelMap = new Map(agendaTerms.map((term) => [term.id, term]));
 
   return companies.map((company) => {
-    const ranked = company.agendas
+    const rankedCandidates = company.agendas
       .map((agenda, index) => {
         const termId = agenda.term;
         const term = labelMap.get(termId);
         const termSignal = signalMap.get(termId) || { ...term, matches: [], score: 0, sourceCount: 0 };
         const evidenceSources = sourcesForCompanyAgenda(company, agenda, termSignal, articles);
+        const refinedAgenda = refineCompanyAgenda(company, agenda, evidenceSources);
         const rawScore = evidenceSources.length ? scoreMap.get(termId) || 1 : Math.max(1, (scoreMap.get(termId) || 1) * 0.45);
         return {
-          label: agenda.label,
-          weight: Math.min(98, Math.max(44, rawScore * 7 + 40 - index * 5)),
+          label: refinedAgenda.label,
+          weight: Math.min(98, Math.max(40, rawScore * 7 + 38 + (evidenceSources.length ? 8 : 0) - index * 5)),
           color: term.color,
-          description: agenda.description,
-          heat: agenda.heat || [agenda.label, ...term.aliases.slice(0, 3)],
+          description: refinedAgenda.description,
+          heat: refinedAgenda.heat || agenda.heat || [refinedAgenda.label, ...term.aliases.slice(0, 3)],
           sources: evidenceSources,
           sourceSummary: sourceSummaryForCompanyAgenda(evidenceSources, term, company),
-          takeaway: takeawayForCompanyAgenda(company, agenda, termId),
+          takeaway: refinedAgenda.takeaway || takeawayForCompanyAgenda(company, refinedAgenda, termId),
           termId,
           term
         };
       })
-      .sort((a, b) => b.weight - a.weight);
+      .sort((a, b) => Number(Boolean(b.sources.length)) - Number(Boolean(a.sources.length)) || b.weight - a.weight);
+    const ranked = [];
+    const seenLabels = new Set();
+    for (const item of rankedCandidates) {
+      const key = item.label.replace(/\s+/g, "").toLowerCase();
+      if (seenLabels.has(key)) continue;
+      seenLabels.add(key);
+      ranked.push(item);
+    }
 
     return {
       id: company.id,
@@ -1822,12 +2028,14 @@ function buildSpecificKeywordData(articles, generatedAt, scoredTerms) {
       description: definition.description,
       brief: definition.brief,
       signals: `${definition.matches.length}개 기사 신호 · ${definition.sourceCount || 1}개 소스`,
-      timeline: definition.matches.slice(0, 4).map(({ article }) => ({
+      timeline: definition.matches.slice(0, 4).map(({ article, businessRelevance }) => ({
         time: formatKst(article.publishedAt),
         title: article.title,
         type: article.source,
         source: article.source,
-        url: article.link
+        url: article.link,
+        summary: articleDetailSummary(article, businessRelevance),
+        takeaway: articleActionBrief(article).nextStep
       }))
     }));
 
@@ -1852,7 +2060,9 @@ function buildSpecificKeywordData(articles, generatedAt, scoredTerms) {
           title: article.title,
           type: article.source,
           source: article.source,
-          url: article.link
+          url: article.link,
+          summary: articleDetailSummary(article, businessRelevanceForArticle(article, generatedAt)),
+          takeaway: articleActionBrief(article).nextStep
         }))
       };
     });
@@ -1880,7 +2090,9 @@ function buildKeywordData(scoredTerms, generatedAt) {
       title: article.title,
       type: article.source,
       source: article.source,
-      url: article.link
+      url: article.link,
+      summary: articleDetailSummary(article, businessRelevanceForArticle(article, generatedAt)),
+      takeaway: articleActionBrief(article).nextStep
     }));
 
     while (timeline.length < 4) {

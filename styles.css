@@ -2669,14 +2669,31 @@ main {
 }
 
 :root[data-theme="dark"] .date-strip div,
+:root[data-theme="dark"] .workspace-section,
+:root[data-theme="dark"] .segmented-control,
 :root[data-theme="dark"] .signal-panel,
 :root[data-theme="dark"] .metric-card,
 :root[data-theme="dark"] .hot-reason,
+:root[data-theme="dark"] .action-next,
 :root[data-theme="dark"] .timeline-takeaway,
 :root[data-theme="dark"] .modal-hotness,
 :root[data-theme="dark"] .modal-source-links,
 :root[data-theme="dark"] .brief-line {
   background: var(--surface-soft);
+}
+
+:root[data-theme="dark"] .workspace-section {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+:root[data-theme="dark"] .segment {
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .segment.active {
+  color: #0d1118;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
 }
 
 :root[data-theme="dark"] .icon-button,
@@ -2733,7 +2750,8 @@ main {
 :root[data-theme="dark"] .modal-hotness em,
 :root[data-theme="dark"] .modal-source-links span,
 :root[data-theme="dark"] .share-strip a,
-:root[data-theme="dark"] .search-result-item p {
+:root[data-theme="dark"] .search-result-item p,
+:root[data-theme="dark"] .action-next {
   color: var(--muted);
 }
 
@@ -2758,6 +2776,81 @@ main {
 :root[data-theme="dark"] .hot-tag[data-tag-type="risk"] {
   color: #ffc0c5;
   background: rgba(224, 139, 145, 0.15);
+}
+
+:root[data-theme="dark"] .radar-panel,
+:root[data-theme="dark"] .signal-stack,
+:root[data-theme="dark"] .company-card,
+:root[data-theme="dark"] .company-card:hover,
+:root[data-theme="dark"] .company-card:focus-visible,
+:root[data-theme="dark"] .company-card.active,
+:root[data-theme="dark"] .business-signal-card,
+:root[data-theme="dark"] .business-signal-card:hover,
+:root[data-theme="dark"] .business-signal-card:focus-visible,
+:root[data-theme="dark"] .signal-row,
+:root[data-theme="dark"] .signal-row:hover,
+:root[data-theme="dark"] .signal-row:focus-visible,
+:root[data-theme="dark"] .focus-distribution,
+:root[data-theme="dark"] .signal-proof-block,
+:root[data-theme="dark"] .word-source,
+:root[data-theme="dark"] .stack-source,
+:root[data-theme="dark"] .stack-action,
+:root[data-theme="dark"] .sparkline {
+  border-color: var(--line);
+  background: var(--surface-soft);
+}
+
+:root[data-theme="dark"] .company-card.active,
+:root[data-theme="dark"] .business-signal-card:hover,
+:root[data-theme="dark"] .business-signal-card:focus-visible,
+:root[data-theme="dark"] .signal-row:hover,
+:root[data-theme="dark"] .signal-row:focus-visible {
+  border-color: rgba(127, 164, 232, 0.54);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+}
+
+:root[data-theme="dark"] .company-card b,
+:root[data-theme="dark"] .signal-title b,
+:root[data-theme="dark"] .company-card-foot strong,
+:root[data-theme="dark"] .company-card-foot b,
+:root[data-theme="dark"] .signal-title em,
+:root[data-theme="dark"] .signal-proof,
+:root[data-theme="dark"] .signal-proof-block em,
+:root[data-theme="dark"] .word-source em,
+:root[data-theme="dark"] .stack-source em,
+:root[data-theme="dark"] .stack-action em,
+:root[data-theme="dark"] .word-action {
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .company-focus,
+:root[data-theme="dark"] .company-proof,
+:root[data-theme="dark"] .signal-desc,
+:root[data-theme="dark"] .company-card-head em,
+:root[data-theme="dark"] .company-card-foot em,
+:root[data-theme="dark"] .signal-proof-block b,
+:root[data-theme="dark"] .word-source b,
+:root[data-theme="dark"] .stack-source b,
+:root[data-theme="dark"] .stack-action b,
+:root[data-theme="dark"] .distribution-legend em {
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .company-proof,
+:root[data-theme="dark"] .company-card-foot b,
+:root[data-theme="dark"] .signal-title em,
+:root[data-theme="dark"] .signal-proof-block.action {
+  background: rgba(127, 164, 232, 0.13);
+}
+
+:root[data-theme="dark"] .company-meter,
+:root[data-theme="dark"] .signal-meter,
+:root[data-theme="dark"] .distribution-bars {
+  background: rgba(153, 165, 181, 0.2);
+}
+
+:root[data-theme="dark"] .sparkline i {
+  background: color-mix(in srgb, var(--signal-color) 72%, #dbe7ff);
 }
 
 :root[data-theme="dark"] .brief-modal {

@@ -332,6 +332,7 @@ let activeCompanyId = companies[0]?.id || "naver";
 let activeKeywordId = keywordData[0]?.id || "agent";
 let activeSignalQuery = "";
 let signalSearchMatches = [];
+let currentCardNewsItems = [];
 let lastFocus = null;
 const savedQueryStorageKey = "marketSignal.savedQueries";
 const themeStorageKey = "marketSignal.theme";
@@ -815,6 +816,130 @@ function renderSignalSearch(query = activeSignalQuery) {
         .join("")}
     </div>
   `;
+}
+
+function buildCardNewsItems() {
+  const topAgendas = hotAgendas.slice(0, 3);
+  const topTags = [...new Set(topAgendas.flatMap((agenda) => getAgendaKeywords(agenda)).map((tag) => tag.replace(/^#/, "")))].slice(0, 5);
+  const leadAgenda = topAgendas[0];
+  const actionBrief = leadAgenda?.actionBrief || {};
+  const actionQuestion = actionBrief.question || actionBrief.decision || "오늘 사업 판단에 영향을 줄 신호를 확인하세요.";
+  const actionTask = actionBrief.task || actionBrief.nextStep || "원문 2건을 읽고 제품, 영업, 파트너십 영향만 분리하세요.";
+
+  return [
+    {
+      type: "cover",
+      kicker: metadata.baseDate,
+      title: "오늘의 AI 사업 신호",
+      headMessage: `${metrics.articles}개 기사와 ${metrics.blogs}개 소스에서 감지한 오늘의 핵심 AI 이슈입니다.`,
+      body: "핫뉴스, 근거, 오늘 확인할 질문을 회의 공유용 카드로 압축했습니다.",
+      note: metadata.windowLabel,
+      tags: topTags
+    },
+    ...topAgendas.map((agenda, index) => {
+      const source = getAgendaSources(agenda)[0];
+      const reason = getAgendaReason(agenda);
+      const summary = agenda.summary && queryText(agenda.summary) !== queryText(agenda.title) ? agenda.summary : reason;
+      return {
+        type: "news",
+        kicker: `핫뉴스 ${index + 1}`,
+        title: agenda.title,
+        headMessage: summary,
+        body: reason,
+        note: source?.title || `${source?.media || "원문"} 근거를 확인하세요.`,
+        media: source?.media || "Source",
+        score: `${getAgendaScore(agenda)}점`,
+        imageUrl: agenda.imageUrl || "",
+        imageAlt: agenda.imageAlt || `${agenda.title} 관련 이미지`,
+        tags: getAgendaKeywords(agenda).map((tag) => tag.replace(/^#/, "")).slice(0, 3)
+      };
+    }),
+    {
+      type: "action",
+      kicker: "So What",
+      title: "오늘 바로 확인할 질문",
+      headMessage: actionQuestion,
+      body: actionTask,
+      note: "내부 제품, 영업, 제휴 의사결정으로 연결할 항목만 남겨보세요.",
+      tags: [actionBrief.owner || "전략", "원문 확인", "사업 액션"]
+    }
+  ];
+}
+
+function cardNewsText(items = currentCardNewsItems) {
+  return items
+    .map((item, index) => {
+      const tags = item.tags?.length ? `\n태그: ${item.tags.map((tag) => `#${tag}`).join(" ")}` : "";
+      const note = item.note ? `\n포인트: ${item.note}` : "";
+      return `[${index + 1}/${items.length}] ${item.kicker}\n제목: ${item.title}\n헤드메시지: ${item.headMessage || item.body}\n본문 포인트: ${item.body}${note}${tags}`;
+    })
+    .join("\n\n");
+}
+
+function renderCardNewsDeck(forceBuild = false) {
+  const workspace = byId("cardNewsWorkspace");
+  const copyButton = byId("copyCardNewsButton");
+  if (!workspace) return;
+
+  if (forceBuild || currentCardNewsItems.length) {
+    currentCardNewsItems = buildCardNewsItems();
+    if (copyButton) copyButton.disabled = false;
+    workspace.innerHTML = `
+      <div class="card-news-deck">
+        ${currentCardNewsItems
+          .map(
+            (item, index) => `
+              <article class="card-news-card ${item.type}" style="--card-index:${index + 1}">
+                <div class="card-news-copy">
+                  <span>${escapeHtml(item.kicker)}</span>
+                  <h3>${escapeHtml(item.title)}</h3>
+                  <div class="card-news-head">
+                    <small>헤드메시지</small>
+                    <strong>${escapeHtml(item.headMessage || item.body)}</strong>
+                  </div>
+                  <p>${escapeHtml(item.body)}</p>
+                  ${item.note ? `<em>${escapeHtml(item.note)}</em>` : ""}
+                </div>
+                ${
+                  item.imageUrl
+                    ? `<img src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" />`
+                    : ""
+                }
+                <div class="card-news-footer">
+                  <b>${index + 1}/${currentCardNewsItems.length}</b>
+                  <span>${(item.tags || []).map((tag) => `<i>#${escapeHtml(tag)}</i>`).join("")}</span>
+                </div>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    `;
+    return;
+  }
+
+  if (copyButton) copyButton.disabled = true;
+  workspace.innerHTML = `
+    <div class="card-news-empty">
+      <b>오늘 수집된 뉴스를 카드뉴스 형태로 정리할 수 있습니다.</b>
+      <span>핫뉴스 3장, 핵심 질문 1장, 커버 1장으로 구성됩니다.</span>
+    </div>
+  `;
+}
+
+async function copyCardNews(button) {
+  if (!currentCardNewsItems.length) renderCardNewsDeck(true);
+  const text = cardNewsText();
+  try {
+    await navigator.clipboard.writeText(text);
+    const previous = button.textContent;
+    button.textContent = "복사됨";
+    window.setTimeout(() => {
+      button.textContent = previous;
+    }, 1400);
+  } catch {
+    window.prompt("카드뉴스 텍스트", text);
+  }
 }
 
 function renderMeta() {
@@ -1470,6 +1595,7 @@ function renderDashboard() {
   renderActionBoard();
   renderHotList();
   renderSignalSearch();
+  renderCardNewsDeck();
   renderCompanyCards();
   renderCompanyView();
   renderKeywordMap();
@@ -1612,6 +1738,12 @@ function bindEvents() {
     byId("signalSearchInput").value = button.dataset.signalQuery;
     renderSignalSearch(button.dataset.signalQuery);
   });
+
+  byId("buildCardNewsButton").addEventListener("click", () => {
+    renderCardNewsDeck(true);
+  });
+
+  byId("copyCardNewsButton").addEventListener("click", (event) => copyCardNews(event.currentTarget));
 
   byId("signalSearchResult").addEventListener("click", (event) => {
     const button = event.target.closest("[data-search-brief-index]");

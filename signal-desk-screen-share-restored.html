@@ -11,12 +11,12 @@
         document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=202606091539" />
-    <script src="agenda-data.js?v=202606091539"></script>
+    <link rel="stylesheet" href="styles.css?v=202606091637" />
+    <script src="agenda-data.js?v=202606091637"></script>
     <script>
       window.AI_MONITORING_DESK_PUBLIC_URL = "https://jpson0924.github.io/AI-Market-Signal/";
     </script>
-    <script src="app.js?v=202606091539" defer></script>
+    <script src="app.js?v=202606091637" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -94,6 +94,21 @@
           </form>
           <div class="saved-query-row" id="savedQueryRow" aria-label="저장된 관심 키워드"></div>
           <div class="signal-search-result" id="signalSearchResult"></div>
+        </section>
+
+        <section class="panel card-news-panel" aria-label="오늘의 카드뉴스 생성">
+          <div class="panel-heading card-news-heading">
+            <div>
+              <p class="eyebrow">Daily Card News</p>
+              <h2>오늘의 카드뉴스</h2>
+              <p class="panel-help">그날의 핫뉴스와 사업 액션을 카드 형태로 정리해 공유할 수 있습니다.</p>
+            </div>
+            <span class="panel-actions">
+              <button class="small-action" id="buildCardNewsButton" type="button">카드뉴스 만들기</button>
+              <button class="small-action" id="copyCardNewsButton" type="button" disabled>텍스트 복사</button>
+            </span>
+          </div>
+          <div class="card-news-workspace" id="cardNewsWorkspace"></div>
         </section>
 
         <section class="overview-grid" aria-label="오늘 액션과 주요 아젠다">

@@ -1161,12 +1161,45 @@ function renderHotList() {
     .join("");
 }
 
+function signalSources(signal = {}) {
+  return asArray(signal.sources).filter((source) => source?.url || source?.title);
+}
+
+function signalEvidenceLabel(sourceCount = 0) {
+  if (sourceCount >= 3) return "근거 충분";
+  if (sourceCount >= 1) return "추적 필요";
+  return "원문 대기";
+}
+
+function compactSignalTime(value = "") {
+  const text = String(value || "").replace(/\s*KST$/, "");
+  const time = text.match(/(\d{1,2}:\d{2})/);
+  if (time) return `${time[1]} 갱신`;
+  return text ? "최근 갱신" : "갱신 대기";
+}
+
+function companyImpactScope(company) {
+  return ["openai", "anthropic", "google", "microsoft"].includes(company.id) ? "벤치마크 영향" : "한국 사업 직접";
+}
+
+function companySignalMeta(company, signal = {}) {
+  const sources = signalSources(signal);
+  const latestSource = sources[0];
+  return {
+    judgement: signalEvidenceLabel(sources.length),
+    sourceLabel: sources.length ? `원문 ${sources.length}건` : "직접 원문 대기",
+    updatedLabel: compactSignalTime(latestSource?.time || latestSource?.date || company.updatedAt),
+    scope: companyImpactScope(company),
+    sourceSummary: signal?.sourceSummary || (sources.length ? `${sources[0].media || "원문"} 기반` : "직접 원문 수집 대기")
+  };
+}
+
 function renderCompanyCards() {
   byId("companyCards").innerHTML = companies
     .map((company) => {
       const topSignal = company.keywords?.[0];
-      const score = Math.round(topSignal?.weight || 0);
-      const summary = topSignal?.sourceSummary || "원문 신호 대기";
+      const meta = companySignalMeta(company, topSignal);
+      const reason = topSignal?.description || company.focus || "오늘 확인할 사업 신호를 수집 중입니다.";
       return `
         <button class="company-card ${company.id === activeCompanyId ? "active" : ""}" type="button" data-company-id="${company.id}" style="--company-color:${company.color}">
           <span class="company-card-head">
@@ -1179,13 +1212,18 @@ function renderCompanyCards() {
           <span class="company-focus">${escapeHtml(company.focus)}</span>
           <span class="company-card-foot">
             <span>
-              <em>Top signal</em>
+              <em>오늘 볼 이유</em>
               <strong>${escapeHtml(topSignal?.label || "아젠다 수집 중")}</strong>
             </span>
-            <b>${score || "--"}</b>
+            <em class="company-verdict">${escapeHtml(meta.judgement)}</em>
           </span>
-          <span class="company-meter" aria-hidden="true"><i style="width:${score || 8}%"></i></span>
-          <span class="company-proof">${escapeHtml(summary)}</span>
+          <span class="company-reason">${escapeHtml(reason)}</span>
+          <span class="company-evidence-row">
+            <em>${escapeHtml(meta.sourceLabel)}</em>
+            <em>${escapeHtml(meta.updatedLabel)}</em>
+            <em>${escapeHtml(meta.scope)}</em>
+          </span>
+          <span class="company-proof"><b>근거</b><em>${escapeHtml(meta.sourceSummary)}</em></span>
         </button>
       `;
     })
@@ -1288,14 +1326,14 @@ function renderCompanyView() {
   byId("wordCloud").innerHTML = company.keywords
       .map((keyword, index) => {
       const description = companyKeywordDescription(company, keyword);
-      const score = Math.round(keyword.weight);
+      const meta = companySignalMeta(company, keyword);
       const signalColor = calmSignalColor(index);
       return `
         <button class="business-signal-card" type="button" data-keyword-label="${escapeHtml(keyword.label)}" style="--signal-color:${signalColor}">
           <span class="signal-main">
             <span class="signal-title">
               <b>${escapeHtml(keyword.label)}</b>
-              <em>${score}</em>
+              <em>${escapeHtml(meta.judgement)}</em>
             </span>
             <span class="signal-desc">${escapeHtml(description)}</span>
           </span>
@@ -1349,7 +1387,7 @@ function renderCompanyView() {
         <button class="stack-item" type="button" data-stack-index="${index}">
           <span class="stack-top">
             <h3>${escapeHtml(item.title)}</h3>
-            <span class="tag-pill">${escapeHtml(item.score)}</span>
+            <span class="tag-pill">${escapeHtml(signalEvidenceLabel(sourceCount))}</span>
           </span>
           <span class="stack-date">${escapeHtml(item.date)} KST</span>
           <span class="stack-source">

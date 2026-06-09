@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Market Signal</title>
-    <link rel="stylesheet" href="styles.css?v=202606091451" />
-    <script src="agenda-data.js?v=202606091451"></script>
+    <link rel="stylesheet" href="styles.css?v=202606091519" />
+    <script src="agenda-data.js?v=202606091519"></script>
     <script>
       window.AI_MONITORING_DESK_PUBLIC_URL = "https://jpson0924.github.io/AI-Market-Signal/";
     </script>
-    <script src="app.js?v=202606091451" defer></script>
+    <script src="app.js?v=202606091519" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -121,6 +121,25 @@
             </div>
             <ol class="hot-list" id="hotList"></ol>
           </article>
+        </section>
+
+        <section class="panel signal-search-panel" aria-label="검색 기반 시그널 브리핑">
+          <div class="panel-heading signal-search-heading">
+            <div>
+              <p class="eyebrow">Signal Search</p>
+              <h2>궁금한 키워드 브리핑</h2>
+              <p class="panel-help">최근 수집된 기사와 회사 신호 안에서 관련 원문과 사업 시사점을 정리합니다.</p>
+            </div>
+            <span class="panel-chip" id="signalSearchCount">수집 데이터 기반</span>
+          </div>
+          <form class="signal-search-form" id="signalSearchForm">
+            <label class="search-label" for="signalSearchInput">키워드</label>
+            <input id="signalSearchInput" name="signalSearchInput" type="search" autocomplete="off" placeholder="젠슨 황 방한, 국내 NPU, 네이버 AI 전략" />
+            <button class="small-action search-submit" type="submit">검색</button>
+            <button class="small-action" id="saveQueryButton" type="button">관심 키워드 저장</button>
+          </form>
+          <div class="saved-query-row" id="savedQueryRow" aria-label="저장된 관심 키워드"></div>
+          <div class="signal-search-result" id="signalSearchResult"></div>
         </section>
 
         <section class="workspace-section">

@@ -330,7 +330,10 @@ let keywordData = asArray(appData.keywordData, [
 
 let activeCompanyId = companies[0]?.id || "naver";
 let activeKeywordId = keywordData[0]?.id || "agent";
+let activeSignalQuery = "";
+let signalSearchMatches = [];
 let lastFocus = null;
+const savedQueryStorageKey = "marketSignal.savedQueries";
 
 const byId = (id) => document.getElementById(id);
 const activeCompany = () => companies.find((company) => company.id === activeCompanyId);
@@ -420,7 +423,8 @@ const getAgendaSources = (agenda) => {
       .map((source) => ({
         title: source.title || source.media || "원문 기사",
         url: source.url || source.link || "",
-        media: source.media || source.source || "Source"
+        media: source.media || source.source || "Source",
+        time: source.time || source.publishedAt || ""
       }))
       .filter((source) => source.url);
   }
@@ -428,7 +432,8 @@ const getAgendaSources = (agenda) => {
     .map((article) => ({
       title: article.title || "원문 기사",
       url: article.url || article.link || "",
-      media: article.media || article.source || "Source"
+      media: article.media || article.source || "Source",
+      time: article.time || article.publishedAt || ""
     }))
     .filter((source) => source.url);
 };
@@ -522,6 +527,283 @@ const getHotnessBreakdown = (agenda) => {
     }
   ];
 };
+
+const queryText = (value = "") =>
+  String(value)
+    .toLowerCase()
+    .replace(/[#·,()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+const queryTokens = (query = "") =>
+  queryText(query)
+    .split(" ")
+    .map((token) => token.trim())
+    .filter((token) => token.length >= 2);
+const uniqueBy = (items, keyFn) => {
+  const seen = new Set();
+  return items.filter((item) => {
+    const key = keyFn(item);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
+function getSavedQueries() {
+  try {
+    return JSON.parse(localStorage.getItem(savedQueryStorageKey) || "[]").filter(Boolean).slice(0, 8);
+  } catch {
+    return [];
+  }
+}
+
+function setSavedQueries(values) {
+  localStorage.setItem(savedQueryStorageKey, JSON.stringify(values.slice(0, 8)));
+}
+
+function flattenSignalItems() {
+  const items = [];
+
+  hotAgendas.forEach((agenda) => {
+    const keywords = getAgendaKeywords(agenda);
+    const companiesForAgenda = asArray(agenda.related_companies);
+    getAgendaSources(agenda).forEach((source) => {
+      items.push({
+        title: source.title || agenda.title,
+        url: source.url,
+        media: source.media,
+        time: source.time || agenda.collectedAt || metadata.generatedAt,
+        summary: agenda.summary || getAgendaReason(agenda),
+        takeaway: agenda.actionBrief?.nextStep || agenda.brief?.implication || getAgendaReason(agenda),
+        agenda: agenda.title,
+        keywords,
+        companies: companiesForAgenda,
+        sourceType: "Hot News",
+        brief: agenda.brief
+      });
+    });
+  });
+
+  companies.forEach((company) => {
+    asArray(company.keywords).forEach((keyword) => {
+      asArray(keyword.sources).forEach((source) => {
+        items.push({
+          title: source.title || keyword.label,
+          url: source.url,
+          media: source.media || company.name,
+          time: source.time || company.updatedAt || metadata.generatedAt,
+          summary: source.summary || keyword.description || company.focus,
+          takeaway: source.takeaway || keyword.takeaway || company.focus,
+          agenda: `${company.name} · ${keyword.label}`,
+          keywords: [keyword.label, ...(keyword.keywords || [])].map(displayTag),
+          companies: [company.name],
+          sourceType: "Company Radar",
+          brief: {
+            background: source.summary || keyword.description || `${company.name} 관련 신호입니다.`,
+            reaction: source.evidence || keyword.sourceSummary || company.focus,
+            implication: source.takeaway || keyword.takeaway || "영업, 제품, 파트너십 관점에서 후속 확인이 필요합니다."
+          }
+        });
+      });
+    });
+  });
+
+  keywordData.forEach((keyword) => {
+    asArray(keyword.timeline).map(normalizeTimelineItem).forEach((item) => {
+      items.push({
+        title: item.title,
+        url: item.url,
+        media: item.source || item.type || "Timeline",
+        time: item.time,
+        summary: item.summary || keyword.description,
+        takeaway: item.takeaway || keyword.brief?.implication || keyword.description,
+        agenda: keyword.label,
+        keywords: [keyword.label, ...(keyword.keywords || [])].map(displayTag),
+        companies: companies.filter((company) => queryText(`${item.title} ${item.summary}`).includes(queryText(company.name))).map((company) => company.name),
+        sourceType: "Keyword Timeline",
+        brief: keyword.brief
+      });
+    });
+  });
+
+  return uniqueBy(
+    items.filter((item) => item.title && (item.url || item.summary)),
+    (item) => `${item.url || ""}-${queryText(item.title).slice(0, 80)}`
+  );
+}
+
+function scoreSignalItem(item, query) {
+  const tokens = queryTokens(query);
+  if (!tokens.length) return 0;
+  const haystack = queryText([
+    item.title,
+    item.summary,
+    item.takeaway,
+    item.agenda,
+    item.media,
+    ...(item.keywords || []),
+    ...(item.companies || [])
+  ].join(" "));
+  let score = haystack.includes(queryText(query)) ? 42 : 0;
+  tokens.forEach((token) => {
+    if (haystack.includes(token)) score += 14;
+    if (queryText(item.title).includes(token)) score += 10;
+    if ((item.keywords || []).some((keyword) => queryText(keyword).includes(token))) score += 8;
+    if ((item.companies || []).some((company) => queryText(company).includes(token))) score += 8;
+  });
+  return score;
+}
+
+function searchSignals(query) {
+  const matches = flattenSignalItems()
+    .map((item) => ({ ...item, score: scoreSignalItem(item, query) }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || String(b.time).localeCompare(String(a.time)));
+  return uniqueBy(matches, (item) => item.url || queryText(item.title)).slice(0, 8);
+}
+
+function topValues(matches, field, limit = 4) {
+  const counts = new Map();
+  matches.forEach((item) => {
+    asArray(item[field]).forEach((value) => {
+      const label = String(value).replace(/^#/, "").trim();
+      if (!label || genericTags.has(normalizeTag(label))) return;
+      counts.set(label, (counts.get(label) || 0) + 1);
+    });
+  });
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([label]) => label);
+}
+
+function signalInsightForQuery(query, matches) {
+  const haystack = queryText(`${query} ${matches.map((item) => `${item.title} ${item.summary} ${item.takeaway}`).join(" ")}`);
+  const companiesForQuery = topValues(matches, "companies", 3);
+  const keywordsForQuery = topValues(matches, "keywords", 3);
+  const companyText = companiesForQuery.length ? companiesForQuery.join(", ") : "관련 기업";
+  const keywordText = keywordsForQuery.length ? keywordsForQuery.join(", ") : query;
+  const top = matches[0];
+
+  if (/젠슨|엔비디아|nvidia|gpu|npu|반도체|hbm|팩토리|데이터센터/.test(haystack)) {
+    return {
+      issue: `${query}는 AI 인프라 조달, 파트너십, 원가 구조가 함께 움직이는 신호입니다.`,
+      lens: `${companyText}의 움직임을 GPU/NPU 확보, 클라우드 단가, 공동 PoC 가능성으로 나눠 보세요.`,
+      action: top?.takeaway || "서비스별 추론비, 대체 인프라, 파트너 후보를 같은 표에서 업데이트하세요."
+    };
+  }
+  if (/보안|권한|감사|통제|개인정보|kisa|복원력/.test(haystack)) {
+    return {
+      issue: `${query}는 AI 도입 심사가 기능보다 통제와 책임 범위로 이동하는 신호입니다.`,
+      lens: `${keywordText} 관련 원문에서 권한, 감사 로그, 데이터 반출 조건이 구매 조건인지 확인하세요.`,
+      action: top?.takeaway || "제안서 앞단에 보안 통제 화면과 운영 책임 범위를 배치하세요."
+    };
+  }
+  if (/네이버|naver|카카오|kakao|skt|삼성|lg|kt|업스테이지|리벨리온|퓨리오사/.test(haystack)) {
+    return {
+      issue: `${query}는 국내 AI 기업의 포지셔닝과 파트너십 우선순위를 읽는 검색입니다.`,
+      lens: `${companyText}의 기사에서 고객군, 상품화 방식, 인프라 조건이 실제 매출 기회인지 분리하세요.`,
+      action: top?.takeaway || "경쟁/협력/고객 제안 중 어디에 걸리는 신호인지 담당자별로 나누세요."
+    };
+  }
+  return {
+    issue: `${query} 관련 수집 신호 ${matches.length}건이 잡혔습니다.`,
+    lens: `${keywordText} 관점에서 기사 제목보다 적용 산업, 발표 주체, 후속 일정이 있는지를 먼저 보세요.`,
+    action: top?.takeaway || "원문 2건을 확인하고 제품, 영업, 파트너십 영향만 분리하세요."
+  };
+}
+
+function suggestedQueries() {
+  const fromHot = hotAgendas.flatMap((agenda) => getAgendaKeywords(agenda)).slice(0, 4);
+  const fromCompanies = companies.slice(0, 3).map((company) => company.name);
+  return [...new Set([...fromHot.map((tag) => tag.replace(/^#/, "")), ...fromCompanies])].slice(0, 6);
+}
+
+function renderSavedQueries() {
+  const row = byId("savedQueryRow");
+  if (!row) return;
+  const saved = getSavedQueries();
+  const chips = saved.length ? saved : suggestedQueries();
+  row.innerHTML = `
+    <span>${saved.length ? "내 추적 키워드" : "추천 키워드"}</span>
+    ${chips
+      .map(
+        (query) => `<button class="query-chip" type="button" data-signal-query="${escapeHtml(query)}">${escapeHtml(query)}</button>`
+      )
+      .join("")}
+  `;
+}
+
+function renderSignalSearch(query = activeSignalQuery) {
+  const container = byId("signalSearchResult");
+  if (!container) return;
+  activeSignalQuery = String(query || "").trim();
+  byId("signalSearchCount").textContent = activeSignalQuery ? "검색 결과" : "수집 데이터 기반";
+  renderSavedQueries();
+
+  if (!activeSignalQuery) {
+    signalSearchMatches = [];
+    container.innerHTML = `
+      <div class="search-empty">
+        <b>최근 신호를 바로 파고들 수 있습니다.</b>
+        <span>${suggestedQueries().slice(0, 3).join(" · ")}</span>
+      </div>
+    `;
+    return;
+  }
+
+  signalSearchMatches = searchSignals(activeSignalQuery);
+  if (!signalSearchMatches.length) {
+    container.innerHTML = `
+      <div class="search-empty">
+        <b>${escapeHtml(activeSignalQuery)} 관련 수집 신호가 아직 없습니다.</b>
+        <span>관심 키워드로 저장하면 다음 수집 대상에 넣어 추적하기 좋습니다.</span>
+      </div>
+    `;
+    return;
+  }
+
+  const insight = signalInsightForQuery(activeSignalQuery, signalSearchMatches);
+  const companiesForQuery = topValues(signalSearchMatches, "companies", 4);
+  const keywordsForQuery = topValues(signalSearchMatches, "keywords", 5);
+  byId("signalSearchCount").textContent = `${signalSearchMatches.length}개 원문`;
+  container.innerHTML = `
+    <div class="search-insight-grid">
+      <div>
+        <span>핵심 신호</span>
+        <b>${escapeHtml(insight.issue)}</b>
+      </div>
+      <div>
+        <span>사업 렌즈</span>
+        <b>${escapeHtml(insight.lens)}</b>
+      </div>
+      <div>
+        <span>다음 액션</span>
+        <b>${escapeHtml(insight.action)}</b>
+      </div>
+    </div>
+    <div class="search-facets">
+      ${companiesForQuery.map((company) => `<em>${escapeHtml(company)}</em>`).join("")}
+      ${keywordsForQuery.map((keyword) => `<em>#${escapeHtml(keyword.replace(/^#/, ""))}</em>`).join("")}
+    </div>
+    <div class="search-result-list">
+      ${signalSearchMatches
+        .map(
+          (item, index) => `
+            <article class="search-result-item">
+              <a href="${escapeHtml(item.url || "#")}" ${item.url ? 'target="_blank" rel="noopener noreferrer"' : ""}>
+                <span>${escapeHtml(item.media || item.sourceType)} · ${escapeHtml(item.time || metadata.generatedAt)}</span>
+                <b>${escapeHtml(item.title)}</b>
+                <p>${escapeHtml(item.summary || item.agenda || "")}</p>
+              </a>
+              <button class="small-action search-brief-button" type="button" data-search-brief-index="${index}">Insight</button>
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
 
 function renderMeta() {
   byId("syncTime").textContent = `${metadata.generatedAt} 수집`;
@@ -1175,6 +1457,7 @@ function renderDashboard() {
   renderMetrics();
   renderActionBoard();
   renderHotList();
+  renderSignalSearch();
   renderCompanyCards();
   renderCompanyView();
   renderKeywordMap();
@@ -1287,6 +1570,51 @@ function bindEvents() {
   byId("shareButton").addEventListener("click", (event) => copyShareLink(event.currentTarget));
   byId("shareTextButton").addEventListener("click", (event) => copyShareLink(event.currentTarget, "복사됨"));
   byId("copyPublicShareButton").addEventListener("click", (event) => copyShareLink(event.currentTarget, "복사됨"));
+
+  byId("signalSearchForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = byId("signalSearchInput").value.trim();
+    renderSignalSearch(query);
+  });
+
+  byId("saveQueryButton").addEventListener("click", (event) => {
+    const query = byId("signalSearchInput").value.trim() || activeSignalQuery;
+    if (!query) return;
+    const saved = getSavedQueries().filter((item) => queryText(item) !== queryText(query));
+    setSavedQueries([query, ...saved]);
+    renderSavedQueries();
+    const previous = event.currentTarget.textContent;
+    event.currentTarget.textContent = "저장됨";
+    window.setTimeout(() => {
+      event.currentTarget.textContent = previous;
+    }, 1200);
+  });
+
+  byId("savedQueryRow").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-signal-query]");
+    if (!button) return;
+    byId("signalSearchInput").value = button.dataset.signalQuery;
+    renderSignalSearch(button.dataset.signalQuery);
+  });
+
+  byId("signalSearchResult").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-search-brief-index]");
+    if (!button) return;
+    const item = signalSearchMatches[Number(button.dataset.searchBriefIndex)];
+    if (!item) return;
+    openBrief({
+      title: item.title,
+      eyebrow: `${activeSignalQuery} Insight`,
+      brief: item.brief || {
+        background: item.summary || `${activeSignalQuery} 관련 수집 신호입니다.`,
+        reaction: item.agenda || item.sourceType || "관련 원문에서 신호가 잡혔습니다.",
+        implication: item.takeaway || "사업 영향과 후속 액션을 분리해 확인하세요."
+      },
+      signals: item.takeaway || item.agenda || activeSignalQuery,
+      date: item.time || metadata.generatedAt,
+      sources: item.url ? [{ title: item.title, url: item.url, media: item.media }] : []
+    });
+  });
 
   document.querySelectorAll(".collapse-toggle").forEach((button) => {
     button.addEventListener("click", () => {

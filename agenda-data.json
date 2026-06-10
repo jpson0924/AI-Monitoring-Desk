@@ -1,14 +1,14 @@
 {
   "metadata": {
     "snapshotDate": "2026-06-10",
-    "generatedAt": "2026.06.10 10:30 KST",
+    "generatedAt": "2026.06.10 10:35 KST",
     "baseDate": "2026.06.10 Wed",
-    "windowLabel": "2026.06.09 10:30 - 2026.06.10 10:30 KST",
+    "windowLabel": "2026.06.09 10:35 - 2026.06.10 10:35 KST",
     "nextUpdate": "2026.06.11 08:20 KST"
   },
   "metrics": {
-    "articles": 314,
-    "blogs": 116,
+    "articles": 317,
+    "blogs": 120,
     "dedupeRate": "81%",
     "newAgendas": "+5"
   },
@@ -193,18 +193,18 @@
   "hotAgendas": [
     {
       "rank": 1,
-      "id": "news-1-57ffr6k",
-      "collectedAt": "2026.06.10 10:30 KST",
-      "title": "엔비디아 의존도 낮춘다…과기부, 피지컬 AI 국산화 시동[현장+]",
-      "score": 90,
-      "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
+      "id": "news-1-3r7us3d",
+      "collectedAt": "2026.06.10 10:35 KST",
+      "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+      "score": 98,
+      "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
       "mentions": 1,
       "sources": [
         {
-          "title": "엔비디아 의존도 낮춘다…과기부, 피지컬 AI 국산화 시동[현장+]",
-          "url": "https://www.bloter.net/news/articleView.html?idxno=664952",
-          "media": "Bloter IT",
-          "time": "2026.06.10 10:30"
+          "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+          "media": "CBC뉴스",
+          "time": "2026.06.10 07:42"
         }
       ],
       "sourceCount": 1,
@@ -212,34 +212,39 @@
       "metric": "Pinned Hot",
       "pinned": true,
       "topicBucket": "nvidia-korea",
-      "imageUrl": "https://cdn.bloter.net/news/thumbnail/202606/664952_277582_1533_v150.jpg",
-      "imageAlt": "Bloter IT 기사 대표 이미지",
-      "imageCredit": "Bloter IT",
-      "reason": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 72점으로 분류했습니다.",
-      "whyHot": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 72점으로 분류했습니다.",
+      "imageUrl": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30",
+      "imageAlt": "VentureBeat AI 관련 기사 대표 이미지",
+      "imageCredit": "VentureBeat AI 관련 기사",
+      "reason": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 100점으로 분류했습니다.",
+      "whyHot": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 100점으로 분류했습니다.",
       "actionBrief": {
         "topic": "엔비디아·피지컬 AI 협력",
         "why": "단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다.",
-        "owner": "인프라/전략",
-        "decision": "우리 서비스 원가가 엔비디아 의존 리스크에 얼마나 노출돼 있나?",
-        "question": "우리 서비스 원가가 엔비디아 의존 리스크에 얼마나 노출돼 있나?",
-        "task": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요.",
-        "nextStep": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요.",
-        "sourceCheck": "GPU 조달 주체, 대체 인프라, 국산 칩 채택 가능성",
-        "evidenceChecklist": "GPU 조달 주체, 대체 인프라, 국산 칩 채택 가능성"
+        "owner": "전략",
+        "decision": "엔비디아·피지컬 AI 협력 이슈가 고객 제안, 제품 로드맵, 파트너십 우선순위를 바꾸나?",
+        "question": "엔비디아·피지컬 AI 협력 이슈가 고객 제안, 제품 로드맵, 파트너십 우선순위를 바꾸나?",
+        "task": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요.",
+        "nextStep": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요.",
+        "sourceCheck": "발표 주체, 적용 산업, 후속 일정, 계약 가능성",
+        "evidenceChecklist": "발표 주체, 적용 산업, 후속 일정, 계약 가능성"
       },
       "businessRelevance": {
-        "score": 72,
+        "score": 100,
         "level": "높음",
         "reasons": [
           {
             "label": "한국 직접성",
-            "value": "엔비디아",
+            "value": "젠슨",
             "detail": "한국 시장, 국내 기업, 규제 기관과 직접 연결됩니다."
           },
           {
+            "label": "사업화 신호",
+            "value": "방한, 투자",
+            "detail": "매출, 고객 확보, 파트너십, 시장 진입과 연결되는 신호입니다."
+          },
+          {
             "label": "인프라·원가",
-            "value": "피지컬 ai, 엔비디아",
+            "value": "반도체",
             "detail": "AI 서비스 원가, 확장성, 공급망과 관련된 신호입니다."
           }
         ]
@@ -249,18 +254,18 @@
         "reasons": [
           {
             "label": "사업 임팩트",
-            "value": "72점",
+            "value": "100점",
             "detail": "한국 시장, 국내 기업, 규제 기관과 직접 연결됩니다."
           },
           {
             "label": "수집 시각",
-            "value": "1h",
-            "detail": "약 1시간 전 발행 또는 수집된 최신 원문입니다."
+            "value": "3h",
+            "detail": "약 3시간 전 발행 또는 수집된 최신 원문입니다."
           },
           {
             "label": "원문 소스",
-            "value": "Bloter IT",
-            "detail": "Bloter IT에서 직접 수집한 기사이며 엔비디아·피지컬 AI 협력 관점으로 분류했습니다."
+            "value": "CBC뉴스",
+            "detail": "CBC뉴스에서 직접 수집한 기사이며 엔비디아·피지컬 AI 협력 관점으로 분류했습니다."
           },
           {
             "label": "기사 내용",
@@ -276,25 +281,29 @@
       },
       "keywords": [
         "#NVIDIA",
-        "#피지컬AI"
+        "#AI반도체",
+        "#협력",
+        "#투자"
       ],
       "hashtags": [
         "#NVIDIA",
-        "#피지컬AI"
+        "#AI반도체",
+        "#협력",
+        "#투자"
       ],
       "related_companies": [],
-      "signals": "Bloter IT · 엔비디아·피지컬 AI 협력",
+      "signals": "CBC뉴스 · 엔비디아·피지컬 AI 협력",
       "articles": [
         {
-          "title": "엔비디아 의존도 낮춘다…과기부, 피지컬 AI 국산화 시동[현장+]",
-          "source": "Bloter IT",
-          "url": "https://www.bloter.net/news/articleView.html?idxno=664952",
-          "time": "2026.06.10 10:30",
-          "imageUrl": "https://cdn.bloter.net/news/thumbnail/202606/664952_277582_1533_v150.jpg"
+          "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+          "time": "2026.06.10 07:42",
+          "imageUrl": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30"
         }
       ],
       "brief": {
-        "background": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
+        "background": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
         "reaction": "국내 플랫폼, 통신, 제조 기업이 AI 팩토리와 피지컬 AI 협력 범위를 빠르게 비교하고 있습니다.",
         "implication": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
       }
@@ -302,7 +311,7 @@
     {
       "rank": 2,
       "id": "news-2-1oghgfr",
-      "collectedAt": "2026.06.10 10:30 KST",
+      "collectedAt": "2026.06.10 10:35 KST",
       "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
       "score": 98,
       "summary": "엔터프라이즈 AI 도입이 파트너 수익, 보안 복원력, 클라우드 현대화 패키지로 묶이는 신호입니다. SI·리셀러 채널 전략에 반영할 만합니다. 판정 근거: 한국 직접성.",
@@ -312,7 +321,7 @@
           "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
           "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673574",
           "media": "DigitalToday AI",
-          "time": "2026.06.10 10:30"
+          "time": "2026.06.10 10:35"
         }
       ],
       "sourceCount": 1,
@@ -400,7 +409,7 @@
           "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
           "source": "DigitalToday AI",
           "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673574",
-          "time": "2026.06.10 10:30",
+          "time": "2026.06.10 10:35",
           "imageUrl": "https://cdn.digitaltoday.co.kr/news/photo/202606/673574_622344_5835.jpg"
         }
       ],
@@ -413,7 +422,7 @@
     {
       "rank": 3,
       "id": "news-3-2yi663z",
-      "collectedAt": "2026.06.10 10:30 KST",
+      "collectedAt": "2026.06.10 10:35 KST",
       "title": "삼성, ‘AI 대전환’ 선언...챗GPT·클로드 등 업무에 본격 도입",
       "score": 88,
       "summary": "삼성은 9일 전 관계사의 모든 업무에 AI를 전면 도입하는 등 삼성의 일하는 방식과 조직문화를 근본적으로 혁신하는 ‘AI 대전환’에 나선다고 밝혔다. 판정 근거: 한국 직접성.",
@@ -515,7 +524,7 @@
     {
       "rank": 4,
       "id": "news-4-2yi663u",
-      "collectedAt": "2026.06.10 10:30 KST",
+      "collectedAt": "2026.06.10 10:35 KST",
       "title": "과기부, ‘피지컬 AI 핵심 기술 국산화’ 위해 국내 산학연 총결집",
       "score": 89,
       "summary": "과학기술정보통신부(장관 배경훈)는 9일 서울 마곡 LG 사이언스파크에서 정보통신기획평가원(원장 홍진배)과 ‘피지컬 AI 핵심 기술 국산화’를 위한 ‘피지컬 AI 선도... 판정 근거: 한국 직접성.",
@@ -630,7 +639,7 @@
     {
       "rank": 5,
       "id": "news-5-1oghi26",
-      "collectedAt": "2026.06.10 10:30 KST",
+      "collectedAt": "2026.06.10 10:35 KST",
       "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
       "score": 94,
       "summary": "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다. 모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다. 판정 근거: 한국 직접성.",
@@ -640,7 +649,7 @@
           "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
           "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673319",
           "media": "DigitalToday AI",
-          "time": "2026.06.10 10:30"
+          "time": "2026.06.10 10:35"
         }
       ],
       "sourceCount": 1,
@@ -728,7 +737,7 @@
           "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
           "source": "DigitalToday AI",
           "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673319",
-          "time": "2026.06.10 10:30",
+          "time": "2026.06.10 10:35",
           "imageUrl": "https://cdn.digitaltoday.co.kr/news/photo/202606/673319_622117_045.png"
         }
       ],
@@ -747,7 +756,7 @@
       "color": "#3f8f4f",
       "short": "NV",
       "focus": "AI 팩토리와 소버린 클라우드",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "AI 팩토리·GPU 조달 전선",
@@ -760,7 +769,7 @@
               "title": "젠슨 황 ”네이버 AI 역량 세계적”…이해진, AI 팩토리 자신감",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -769,7 +778,7 @@
               "title": "젠슨 황 엔비디아 최고경영자(CEO)가 네이버의 인공지능(AI) 개발 역량을 높이 산 가운데 이해진 네이버 이사회 의장도 AI 팩토리 구축에 있어 네이버의 경험과 기...",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -778,7 +787,7 @@
               "title": "인공지능(AI) 3대 강국 도약을 위해 정부가 2조원 규모의 첨단 그래픽처리장치(GPU) 확보·구축·운용지원 사업을 추진 중인 가운데 네이버클라우드, 삼성SDS, 엘...",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664812",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다. 모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다. 판정 근거: 한국 직접성.",
               "takeaway": "GPU/NPU 조달안, 클라우드 단가, 서비스별 추론비 민감도를 업데이트하세요."
@@ -851,14 +860,14 @@
           "title": "AI 팩토리·GPU 조달 전선",
           "body": "네이버의 클라우드·AI 운영 역량이 정부 GPU 사업, 엔비디아 협력, 소버린 AI 수요와 연결되는지 봐야 합니다.",
           "score": "53",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "sovereign",
           "sources": [
             {
               "title": "젠슨 황 ”네이버 AI 역량 세계적”…이해진, AI 팩토리 자신감",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -867,7 +876,7 @@
               "title": "젠슨 황 엔비디아 최고경영자(CEO)가 네이버의 인공지능(AI) 개발 역량을 높이 산 가운데 이해진 네이버 이사회 의장도 AI 팩토리 구축에 있어 네이버의 경험과 기...",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -876,7 +885,7 @@
               "title": "인공지능(AI) 3대 강국 도약을 위해 정부가 2조원 규모의 첨단 그래픽처리장치(GPU) 확보·구축·운용지원 사업을 추진 중인 가운데 네이버클라우드, 삼성SDS, 엘...",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664812",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다. 모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다. 판정 근거: 한국 직접성.",
               "takeaway": "GPU/NPU 조달안, 클라우드 단가, 서비스별 추론비 민감도를 업데이트하세요."
@@ -889,7 +898,7 @@
           "title": "하이퍼클로바 산업 패키지",
           "body": "한국어 모델과 검색·커머스 데이터를 산업별 업무 패키지로 묶어 글로벌 범용 모델과 차별화할 수 있습니다.",
           "score": "48",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [
             {
@@ -927,7 +936,7 @@
           "title": "검색·커머스 AI 수익화",
           "body": "검색, 쇼핑, 광고 추천을 생성형 응답 안에서 재배치해 플랫폼 체류와 거래 전환을 노립니다.",
           "score": "66",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Naver 직접 원문 수집 대기",
@@ -956,7 +965,7 @@
       "color": "#8a6d1f",
       "short": "KK",
       "focus": "메신저 기반 AI와 커머스",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "창작·광고 자동화",
@@ -1004,7 +1013,7 @@
           "title": "창작·광고 자동화",
           "body": "콘텐츠 제작, 광고 문안, 쇼핑 운영 자동화가 소상공인과 브랜드 고객의 지불 의사로 이어질 수 있습니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [],
           "sourceSummary": "Kakao 직접 원문 수집 대기",
@@ -1014,7 +1023,7 @@
           "title": "카카오톡 AI 접점 확대",
           "body": "메신저, 채널, 커머스 안에서 AI가 예약, 상담, 추천 같은 실행 흐름으로 들어갈 여지가 큽니다.",
           "score": "76",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Kakao 직접 원문 수집 대기",
@@ -1024,7 +1033,7 @@
           "title": "개인화 데이터 안전성",
           "body": "대화와 생활 데이터 기반 서비스가 커질수록 동의, 보관, 추천 품질 관리가 핵심 리스크가 됩니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [],
           "sourceSummary": "Kakao 직접 원문 수집 대기",
@@ -1053,7 +1062,7 @@
       "color": "#c54b40",
       "short": "SK",
       "focus": "통신 AI와 데이터센터",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "엔비디아 AIDC 동맹",
@@ -1101,7 +1110,7 @@
           "title": "엔비디아 AIDC 동맹",
           "body": "SKT가 네트워크와 데이터센터 자산을 엔비디아 GPU 인프라 수요와 결합해 B2B AI 인프라 사업으로 확장하는 신호입니다.",
           "score": "71",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "on-device",
           "sources": [
             {
@@ -1121,7 +1130,7 @@
           "title": "통신형 AI 에이전트",
           "body": "통화, 일정, 고객센터, 멤버십 접점을 묶어 통신사형 개인·기업 에이전트로 확장할 수 있습니다.",
           "score": "76",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "SK Telecom 직접 원문 수집 대기",
@@ -1131,7 +1140,7 @@
           "title": "엔터프라이즈 AX 패키징",
           "body": "기업 고객에게 모델보다 상담, 보안, 품질 운영을 묶은 AX 패키지로 판매하는 전략이 중요합니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [],
           "sourceSummary": "SK Telecom 직접 원문 수집 대기",
@@ -1160,7 +1169,7 @@
       "color": "#3563c8",
       "short": "SS",
       "focus": "온디바이스 AI와 반도체",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "HBM 이후 AI 팩토리 공급망",
@@ -1226,7 +1235,7 @@
           "title": "HBM 이후 AI 팩토리 공급망",
           "body": "삼성의 메모리·파운드리·디바이스 자산이 AI 팩토리, 로봇, 온디바이스 AI 수요와 어떻게 연결되는지 봐야 합니다.",
           "score": "81",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "on-device",
           "sources": [
             {
@@ -1264,7 +1273,7 @@
           "title": "가전·로봇 피지컬 AI 접점",
           "body": "TV, 가전, 로봇이 생활 공간의 AI 인터페이스가 되면 피지컬 AI 서비스 번들과 데이터 접점이 새로 열립니다.",
           "score": "66",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Samsung 직접 원문 수집 대기",
@@ -1274,7 +1283,7 @@
           "title": "기기 내 데이터 거버넌스",
           "body": "개인 데이터가 기기에서 처리될수록 모델 업데이트, 권한, 안전성 평가 체계가 구매 조건이 됩니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [],
           "sourceSummary": "Samsung 직접 원문 수집 대기",
@@ -1303,7 +1312,7 @@
       "color": "#9a3f5d",
       "short": "LG",
       "focus": "산업 특화 모델과 제조 AI",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "멀티모델 AX SI 패키지",
@@ -1361,7 +1370,7 @@
           "title": "멀티모델 AX SI 패키지",
           "body": "LG 계열의 AX 사업이 OpenAI, Anthropic 등 모델 파트너를 실제 기업 업무 전환 패키지로 묶는지 확인해야 합니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [
             {
@@ -1381,7 +1390,7 @@
           "title": "EXAONE 산업 모델",
           "body": "범용 챗봇보다 제조, 화학, 바이오 같은 그룹 산업 데이터를 잘 다루는 특화 모델 전략입니다.",
           "score": "45",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [],
           "sourceSummary": "LG AI Research 직접 원문 수집 대기",
@@ -1391,7 +1400,7 @@
           "title": "기업 데이터 폐쇄망",
           "body": "민감한 산업 데이터는 클라우드보다 사내망과 전용 모델 운영 요구가 강해질 수 있습니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "sovereign",
           "sources": [],
           "sourceSummary": "LG AI Research 직접 원문 수집 대기",
@@ -1420,7 +1429,7 @@
       "color": "#7a5a26",
       "short": "KT",
       "focus": "통신 AX와 공공 클라우드",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "AICC·상담 자동화",
@@ -1468,7 +1477,7 @@
           "title": "AICC·상담 자동화",
           "body": "콜센터, 영업, 고객 응대를 AI가 처리하면서 통신사의 B2B AX 매출화가 빨라질 수 있습니다.",
           "score": "76",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "KT 직접 원문 수집 대기",
@@ -1478,7 +1487,7 @@
           "title": "공공·금융 AI 클라우드",
           "body": "국내 데이터 보관과 보안 요구가 강한 고객에게 로컬 클라우드와 모델 운영을 묶어 제안합니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "sovereign",
           "sources": [],
           "sourceSummary": "KT 직접 원문 수집 대기",
@@ -1488,7 +1497,7 @@
           "title": "망 데이터 기반 품질 운영",
           "body": "네트워크와 고객 운영 데이터를 AI 서비스 품질, 장애 예측, 보안 운영으로 연결할 수 있습니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [],
           "sourceSummary": "KT 직접 원문 수집 대기",
@@ -1517,7 +1526,7 @@
       "color": "#0f8f82",
       "short": "UP",
       "focus": "문서 AI와 기업 LLM",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "문서 AI 업무 자동화",
@@ -1539,7 +1548,7 @@
               "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -1577,7 +1586,7 @@
               "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -1621,7 +1630,7 @@
           "title": "문서 AI 업무 자동화",
           "body": "계약서, 청구서, 내부 문서 처리 자동화는 기업이 바로 비용 절감을 체감하는 AI 영역입니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [
             {
@@ -1637,7 +1646,7 @@
               "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -1659,7 +1668,7 @@
           "title": "개발자 워크플로 연동",
           "body": "문서, 검색, API를 개발자 친화적으로 붙이면 기업 내부 AI 앱 생태계에 진입할 수 있습니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [
             {
@@ -1675,7 +1684,7 @@
               "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
               "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
               "media": "Bloter IT",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "evidence": "회사 관련 AI 전략 기사",
               "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -1697,7 +1706,7 @@
           "title": "Solar LLM 기업 API",
           "body": "한국어와 기업 문서에 최적화된 모델 API로 글로벌 모델 의존도를 낮추는 선택지가 됩니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "sovereign",
           "sources": [],
           "sourceSummary": "Upstage 직접 원문 수집 대기",
@@ -1726,7 +1735,7 @@
       "color": "#d68419",
       "short": "RB",
       "focus": "국산 AI 가속기와 추론 원가",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "온프레미스 AI 수요",
@@ -1774,7 +1783,7 @@
           "title": "온프레미스 AI 수요",
           "body": "보안이 민감한 기업은 사내망 추론과 전용 하드웨어를 함께 요구할 가능성이 높습니다.",
           "score": "61",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Rebellions 직접 원문 수집 대기",
@@ -1784,7 +1793,7 @@
           "title": "국산 AI 칩 공급",
           "body": "국내 데이터센터의 추론 원가와 공급망 리스크를 낮추는 대안으로 AI 가속기 수요가 커집니다.",
           "score": "54",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "on-device",
           "sources": [],
           "sourceSummary": "Rebellions 직접 원문 수집 대기",
@@ -1794,7 +1803,7 @@
           "title": "통신·클라우드 협력",
           "body": "통신사와 클라우드 사업자가 국산 칩을 채택하면 소버린 AI 인프라 논리가 강해집니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "sovereign",
           "sources": [],
           "sourceSummary": "Rebellions 직접 원문 수집 대기",
@@ -1823,7 +1832,7 @@
       "color": "#3f8f4f",
       "short": "FA",
       "focus": "저전력 추론 칩",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "전용 AI 어플라이언스",
@@ -1871,7 +1880,7 @@
           "title": "전용 AI 어플라이언스",
           "body": "보안과 지연시간이 중요한 현장형 AI 서비스는 전용 장비와 모델 번들로 팔릴 수 있습니다.",
           "score": "61",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "FuriosaAI 직접 원문 수집 대기",
@@ -1881,7 +1890,7 @@
           "title": "저전력 추론 원가",
           "body": "GPU 의존도가 높아질수록 전력 대비 추론 성능은 AI 서비스 마진의 핵심 지표가 됩니다.",
           "score": "54",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "on-device",
           "sources": [],
           "sourceSummary": "FuriosaAI 직접 원문 수집 대기",
@@ -1891,7 +1900,7 @@
           "title": "서버 생태계 확장",
           "body": "국산 칩이 서버, 클라우드, SI 파트너와 묶여야 실제 도입 가능한 인프라 대안이 됩니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "sovereign",
           "sources": [],
           "sourceSummary": "FuriosaAI 직접 원문 수집 대기",
@@ -1920,7 +1929,7 @@
       "color": "#7b61c9",
       "short": "WR",
       "focus": "개인·소상공인 AI 앱",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "콘텐츠 생성 워크플로",
@@ -1968,7 +1977,7 @@
           "title": "콘텐츠 생성 워크플로",
           "body": "이미지, 영상, 문서 생성 기능을 업무 흐름으로 묶을 때 단순 챗봇보다 체류와 전환이 커집니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [],
           "sourceSummary": "Wrtn 직접 원문 수집 대기",
@@ -1978,7 +1987,7 @@
           "title": "B2C AI 슈퍼앱",
           "body": "검색, 작성, 요약, 자동화를 한 앱 안에 묶어 일반 사용자 접점을 넓히는 전략입니다.",
           "score": "76",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Wrtn 직접 원문 수집 대기",
@@ -1988,7 +1997,7 @@
           "title": "소상공인 업무 자동화",
           "body": "마케팅 문구, 고객 응대, 예약, 콘텐츠 운영은 작지만 반복적인 지불 의사가 있는 영역입니다.",
           "score": "71",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Wrtn 직접 원문 수집 대기",
@@ -2017,7 +2026,7 @@
       "color": "#c54b40",
       "short": "FS",
       "focus": "문서 보안과 기업 AX",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "문서 워크플로 자동화",
@@ -2065,7 +2074,7 @@
           "title": "문서 워크플로 자동화",
           "body": "검토, 요약, 승인, 배포를 문서 보안 체계 안에서 자동화하면 기존 고객 기반을 확장할 수 있습니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [],
           "sourceSummary": "Fasoo AI 직접 원문 수집 대기",
@@ -2075,7 +2084,7 @@
           "title": "글로벌 AX 영업",
           "body": "미국 법인과 파트너를 통해 제조, 금융, 공공 고객의 업무 자동화 수요를 공략합니다.",
           "score": "71",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Fasoo AI 직접 원문 수집 대기",
@@ -2085,7 +2094,7 @@
           "title": "문서 보안 AI",
           "body": "기업 문서와 민감정보를 AI가 다룰 때 접근권한, 추적, 유출 방지가 구매 조건이 됩니다.",
           "score": "45",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [],
           "sourceSummary": "Fasoo AI 직접 원문 수집 대기",
@@ -2114,7 +2123,7 @@
       "color": "#3563c8",
       "short": "OA",
       "focus": "에이전트 플랫폼과 멀티모달",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "개발 워크플로 장악",
@@ -2181,7 +2190,7 @@
           "title": "개발 워크플로 장악",
           "body": "코드 생성보다 이슈 분석, 테스트 수정, 리뷰까지 이어지는 저장소 운영면으로 확장하고 있습니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [
             {
@@ -2210,7 +2219,7 @@
           "title": "Agent Runtime 표준화",
           "body": "SDK, 툴 호출, 상태 관리를 묶어 에이전트 앱의 기본 실행 레이어를 장악하려는 흐름입니다.",
           "score": "76",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "OpenAI 직접 원문 수집 대기",
@@ -2220,7 +2229,7 @@
           "title": "외부 툴 연결성 확보",
           "body": "타사 업무 시스템과 데이터 소스를 모델 경험 안으로 끌어오는 연결 표준 경쟁에 대응합니다.",
           "score": "42",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "mcp",
           "sources": [],
           "sourceSummary": "OpenAI 직접 원문 수집 대기",
@@ -2249,7 +2258,7 @@
       "color": "#0f8f82",
       "short": "AN",
       "focus": "MCP와 에이전트 개발면",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "Claude Code 운영화",
@@ -2335,7 +2344,7 @@
           "title": "Claude Code 운영화",
           "body": "IDE 보조를 넘어 터미널, 저장소, 테스트 수정까지 맡는 개발 운영 도구로 포지셔닝합니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [
             {
@@ -2373,7 +2382,7 @@
           "title": "안전성 평가 메시지",
           "body": "기업 도입의 불안을 줄이기 위해 모델 성능보다 실패 경계와 평가 체계를 함께 강조합니다.",
           "score": "40",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [
             {
@@ -2393,7 +2402,7 @@
           "title": "권한 있는 Tool Use",
           "body": "에이전트가 실제 업무를 실행할 때 승인, 권한 범위, 감사 로그를 제품 차별점으로 밀고 있습니다.",
           "score": "66",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Anthropic 직접 원문 수집 대기",
@@ -2422,7 +2431,7 @@
       "color": "#d68419",
       "short": "GO",
       "focus": "검색 재구성과 온디바이스",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "TPU 원가 우위 방어",
@@ -2480,7 +2489,7 @@
           "title": "TPU 원가 우위 방어",
           "body": "모델 경쟁을 클라우드 인프라 비용과 TPU 스택 락인으로 연결해 장기 원가 경쟁력을 지키려 합니다.",
           "score": "43",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "evalops",
           "sources": [
             {
@@ -2500,7 +2509,7 @@
           "title": "검색 수익모델 재설계",
           "body": "AI 답변, 쇼핑, 광고가 한 화면에 섞이면서 검색 UX와 수익 배분이 동시에 흔들리고 있습니다.",
           "score": "76",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [],
           "sourceSummary": "Google 직접 원문 수집 대기",
@@ -2510,7 +2519,7 @@
           "title": "Gemini 온디바이스화",
           "body": "Android와 Chrome 안에서 지연시간, 프라이버시, 로컬 개인화를 묶어 차별화하려는 흐름입니다.",
           "score": "49",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "on-device",
           "sources": [],
           "sourceSummary": "Google 직접 원문 수집 대기",
@@ -2539,7 +2548,7 @@
       "color": "#c54b40",
       "short": "MS",
       "focus": "Copilot 운영면과 보안",
-      "updatedAt": "2026.06.10 10:30 KST",
+      "updatedAt": "2026.06.10 10:35 KST",
       "keywords": [
         {
           "label": "Copilot 업무 레이어화",
@@ -2635,7 +2644,7 @@
           "title": "Copilot 업무 레이어화",
           "body": "Office, Teams, Windows의 반복 업무를 Copilot 액션으로 묶어 기업 기본 업무면을 넓힙니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "agent",
           "sources": [
             {
@@ -2655,7 +2664,7 @@
           "title": "개발자 플랫폼 방어",
           "body": "GitHub와 Azure DevOps를 통해 코드 작성 이후 리뷰, 테스트, 배포 검증까지 묶어두려 합니다.",
           "score": "98",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "ai-code",
           "sources": [
             {
@@ -2693,7 +2702,7 @@
           "title": "Graph Grounding 강화",
           "body": "메일, 문서, 일정, 권한 정보를 Graph로 묶어 기업 내부 문맥을 모델 응답의 핵심 자산으로 만듭니다.",
           "score": "83",
-          "date": "2026.06.10 10:30",
+          "date": "2026.06.10 10:35",
           "termId": "mcp",
           "sources": [
             {
@@ -2753,8 +2762,17 @@
         "reaction": "게임, 제조, 로봇, 반도체 기업들이 엔비디아 스택과의 접점을 빠르게 확인하고 있습니다.",
         "implication": "국내 AI 사업자는 GPU 의존 기능, 로봇·시뮬레이션 연동, 파트너십 후보를 같은 표로 점검해야 합니다."
       },
-      "signals": "136개 기사 신호 · 85개 소스",
+      "signals": "137개 기사 신호 · 86개 소스",
       "timeline": [
+        {
+          "time": "2026.06.10 07:42",
+          "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+          "type": "CBC뉴스",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+          "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
+          "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
+        },
         {
           "time": "2026.06.10 00:00",
           "title": "광전자, 상한가 터치 후 급등…젠슨 황 방한 효과에 AI·반도체 기대감 집중",
@@ -2779,15 +2797,6 @@
           "type": "S저널",
           "source": "S저널",
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqQzJiOEMyQjNzc3d6STVxazM5RFR6TUwzcS1aak1jNlpnczh4UWJxYkFHWmRxOURjRENGcDNCbVJHT09XbFdRcTV4QkxKNzJLZUV1T2o5XzR1Rzh6Q0MxeDVHb201ZVY5SFRzZ0pB?oc=5",
-          "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
-          "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
-        },
-        {
-          "time": "2026.06.09 16:00",
-          "title": "젠슨 황 \"한국, R&D 투자 최적지\"…엔비디아, 국내서 AI 인재 확보 본격 돌입",
-          "type": "뉴시스",
-          "source": "뉴시스",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNWmxpMjNHMUZZWlhwdW1DX0VUX2hFQndBQ0trc1BsQnlFTldlbVVCZU1BbzJ6aVp3WTlyWjZ4OWdfQVNlTUZhR2JvanlCNFhEQUl0YTZrRmthQ2Q3QzdVaEZIaHhrdS1haVVGclVQZDBaRTBnQlZON9IBeEFVX3lxTFBNWmxpMjNHMUZZWlhwdW1DX0VUX2hFQndBQ0trc1BsQnlFTldlbVVCZU1BbzJ6aVp3WTlyWjZ4OWdfQVNlTUZhR2JvanlCNFhEQUl0YTZrRmthQ2Q3QzdVaEZIaHhrdS1haVVGclVQZDBaRTBnQlZONw?oc=5",
           "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
           "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
         }
@@ -2817,7 +2826,7 @@
         "reaction": "국내 플랫폼, 통신사, 모델 스타트업은 공공 조달과 산업별 모델을 동시에 겨냥합니다.",
         "implication": "사업자는 공공 레퍼런스, 국내 데이터 처리, 보안 인증 로드맵을 제안서 앞단에 둬야 합니다."
       },
-      "signals": "63개 기사 신호 · 41개 소스",
+      "signals": "64개 기사 신호 · 42개 소스",
       "timeline": [
         {
           "time": "2026.06.10 00:31",
@@ -2870,9 +2879,10 @@
         "가속기"
       ],
       "keywords": [
-        "#AI반도체",
         "#NVIDIA",
+        "#AI반도체",
         "#협력",
+        "#투자",
         "#피지컬AI"
       ],
       "color": "#3563c8",
@@ -2882,10 +2892,19 @@
         "reaction": "대기업과 스타트업은 GPU 대체 옵션, 국산 NPU, 클라우드 조달 조건을 함께 검토하고 있습니다.",
         "implication": "견적과 제안서에는 GPU/HBM 의존도, 대체 인프라, 비용 변동 시나리오를 미리 넣어야 합니다."
       },
-      "signals": "21개 기사 신호 · 21개 소스",
+      "signals": "22개 기사 신호 · 22개 소스",
       "timeline": [
         {
-          "time": "2026.06.10 10:30",
+          "time": "2026.06.10 07:42",
+          "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+          "type": "CBC뉴스",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+          "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
+          "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
+        },
+        {
+          "time": "2026.06.10 10:35",
           "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
           "type": "DigitalToday AI",
           "source": "DigitalToday AI",
@@ -2910,15 +2929,6 @@
           "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE94Ry1xdm5QRWtrN2JtSHk5WWJ5dFNsU0g4TnVkS0NYMW9JQ1lPc3FYTEFKNUw5Y2dkeFNpVlFyUmJZdjhXOHBvWG4zOFBnblh2bWV1c2RkZHdmRS16TjJaUzI4RDNHOWNWeWxYbTRlQQ?oc=5",
           "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
           "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
-        },
-        {
-          "time": "2026.06.09 16:42",
-          "title": "젠슨 황 방한, 韓 AI동맹 'HBM'서 'AI 팩토리'로 넓혔다",
-          "type": "포인트데일리",
-          "source": "포인트데일리",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8yWU9sc3FYQm9SVW1KUjgyQVRJeVo1dU5YVXlwY2RKcWxJZzhSWFp2b0JIODltek45Y3VPUHJDUDZIcGpacHl0UGdrMlpRTFRtU0ZFNVhTTk0yWFFPQlZWU0NFVzB6MS11d2YzZUcyM0vSAXRBVV95cUxQMWFpc2wydVRmbklMQnFkNkFvbWZPZzM4UlUwYTVBRUxNZUhBRGFjdk40LVVpSVhWRjdnckxBdmljTUF3dldEQVVOOHVvTnJFODQ3MG1KWFE4SGpja2R4ZmNpZDhSaGZGcmJybkU3ZXFReHVKRg?oc=5",
-          "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
-          "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
         }
       ]
     },
@@ -2949,7 +2959,7 @@
       "signals": "23개 기사 신호 · 10개 소스",
       "timeline": [
         {
-          "time": "2026.06.10 10:30",
+          "time": "2026.06.10 10:35",
           "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
           "type": "DigitalToday AI",
           "source": "DigitalToday AI",
@@ -3039,7 +3049,7 @@
           "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
         },
         {
-          "time": "2026.06.10 10:30",
+          "time": "2026.06.10 10:35",
           "title": "KT는 볼보의 전기차 EX90 출시 캠페인에 인공지능(AI)·데이터 기반 광고 플랫폼을 적용해 브랜드 검색량 증가와 시승 신청 확대 등의 성과를 냈다고 10일 밝혔다.",
           "type": "DigitalToday AI",
           "source": "DigitalToday AI",
@@ -3088,7 +3098,7 @@
           "takeaway": "AI 도입 패키지를 보안 복원력, 클라우드 현대화, 파트너 마진 관점으로 재정리하세요."
         },
         {
-          "time": "2026.06.10 10:30",
+          "time": "2026.06.10 10:35",
           "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
           "type": "Bloter IT",
           "source": "Bloter IT",
@@ -3122,14 +3132,14 @@
       "date": "2026-06-10",
       "metadata": {
         "snapshotDate": "2026-06-10",
-        "generatedAt": "2026.06.10 10:30 KST",
+        "generatedAt": "2026.06.10 10:35 KST",
         "baseDate": "2026.06.10 Wed",
-        "windowLabel": "2026.06.09 10:30 - 2026.06.10 10:30 KST",
+        "windowLabel": "2026.06.09 10:35 - 2026.06.10 10:35 KST",
         "nextUpdate": "2026.06.11 08:20 KST"
       },
       "metrics": {
-        "articles": 314,
-        "blogs": 116,
+        "articles": 317,
+        "blogs": 120,
         "dedupeRate": "81%",
         "newAgendas": "+5"
       },
@@ -3150,18 +3160,18 @@
       "hotAgendas": [
         {
           "rank": 1,
-          "id": "news-1-57ffr6k",
-          "collectedAt": "2026.06.10 10:30 KST",
-          "title": "엔비디아 의존도 낮춘다…과기부, 피지컬 AI 국산화 시동[현장+]",
-          "score": 90,
-          "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
+          "id": "news-1-3r7us3d",
+          "collectedAt": "2026.06.10 10:35 KST",
+          "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+          "score": 98,
+          "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
           "mentions": 1,
           "sources": [
             {
-              "title": "엔비디아 의존도 낮춘다…과기부, 피지컬 AI 국산화 시동[현장+]",
-              "url": "https://www.bloter.net/news/articleView.html?idxno=664952",
-              "media": "Bloter IT",
-              "time": "2026.06.10 10:30"
+              "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+              "media": "CBC뉴스",
+              "time": "2026.06.10 07:42"
             }
           ],
           "sourceCount": 1,
@@ -3169,34 +3179,39 @@
           "metric": "Pinned Hot",
           "pinned": true,
           "topicBucket": "nvidia-korea",
-          "imageUrl": "https://cdn.bloter.net/news/thumbnail/202606/664952_277582_1533_v150.jpg",
-          "imageAlt": "Bloter IT 기사 대표 이미지",
-          "imageCredit": "Bloter IT",
-          "reason": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 72점으로 분류했습니다.",
-          "whyHot": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 72점으로 분류했습니다.",
+          "imageUrl": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30",
+          "imageAlt": "VentureBeat AI 관련 기사 대표 이미지",
+          "imageCredit": "VentureBeat AI 관련 기사",
+          "reason": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 100점으로 분류했습니다.",
+          "whyHot": "엔비디아·피지컬 AI 협력 관점의 기사이며 한국 직접성 신호가 감지돼 한국 AI 사업 임팩트 100점으로 분류했습니다.",
           "actionBrief": {
             "topic": "엔비디아·피지컬 AI 협력",
             "why": "단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다.",
-            "owner": "인프라/전략",
-            "decision": "우리 서비스 원가가 엔비디아 의존 리스크에 얼마나 노출돼 있나?",
-            "question": "우리 서비스 원가가 엔비디아 의존 리스크에 얼마나 노출돼 있나?",
-            "task": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요.",
-            "nextStep": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요.",
-            "sourceCheck": "GPU 조달 주체, 대체 인프라, 국산 칩 채택 가능성",
-            "evidenceChecklist": "GPU 조달 주체, 대체 인프라, 국산 칩 채택 가능성"
+            "owner": "전략",
+            "decision": "엔비디아·피지컬 AI 협력 이슈가 고객 제안, 제품 로드맵, 파트너십 우선순위를 바꾸나?",
+            "question": "엔비디아·피지컬 AI 협력 이슈가 고객 제안, 제품 로드맵, 파트너십 우선순위를 바꾸나?",
+            "task": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요.",
+            "nextStep": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요.",
+            "sourceCheck": "발표 주체, 적용 산업, 후속 일정, 계약 가능성",
+            "evidenceChecklist": "발표 주체, 적용 산업, 후속 일정, 계약 가능성"
           },
           "businessRelevance": {
-            "score": 72,
+            "score": 100,
             "level": "높음",
             "reasons": [
               {
                 "label": "한국 직접성",
-                "value": "엔비디아",
+                "value": "젠슨",
                 "detail": "한국 시장, 국내 기업, 규제 기관과 직접 연결됩니다."
               },
               {
+                "label": "사업화 신호",
+                "value": "방한, 투자",
+                "detail": "매출, 고객 확보, 파트너십, 시장 진입과 연결되는 신호입니다."
+              },
+              {
                 "label": "인프라·원가",
-                "value": "피지컬 ai, 엔비디아",
+                "value": "반도체",
                 "detail": "AI 서비스 원가, 확장성, 공급망과 관련된 신호입니다."
               }
             ]
@@ -3206,18 +3221,18 @@
             "reasons": [
               {
                 "label": "사업 임팩트",
-                "value": "72점",
+                "value": "100점",
                 "detail": "한국 시장, 국내 기업, 규제 기관과 직접 연결됩니다."
               },
               {
                 "label": "수집 시각",
-                "value": "1h",
-                "detail": "약 1시간 전 발행 또는 수집된 최신 원문입니다."
+                "value": "3h",
+                "detail": "약 3시간 전 발행 또는 수집된 최신 원문입니다."
               },
               {
                 "label": "원문 소스",
-                "value": "Bloter IT",
-                "detail": "Bloter IT에서 직접 수집한 기사이며 엔비디아·피지컬 AI 협력 관점으로 분류했습니다."
+                "value": "CBC뉴스",
+                "detail": "CBC뉴스에서 직접 수집한 기사이며 엔비디아·피지컬 AI 협력 관점으로 분류했습니다."
               },
               {
                 "label": "기사 내용",
@@ -3233,25 +3248,29 @@
           },
           "keywords": [
             "#NVIDIA",
-            "#피지컬AI"
+            "#AI반도체",
+            "#협력",
+            "#투자"
           ],
           "hashtags": [
             "#NVIDIA",
-            "#피지컬AI"
+            "#AI반도체",
+            "#협력",
+            "#투자"
           ],
           "related_companies": [],
-          "signals": "Bloter IT · 엔비디아·피지컬 AI 협력",
+          "signals": "CBC뉴스 · 엔비디아·피지컬 AI 협력",
           "articles": [
             {
-              "title": "엔비디아 의존도 낮춘다…과기부, 피지컬 AI 국산화 시동[현장+]",
-              "source": "Bloter IT",
-              "url": "https://www.bloter.net/news/articleView.html?idxno=664952",
-              "time": "2026.06.10 10:30",
-              "imageUrl": "https://cdn.bloter.net/news/thumbnail/202606/664952_277582_1533_v150.jpg"
+              "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+              "source": "CBC뉴스",
+              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+              "time": "2026.06.10 07:42",
+              "imageUrl": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30"
             }
           ],
           "brief": {
-            "background": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
+            "background": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
             "reaction": "국내 플랫폼, 통신, 제조 기업이 AI 팩토리와 피지컬 AI 협력 범위를 빠르게 비교하고 있습니다.",
             "implication": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
           }
@@ -3259,7 +3278,7 @@
         {
           "rank": 2,
           "id": "news-2-1oghgfr",
-          "collectedAt": "2026.06.10 10:30 KST",
+          "collectedAt": "2026.06.10 10:35 KST",
           "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
           "score": 98,
           "summary": "엔터프라이즈 AI 도입이 파트너 수익, 보안 복원력, 클라우드 현대화 패키지로 묶이는 신호입니다. SI·리셀러 채널 전략에 반영할 만합니다. 판정 근거: 한국 직접성.",
@@ -3269,7 +3288,7 @@
               "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
               "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673574",
               "media": "DigitalToday AI",
-              "time": "2026.06.10 10:30"
+              "time": "2026.06.10 10:35"
             }
           ],
           "sourceCount": 1,
@@ -3357,7 +3376,7 @@
               "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
               "source": "DigitalToday AI",
               "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673574",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "imageUrl": "https://cdn.digitaltoday.co.kr/news/photo/202606/673574_622344_5835.jpg"
             }
           ],
@@ -3370,7 +3389,7 @@
         {
           "rank": 3,
           "id": "news-3-2yi663z",
-          "collectedAt": "2026.06.10 10:30 KST",
+          "collectedAt": "2026.06.10 10:35 KST",
           "title": "삼성, ‘AI 대전환’ 선언...챗GPT·클로드 등 업무에 본격 도입",
           "score": 88,
           "summary": "삼성은 9일 전 관계사의 모든 업무에 AI를 전면 도입하는 등 삼성의 일하는 방식과 조직문화를 근본적으로 혁신하는 ‘AI 대전환’에 나선다고 밝혔다. 판정 근거: 한국 직접성.",
@@ -3472,7 +3491,7 @@
         {
           "rank": 4,
           "id": "news-4-2yi663u",
-          "collectedAt": "2026.06.10 10:30 KST",
+          "collectedAt": "2026.06.10 10:35 KST",
           "title": "과기부, ‘피지컬 AI 핵심 기술 국산화’ 위해 국내 산학연 총결집",
           "score": 89,
           "summary": "과학기술정보통신부(장관 배경훈)는 9일 서울 마곡 LG 사이언스파크에서 정보통신기획평가원(원장 홍진배)과 ‘피지컬 AI 핵심 기술 국산화’를 위한 ‘피지컬 AI 선도... 판정 근거: 한국 직접성.",
@@ -3587,7 +3606,7 @@
         {
           "rank": 5,
           "id": "news-5-1oghi26",
-          "collectedAt": "2026.06.10 10:30 KST",
+          "collectedAt": "2026.06.10 10:35 KST",
           "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
           "score": 94,
           "summary": "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다. 모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다. 판정 근거: 한국 직접성.",
@@ -3597,7 +3616,7 @@
               "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
               "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673319",
               "media": "DigitalToday AI",
-              "time": "2026.06.10 10:30"
+              "time": "2026.06.10 10:35"
             }
           ],
           "sourceCount": 1,
@@ -3685,7 +3704,7 @@
               "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
               "source": "DigitalToday AI",
               "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673319",
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "imageUrl": "https://cdn.digitaltoday.co.kr/news/photo/202606/673319_622117_045.png"
             }
           ],
@@ -3724,7 +3743,7 @@
           "color": "#3f8f4f",
           "short": "NV",
           "focus": "AI 팩토리와 소버린 클라우드",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "AI 팩토리·GPU 조달 전선",
@@ -3737,7 +3756,7 @@
                   "title": "젠슨 황 ”네이버 AI 역량 세계적”…이해진, AI 팩토리 자신감",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -3746,7 +3765,7 @@
                   "title": "젠슨 황 엔비디아 최고경영자(CEO)가 네이버의 인공지능(AI) 개발 역량을 높이 산 가운데 이해진 네이버 이사회 의장도 AI 팩토리 구축에 있어 네이버의 경험과 기...",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -3755,7 +3774,7 @@
                   "title": "인공지능(AI) 3대 강국 도약을 위해 정부가 2조원 규모의 첨단 그래픽처리장치(GPU) 확보·구축·운용지원 사업을 추진 중인 가운데 네이버클라우드, 삼성SDS, 엘...",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664812",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다. 모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다. 판정 근거: 한국 직접성.",
                   "takeaway": "GPU/NPU 조달안, 클라우드 단가, 서비스별 추론비 민감도를 업데이트하세요."
@@ -3828,14 +3847,14 @@
               "title": "AI 팩토리·GPU 조달 전선",
               "body": "네이버의 클라우드·AI 운영 역량이 정부 GPU 사업, 엔비디아 협력, 소버린 AI 수요와 연결되는지 봐야 합니다.",
               "score": "53",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "sovereign",
               "sources": [
                 {
                   "title": "젠슨 황 ”네이버 AI 역량 세계적”…이해진, AI 팩토리 자신감",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -3844,7 +3863,7 @@
                   "title": "젠슨 황 엔비디아 최고경영자(CEO)가 네이버의 인공지능(AI) 개발 역량을 높이 산 가운데 이해진 네이버 이사회 의장도 AI 팩토리 구축에 있어 네이버의 경험과 기...",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664834",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
@@ -3853,7 +3872,7 @@
                   "title": "인공지능(AI) 3대 강국 도약을 위해 정부가 2조원 규모의 첨단 그래픽처리장치(GPU) 확보·구축·운용지원 사업을 추진 중인 가운데 네이버클라우드, 삼성SDS, 엘...",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664812",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "AI 서비스의 원가와 출시 속도를 좌우하는 GPU, HBM, NPU, AI 팩토리 조달 신호입니다. 모델 성능보다 인프라 확보 조건과 추론 단가가 사업성 판단의 병목이 될 수 있습니다. 판정 근거: 한국 직접성.",
                   "takeaway": "GPU/NPU 조달안, 클라우드 단가, 서비스별 추론비 민감도를 업데이트하세요."
@@ -3866,7 +3885,7 @@
               "title": "하이퍼클로바 산업 패키지",
               "body": "한국어 모델과 검색·커머스 데이터를 산업별 업무 패키지로 묶어 글로벌 범용 모델과 차별화할 수 있습니다.",
               "score": "48",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [
                 {
@@ -3904,7 +3923,7 @@
               "title": "검색·커머스 AI 수익화",
               "body": "검색, 쇼핑, 광고 추천을 생성형 응답 안에서 재배치해 플랫폼 체류와 거래 전환을 노립니다.",
               "score": "66",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Naver 직접 원문 수집 대기",
@@ -3933,7 +3952,7 @@
           "color": "#8a6d1f",
           "short": "KK",
           "focus": "메신저 기반 AI와 커머스",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "창작·광고 자동화",
@@ -3981,7 +4000,7 @@
               "title": "창작·광고 자동화",
               "body": "콘텐츠 제작, 광고 문안, 쇼핑 운영 자동화가 소상공인과 브랜드 고객의 지불 의사로 이어질 수 있습니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [],
               "sourceSummary": "Kakao 직접 원문 수집 대기",
@@ -3991,7 +4010,7 @@
               "title": "카카오톡 AI 접점 확대",
               "body": "메신저, 채널, 커머스 안에서 AI가 예약, 상담, 추천 같은 실행 흐름으로 들어갈 여지가 큽니다.",
               "score": "76",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Kakao 직접 원문 수집 대기",
@@ -4001,7 +4020,7 @@
               "title": "개인화 데이터 안전성",
               "body": "대화와 생활 데이터 기반 서비스가 커질수록 동의, 보관, 추천 품질 관리가 핵심 리스크가 됩니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [],
               "sourceSummary": "Kakao 직접 원문 수집 대기",
@@ -4030,7 +4049,7 @@
           "color": "#c54b40",
           "short": "SK",
           "focus": "통신 AI와 데이터센터",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "엔비디아 AIDC 동맹",
@@ -4078,7 +4097,7 @@
               "title": "엔비디아 AIDC 동맹",
               "body": "SKT가 네트워크와 데이터센터 자산을 엔비디아 GPU 인프라 수요와 결합해 B2B AI 인프라 사업으로 확장하는 신호입니다.",
               "score": "71",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "on-device",
               "sources": [
                 {
@@ -4098,7 +4117,7 @@
               "title": "통신형 AI 에이전트",
               "body": "통화, 일정, 고객센터, 멤버십 접점을 묶어 통신사형 개인·기업 에이전트로 확장할 수 있습니다.",
               "score": "76",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "SK Telecom 직접 원문 수집 대기",
@@ -4108,7 +4127,7 @@
               "title": "엔터프라이즈 AX 패키징",
               "body": "기업 고객에게 모델보다 상담, 보안, 품질 운영을 묶은 AX 패키지로 판매하는 전략이 중요합니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [],
               "sourceSummary": "SK Telecom 직접 원문 수집 대기",
@@ -4137,7 +4156,7 @@
           "color": "#3563c8",
           "short": "SS",
           "focus": "온디바이스 AI와 반도체",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "HBM 이후 AI 팩토리 공급망",
@@ -4203,7 +4222,7 @@
               "title": "HBM 이후 AI 팩토리 공급망",
               "body": "삼성의 메모리·파운드리·디바이스 자산이 AI 팩토리, 로봇, 온디바이스 AI 수요와 어떻게 연결되는지 봐야 합니다.",
               "score": "81",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "on-device",
               "sources": [
                 {
@@ -4241,7 +4260,7 @@
               "title": "가전·로봇 피지컬 AI 접점",
               "body": "TV, 가전, 로봇이 생활 공간의 AI 인터페이스가 되면 피지컬 AI 서비스 번들과 데이터 접점이 새로 열립니다.",
               "score": "66",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Samsung 직접 원문 수집 대기",
@@ -4251,7 +4270,7 @@
               "title": "기기 내 데이터 거버넌스",
               "body": "개인 데이터가 기기에서 처리될수록 모델 업데이트, 권한, 안전성 평가 체계가 구매 조건이 됩니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [],
               "sourceSummary": "Samsung 직접 원문 수집 대기",
@@ -4280,7 +4299,7 @@
           "color": "#9a3f5d",
           "short": "LG",
           "focus": "산업 특화 모델과 제조 AI",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "멀티모델 AX SI 패키지",
@@ -4338,7 +4357,7 @@
               "title": "멀티모델 AX SI 패키지",
               "body": "LG 계열의 AX 사업이 OpenAI, Anthropic 등 모델 파트너를 실제 기업 업무 전환 패키지로 묶는지 확인해야 합니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [
                 {
@@ -4358,7 +4377,7 @@
               "title": "EXAONE 산업 모델",
               "body": "범용 챗봇보다 제조, 화학, 바이오 같은 그룹 산업 데이터를 잘 다루는 특화 모델 전략입니다.",
               "score": "45",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [],
               "sourceSummary": "LG AI Research 직접 원문 수집 대기",
@@ -4368,7 +4387,7 @@
               "title": "기업 데이터 폐쇄망",
               "body": "민감한 산업 데이터는 클라우드보다 사내망과 전용 모델 운영 요구가 강해질 수 있습니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "sovereign",
               "sources": [],
               "sourceSummary": "LG AI Research 직접 원문 수집 대기",
@@ -4397,7 +4416,7 @@
           "color": "#7a5a26",
           "short": "KT",
           "focus": "통신 AX와 공공 클라우드",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "AICC·상담 자동화",
@@ -4445,7 +4464,7 @@
               "title": "AICC·상담 자동화",
               "body": "콜센터, 영업, 고객 응대를 AI가 처리하면서 통신사의 B2B AX 매출화가 빨라질 수 있습니다.",
               "score": "76",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "KT 직접 원문 수집 대기",
@@ -4455,7 +4474,7 @@
               "title": "공공·금융 AI 클라우드",
               "body": "국내 데이터 보관과 보안 요구가 강한 고객에게 로컬 클라우드와 모델 운영을 묶어 제안합니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "sovereign",
               "sources": [],
               "sourceSummary": "KT 직접 원문 수집 대기",
@@ -4465,7 +4484,7 @@
               "title": "망 데이터 기반 품질 운영",
               "body": "네트워크와 고객 운영 데이터를 AI 서비스 품질, 장애 예측, 보안 운영으로 연결할 수 있습니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [],
               "sourceSummary": "KT 직접 원문 수집 대기",
@@ -4494,7 +4513,7 @@
           "color": "#0f8f82",
           "short": "UP",
           "focus": "문서 AI와 기업 LLM",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "문서 AI 업무 자동화",
@@ -4516,7 +4535,7 @@
                   "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -4554,7 +4573,7 @@
                   "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -4598,7 +4617,7 @@
               "title": "문서 AI 업무 자동화",
               "body": "계약서, 청구서, 내부 문서 처리 자동화는 기업이 바로 비용 절감을 체감하는 AI 영역입니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [
                 {
@@ -4614,7 +4633,7 @@
                   "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -4636,7 +4655,7 @@
               "title": "개발자 워크플로 연동",
               "body": "문서, 검색, API를 개발자 친화적으로 붙이면 기업 내부 AI 앱 생태계에 진입할 수 있습니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [
                 {
@@ -4652,7 +4671,7 @@
                   "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
                   "url": "https://www.bloter.net/news/articleView.html?idxno=664954",
                   "media": "Bloter IT",
-                  "time": "2026.06.10 10:30",
+                  "time": "2026.06.10 10:35",
                   "evidence": "회사 관련 AI 전략 기사",
                   "summary": "AI 시장의 제품, 인프라, 규제, 파트너십 중 하나가 움직이는 기사입니다. 제목만 보고 넘기기보다 고객 제안, 제품 로드맵, 파트너십에 미치는 영향을 분리해야 합니다. 판정 근거: 한국 직접성.",
                   "takeaway": "원문에서 발표 주체, 적용 산업, 후속 계약 가능성을 확인하세요."
@@ -4674,7 +4693,7 @@
               "title": "Solar LLM 기업 API",
               "body": "한국어와 기업 문서에 최적화된 모델 API로 글로벌 모델 의존도를 낮추는 선택지가 됩니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "sovereign",
               "sources": [],
               "sourceSummary": "Upstage 직접 원문 수집 대기",
@@ -4703,7 +4722,7 @@
           "color": "#d68419",
           "short": "RB",
           "focus": "국산 AI 가속기와 추론 원가",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "온프레미스 AI 수요",
@@ -4751,7 +4770,7 @@
               "title": "온프레미스 AI 수요",
               "body": "보안이 민감한 기업은 사내망 추론과 전용 하드웨어를 함께 요구할 가능성이 높습니다.",
               "score": "61",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Rebellions 직접 원문 수집 대기",
@@ -4761,7 +4780,7 @@
               "title": "국산 AI 칩 공급",
               "body": "국내 데이터센터의 추론 원가와 공급망 리스크를 낮추는 대안으로 AI 가속기 수요가 커집니다.",
               "score": "54",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "on-device",
               "sources": [],
               "sourceSummary": "Rebellions 직접 원문 수집 대기",
@@ -4771,7 +4790,7 @@
               "title": "통신·클라우드 협력",
               "body": "통신사와 클라우드 사업자가 국산 칩을 채택하면 소버린 AI 인프라 논리가 강해집니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "sovereign",
               "sources": [],
               "sourceSummary": "Rebellions 직접 원문 수집 대기",
@@ -4800,7 +4819,7 @@
           "color": "#3f8f4f",
           "short": "FA",
           "focus": "저전력 추론 칩",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "전용 AI 어플라이언스",
@@ -4848,7 +4867,7 @@
               "title": "전용 AI 어플라이언스",
               "body": "보안과 지연시간이 중요한 현장형 AI 서비스는 전용 장비와 모델 번들로 팔릴 수 있습니다.",
               "score": "61",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "FuriosaAI 직접 원문 수집 대기",
@@ -4858,7 +4877,7 @@
               "title": "저전력 추론 원가",
               "body": "GPU 의존도가 높아질수록 전력 대비 추론 성능은 AI 서비스 마진의 핵심 지표가 됩니다.",
               "score": "54",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "on-device",
               "sources": [],
               "sourceSummary": "FuriosaAI 직접 원문 수집 대기",
@@ -4868,7 +4887,7 @@
               "title": "서버 생태계 확장",
               "body": "국산 칩이 서버, 클라우드, SI 파트너와 묶여야 실제 도입 가능한 인프라 대안이 됩니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "sovereign",
               "sources": [],
               "sourceSummary": "FuriosaAI 직접 원문 수집 대기",
@@ -4897,7 +4916,7 @@
           "color": "#7b61c9",
           "short": "WR",
           "focus": "개인·소상공인 AI 앱",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "콘텐츠 생성 워크플로",
@@ -4945,7 +4964,7 @@
               "title": "콘텐츠 생성 워크플로",
               "body": "이미지, 영상, 문서 생성 기능을 업무 흐름으로 묶을 때 단순 챗봇보다 체류와 전환이 커집니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [],
               "sourceSummary": "Wrtn 직접 원문 수집 대기",
@@ -4955,7 +4974,7 @@
               "title": "B2C AI 슈퍼앱",
               "body": "검색, 작성, 요약, 자동화를 한 앱 안에 묶어 일반 사용자 접점을 넓히는 전략입니다.",
               "score": "76",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Wrtn 직접 원문 수집 대기",
@@ -4965,7 +4984,7 @@
               "title": "소상공인 업무 자동화",
               "body": "마케팅 문구, 고객 응대, 예약, 콘텐츠 운영은 작지만 반복적인 지불 의사가 있는 영역입니다.",
               "score": "71",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Wrtn 직접 원문 수집 대기",
@@ -4994,7 +5013,7 @@
           "color": "#c54b40",
           "short": "FS",
           "focus": "문서 보안과 기업 AX",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "문서 워크플로 자동화",
@@ -5042,7 +5061,7 @@
               "title": "문서 워크플로 자동화",
               "body": "검토, 요약, 승인, 배포를 문서 보안 체계 안에서 자동화하면 기존 고객 기반을 확장할 수 있습니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [],
               "sourceSummary": "Fasoo AI 직접 원문 수집 대기",
@@ -5052,7 +5071,7 @@
               "title": "글로벌 AX 영업",
               "body": "미국 법인과 파트너를 통해 제조, 금융, 공공 고객의 업무 자동화 수요를 공략합니다.",
               "score": "71",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Fasoo AI 직접 원문 수집 대기",
@@ -5062,7 +5081,7 @@
               "title": "문서 보안 AI",
               "body": "기업 문서와 민감정보를 AI가 다룰 때 접근권한, 추적, 유출 방지가 구매 조건이 됩니다.",
               "score": "45",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [],
               "sourceSummary": "Fasoo AI 직접 원문 수집 대기",
@@ -5091,7 +5110,7 @@
           "color": "#3563c8",
           "short": "OA",
           "focus": "에이전트 플랫폼과 멀티모달",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "개발 워크플로 장악",
@@ -5158,7 +5177,7 @@
               "title": "개발 워크플로 장악",
               "body": "코드 생성보다 이슈 분석, 테스트 수정, 리뷰까지 이어지는 저장소 운영면으로 확장하고 있습니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [
                 {
@@ -5187,7 +5206,7 @@
               "title": "Agent Runtime 표준화",
               "body": "SDK, 툴 호출, 상태 관리를 묶어 에이전트 앱의 기본 실행 레이어를 장악하려는 흐름입니다.",
               "score": "76",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "OpenAI 직접 원문 수집 대기",
@@ -5197,7 +5216,7 @@
               "title": "외부 툴 연결성 확보",
               "body": "타사 업무 시스템과 데이터 소스를 모델 경험 안으로 끌어오는 연결 표준 경쟁에 대응합니다.",
               "score": "42",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "mcp",
               "sources": [],
               "sourceSummary": "OpenAI 직접 원문 수집 대기",
@@ -5226,7 +5245,7 @@
           "color": "#0f8f82",
           "short": "AN",
           "focus": "MCP와 에이전트 개발면",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "Claude Code 운영화",
@@ -5312,7 +5331,7 @@
               "title": "Claude Code 운영화",
               "body": "IDE 보조를 넘어 터미널, 저장소, 테스트 수정까지 맡는 개발 운영 도구로 포지셔닝합니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [
                 {
@@ -5350,7 +5369,7 @@
               "title": "안전성 평가 메시지",
               "body": "기업 도입의 불안을 줄이기 위해 모델 성능보다 실패 경계와 평가 체계를 함께 강조합니다.",
               "score": "40",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [
                 {
@@ -5370,7 +5389,7 @@
               "title": "권한 있는 Tool Use",
               "body": "에이전트가 실제 업무를 실행할 때 승인, 권한 범위, 감사 로그를 제품 차별점으로 밀고 있습니다.",
               "score": "66",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Anthropic 직접 원문 수집 대기",
@@ -5399,7 +5418,7 @@
           "color": "#d68419",
           "short": "GO",
           "focus": "검색 재구성과 온디바이스",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "TPU 원가 우위 방어",
@@ -5457,7 +5476,7 @@
               "title": "TPU 원가 우위 방어",
               "body": "모델 경쟁을 클라우드 인프라 비용과 TPU 스택 락인으로 연결해 장기 원가 경쟁력을 지키려 합니다.",
               "score": "43",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "evalops",
               "sources": [
                 {
@@ -5477,7 +5496,7 @@
               "title": "검색 수익모델 재설계",
               "body": "AI 답변, 쇼핑, 광고가 한 화면에 섞이면서 검색 UX와 수익 배분이 동시에 흔들리고 있습니다.",
               "score": "76",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [],
               "sourceSummary": "Google 직접 원문 수집 대기",
@@ -5487,7 +5506,7 @@
               "title": "Gemini 온디바이스화",
               "body": "Android와 Chrome 안에서 지연시간, 프라이버시, 로컬 개인화를 묶어 차별화하려는 흐름입니다.",
               "score": "49",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "on-device",
               "sources": [],
               "sourceSummary": "Google 직접 원문 수집 대기",
@@ -5516,7 +5535,7 @@
           "color": "#c54b40",
           "short": "MS",
           "focus": "Copilot 운영면과 보안",
-          "updatedAt": "2026.06.10 10:30 KST",
+          "updatedAt": "2026.06.10 10:35 KST",
           "keywords": [
             {
               "label": "Copilot 업무 레이어화",
@@ -5612,7 +5631,7 @@
               "title": "Copilot 업무 레이어화",
               "body": "Office, Teams, Windows의 반복 업무를 Copilot 액션으로 묶어 기업 기본 업무면을 넓힙니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "agent",
               "sources": [
                 {
@@ -5632,7 +5651,7 @@
               "title": "개발자 플랫폼 방어",
               "body": "GitHub와 Azure DevOps를 통해 코드 작성 이후 리뷰, 테스트, 배포 검증까지 묶어두려 합니다.",
               "score": "98",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "ai-code",
               "sources": [
                 {
@@ -5670,7 +5689,7 @@
               "title": "Graph Grounding 강화",
               "body": "메일, 문서, 일정, 권한 정보를 Graph로 묶어 기업 내부 문맥을 모델 응답의 핵심 자산으로 만듭니다.",
               "score": "83",
-              "date": "2026.06.10 10:30",
+              "date": "2026.06.10 10:35",
               "termId": "mcp",
               "sources": [
                 {
@@ -5730,8 +5749,17 @@
             "reaction": "게임, 제조, 로봇, 반도체 기업들이 엔비디아 스택과의 접점을 빠르게 확인하고 있습니다.",
             "implication": "국내 AI 사업자는 GPU 의존 기능, 로봇·시뮬레이션 연동, 파트너십 후보를 같은 표로 점검해야 합니다."
           },
-          "signals": "136개 기사 신호 · 85개 소스",
+          "signals": "137개 기사 신호 · 86개 소스",
           "timeline": [
+            {
+              "time": "2026.06.10 07:42",
+              "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+              "type": "CBC뉴스",
+              "source": "CBC뉴스",
+              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+              "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
+              "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
+            },
             {
               "time": "2026.06.10 00:00",
               "title": "광전자, 상한가 터치 후 급등…젠슨 황 방한 효과에 AI·반도체 기대감 집중",
@@ -5756,15 +5784,6 @@
               "type": "S저널",
               "source": "S저널",
               "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqQzJiOEMyQjNzc3d6STVxazM5RFR6TUwzcS1aak1jNlpnczh4UWJxYkFHWmRxOURjRENGcDNCbVJHT09XbFdRcTV4QkxKNzJLZUV1T2o5XzR1Rzh6Q0MxeDVHb201ZVY5SFRzZ0pB?oc=5",
-              "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
-              "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
-            },
-            {
-              "time": "2026.06.09 16:00",
-              "title": "젠슨 황 \"한국, R&D 투자 최적지\"…엔비디아, 국내서 AI 인재 확보 본격 돌입",
-              "type": "뉴시스",
-              "source": "뉴시스",
-              "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNWmxpMjNHMUZZWlhwdW1DX0VUX2hFQndBQ0trc1BsQnlFTldlbVVCZU1BbzJ6aVp3WTlyWjZ4OWdfQVNlTUZhR2JvanlCNFhEQUl0YTZrRmthQ2Q3QzdVaEZIaHhrdS1haVVGclVQZDBaRTBnQlZON9IBeEFVX3lxTFBNWmxpMjNHMUZZWlhwdW1DX0VUX2hFQndBQ0trc1BsQnlFTldlbVVCZU1BbzJ6aVp3WTlyWjZ4OWdfQVNlTUZhR2JvanlCNFhEQUl0YTZrRmthQ2Q3QzdVaEZIaHhrdS1haVVGclVQZDBaRTBnQlZONw?oc=5",
               "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
             }
@@ -5794,7 +5813,7 @@
             "reaction": "국내 플랫폼, 통신사, 모델 스타트업은 공공 조달과 산업별 모델을 동시에 겨냥합니다.",
             "implication": "사업자는 공공 레퍼런스, 국내 데이터 처리, 보안 인증 로드맵을 제안서 앞단에 둬야 합니다."
           },
-          "signals": "63개 기사 신호 · 41개 소스",
+          "signals": "64개 기사 신호 · 42개 소스",
           "timeline": [
             {
               "time": "2026.06.10 00:31",
@@ -5847,9 +5866,10 @@
             "가속기"
           ],
           "keywords": [
-            "#AI반도체",
             "#NVIDIA",
+            "#AI반도체",
             "#협력",
+            "#투자",
             "#피지컬AI"
           ],
           "color": "#3563c8",
@@ -5859,10 +5879,19 @@
             "reaction": "대기업과 스타트업은 GPU 대체 옵션, 국산 NPU, 클라우드 조달 조건을 함께 검토하고 있습니다.",
             "implication": "견적과 제안서에는 GPU/HBM 의존도, 대체 인프라, 비용 변동 시나리오를 미리 넣어야 합니다."
           },
-          "signals": "21개 기사 신호 · 21개 소스",
+          "signals": "22개 기사 신호 · 22개 소스",
           "timeline": [
             {
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 07:42",
+              "title": "주성엔지니어링, AI 반도체 투자 확대 기대 속 주목…젠슨 황 방한에 관심 집중",
+              "type": "CBC뉴스",
+              "source": "CBC뉴스",
+              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9nQUVzUmJjdjVzRS02aVNYQ1gzWFFpQnF6ZlY5akRBclNrZExmbE03RzBSMmJsM1J6Q2VlT1NCZWRVNGlabTVRbTFMX01Zd25YdGVqUnA2M2l5ZF9hREotdjU2MEpqNTRl?oc=5",
+              "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
+              "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
+            },
+            {
+              "time": "2026.06.10 10:35",
               "title": "국내 인공지능(AI) 기술 경쟁력이 반도체·가속기부터 응용 소프트웨어(SW)까지 전 영역에서 높은 해외의존도로 단기간 내 풀스택 자립은 불가능하다는 진단이 나왔다.",
               "type": "DigitalToday AI",
               "source": "DigitalToday AI",
@@ -5887,15 +5916,6 @@
               "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE94Ry1xdm5QRWtrN2JtSHk5WWJ5dFNsU0g4TnVkS0NYMW9JQ1lPc3FYTEFKNUw5Y2dkeFNpVlFyUmJZdjhXOHBvWG4zOFBnblh2bWV1c2RkZHdmRS16TjJaUzI4RDNHOWNWeWxYbTRlQQ?oc=5",
               "summary": "엔비디아의 한국 파트너십이 GPU 공급, AI 팩토리, 로봇·게임·제조 협력으로 실제 전환되는지 봐야 하는 신호입니다. 단순 행사성 노출인지, 국내 기업의 제품·인프라 로드맵을 바꿀 협력인지 구분해야 합니다. 판정 근거: 한국 직접성.",
               "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
-            },
-            {
-              "time": "2026.06.09 16:42",
-              "title": "젠슨 황 방한, 韓 AI동맹 'HBM'서 'AI 팩토리'로 넓혔다",
-              "type": "포인트데일리",
-              "source": "포인트데일리",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8yWU9sc3FYQm9SVW1KUjgyQVRJeVo1dU5YVXlwY2RKcWxJZzhSWFp2b0JIODltek45Y3VPUHJDUDZIcGpacHl0UGdrMlpRTFRtU0ZFNVhTTk0yWFFPQlZWU0NFVzB6MS11d2YzZUcyM0vSAXRBVV95cUxQMWFpc2wydVRmbklMQnFkNkFvbWZPZzM4UlUwYTVBRUxNZUhBRGFjdk40LVVpSVhWRjdnckxBdmljTUF3dldEQVVOOHVvTnJFODQ3MG1KWFE4SGpja2R4ZmNpZDhSaGZGcmJybkU3ZXFReHVKRg?oc=5",
-              "summary": "한국이 AI 팩토리 거점으로 부상하는 동시에 엔비디아 의존 리스크가 커진다는 신호입니다. 대체 인프라와 국산 칩 활용 가능성을 같이 봐야 합니다. 판정 근거: 한국 직접성.",
-              "takeaway": "GPU 의존도, 국산 NPU 대체안, 클라우드 단가를 오늘 비용표에 반영하세요."
             }
           ]
         },
@@ -5926,7 +5946,7 @@
           "signals": "23개 기사 신호 · 10개 소스",
           "timeline": [
             {
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "title": "앤트로픽이 첫 공개 미토스급 모델인 '클로드 페이블 5'를 출시하면서 사이버보안, 생물학, 화학 관련 질의에 강력한 제한을 적용했다.",
               "type": "DigitalToday AI",
               "source": "DigitalToday AI",
@@ -6016,7 +6036,7 @@
               "takeaway": "NVIDIA 의존 기능, 대체 인프라, 공동 PoC 후보를 한 표로 정리하세요."
             },
             {
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "title": "KT는 볼보의 전기차 EX90 출시 캠페인에 인공지능(AI)·데이터 기반 광고 플랫폼을 적용해 브랜드 검색량 증가와 시승 신청 확대 등의 성과를 냈다고 10일 밝혔다.",
               "type": "DigitalToday AI",
               "source": "DigitalToday AI",
@@ -6065,7 +6085,7 @@
               "takeaway": "AI 도입 패키지를 보안 복원력, 클라우드 현대화, 파트너 마진 관점으로 재정리하세요."
             },
             {
-              "time": "2026.06.10 10:30",
+              "time": "2026.06.10 10:35",
               "title": "업스테이지, AI 에이전트 플랫폼 ‘타임리’ 인수",
               "type": "Bloter IT",
               "source": "Bloter IT",

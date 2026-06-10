@@ -122,6 +122,13 @@ const sources = [
     feed: "https://blog.google/innovation-and-ai/technology/ai/rss/"
   },
   {
+    name: "Apple Newsroom",
+    region: "Global",
+    kind: "RSS",
+    url: "https://www.apple.com/newsroom/",
+    feed: "https://www.apple.com/newsroom/rss-feed.rss"
+  },
+  {
     name: "MIT Technology Review",
     region: "Global",
     kind: "RSS",
@@ -341,6 +348,41 @@ const companies = [
         term: "sovereign",
         description: "각국 데이터 주권 요구에 맞춰 클라우드 리전, 파트너, 모델 제공 방식을 현지화합니다.",
         heat: ["Region", "Gov", "Local Cloud", "Data"]
+      }
+    ]
+  },
+  {
+    id: "apple",
+    name: "Apple",
+    sector: "Device & OS",
+    color: "#5b6472",
+    short: "AP",
+    focus: "온디바이스 AI와 OS 배포면",
+    terms: ["on-device", "agent", "evalops", "ai-code"],
+    agendas: [
+      {
+        label: "Apple Intelligence 배포면",
+        term: "on-device",
+        description: "iPhone, iPad, Mac 기본 OS에 AI 기능이 들어가면 소비자 접점의 기본 기대치가 바뀝니다.",
+        heat: ["Apple Intelligence", "iOS", "macOS", "On-device"]
+      },
+      {
+        label: "Siri 에이전트화",
+        term: "agent",
+        description: "Siri와 앱 인텐트가 실제 작업 실행으로 확장되면 모바일 에이전트 UX의 기준점이 됩니다.",
+        heat: ["Siri", "App Intents", "Agent", "Mobile"]
+      },
+      {
+        label: "Private Cloud Compute",
+        term: "evalops",
+        description: "개인 데이터와 클라우드 추론을 함께 쓰는 구조에서 프라이버시와 감사 가능성이 차별점이 됩니다.",
+        heat: ["Privacy", "PCC", "Audit", "Safety"]
+      },
+      {
+        label: "개발자 AI API 잠금",
+        term: "ai-code",
+        description: "앱 개발자가 Apple의 OS AI API를 쓰게 되면 배포 채널과 사용자 경험의 통제력이 커집니다.",
+        heat: ["Developer API", "App Store", "Xcode", "SDK"]
       }
     ]
   },
@@ -781,6 +823,7 @@ const companyPriority = [
   "openai",
   "anthropic",
   "google",
+  "apple",
   "microsoft"
 ];
 
@@ -807,6 +850,14 @@ function tag(block, name) {
 
 function escapeRegExp(value = "") {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function keywordMatches(haystack, keyword) {
+  const lowered = keyword.toLowerCase();
+  if (!/[a-z0-9]/.test(lowered)) return haystack.includes(lowered);
+  const needsBoundary = lowered.length <= 4 || /^[a-z0-9&.+-]+(?:\s+[a-z0-9&.+-]+)*$/.test(lowered);
+  if (!needsBoundary) return haystack.includes(lowered);
+  return new RegExp(`(^|[^a-z0-9])${escapeRegExp(lowered)}($|[^a-z0-9])`, "i").test(haystack);
 }
 
 function stripKnownSourceSuffix(value = "", source = "") {
@@ -1347,7 +1398,7 @@ const koreaBusinessRules = [
   {
     label: "플랫폼 경쟁",
     weight: 14,
-    keywords: ["openai", "anthropic", "google", "microsoft", "aws", "claude", "gemini", "copilot", "codex", "오픈ai", "앤트로픽", "구글"],
+    keywords: ["openai", "anthropic", "google", "microsoft", "apple", "aws", "claude", "gemini", "copilot", "codex", "siri", "오픈ai", "앤트로픽", "구글", "애플"],
     detail: "국내 사업자가 의존하거나 경쟁해야 하는 글로벌 플랫폼 변화입니다."
   }
 ];
@@ -1356,7 +1407,7 @@ function businessRelevanceForArticle(article, generatedAt = new Date()) {
   const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
   const hits = koreaBusinessRules
     .map((rule) => {
-      let matched = rule.keywords.filter((keyword) => haystack.includes(keyword.toLowerCase()));
+      let matched = rule.keywords.filter((keyword) => keywordMatches(haystack, keyword));
       if (rule.label === "사업화 신호" && /대학|kaist|카이스트|교육/.test(haystack)) {
         matched = matched.filter((keyword) => !["투자", "시장"].includes(keyword));
       }
@@ -1383,9 +1434,19 @@ function businessRelevanceForArticle(article, generatedAt = new Date()) {
   };
 }
 
+const explicitAppleSignalPattern =
+  /\bapple\b|\bapple intelligence\b|애플\s*인텔리전스|애플|\bsiri\b|시리|\bprivate cloud compute\b|\biphone\b|\bios\b|\bmacos\b/;
+
+function isExplicitAppleArticle(article, includeSummary = false) {
+  const haystack = includeSummary
+    ? `${article.title} ${article.summary} ${article.source}`.toLowerCase()
+    : `${article.title} ${article.source}`.toLowerCase();
+  return explicitAppleSignalPattern.test(haystack);
+}
+
 function isAiBusinessArticle(article) {
   const haystack = `${article.title} ${article.summary}`.toLowerCase();
-  return /ai|인공지능|생성형|llm|에이전트|agent|오픈ai|openai|앤트로픽|anthropic|클로드|claude|gemini|제미나이|copilot|코파일럿|codex|npu|gpu|hbm|데이터센터|디지털 트윈|피지컬|로보틱스|로봇|robot|모델|챗봇|chatbot|머신러닝|딥러닝/.test(haystack);
+  return /ai|인공지능|생성형|llm|에이전트|agent|오픈ai|openai|앤트로픽|anthropic|클로드|claude|gemini|제미나이|apple intelligence|애플 인텔리전스|siri|시리|private cloud compute|copilot|코파일럿|codex|npu|gpu|hbm|데이터센터|디지털 트윈|피지컬|로보틱스|로봇|robot|모델|챗봇|chatbot|머신러닝|딥러닝/.test(haystack);
 }
 
 function aggregateBusinessRelevance(matches, generatedAt) {
@@ -1492,7 +1553,6 @@ function relatedCompaniesForTerm(term, matches) {
     ...companies.map((company) => company.name),
     "NVIDIA",
     "Meta",
-    "Apple",
     "Amazon",
     "Samsung",
     "Kakao",
@@ -1751,7 +1811,6 @@ function relatedCompaniesForArticle(article) {
     ...companies.map((company) => company.name),
     "NVIDIA",
     "Meta",
-    "Apple",
     "Amazon",
     "Samsung",
     "Kakao",
@@ -1774,11 +1833,14 @@ function hashtagsForArticle(article) {
   ]
     .filter(([pattern]) => pattern.test(haystack))
     .map(([, tag]) => tag);
+  if (isExplicitAppleArticle(article)) signalTags.unshift("Apple");
   const topicTags = agendaTerms
     .filter((term) => scoreArticle(article, term) > 0)
     .map((term) => term.label.replace(/\s+/g, ""));
   const companyTags = relatedCompaniesForArticle(article);
-  return [...new Set([...signalTags, ...topicTags, ...companyTags])]
+  const genericCompanyTags = new Set(["OpenAI", "Anthropic", "Google", "Microsoft", "Apple"]);
+  const filteredCompanyTags = companyTags.filter((tag) => !genericCompanyTags.has(tag) || tag !== "Apple" || isExplicitAppleArticle(article));
+  return [...new Set([...signalTags, ...topicTags, ...filteredCompanyTags])]
     .slice(0, 5)
     .map((tag) => `#${tag}`);
 }
@@ -1968,6 +2030,7 @@ function articleTopicBucket(article) {
   if (/(젠슨\s*황|jensen\s*huang|엔비디아|nvidia)/i.test(haystack) && /(방한|한국|korea|피지컬|로보틱스|로봇|게임|회동|크래프톤|삼성|sk|현대|네이버|lg)/i.test(haystack)) return "nvidia-korea";
   if (/앤트로픽|anthropic|글래스윙|glasswing|kisa|사이버\s*보안/i.test(haystack)) return "anthropic-security";
   if (/ai\s*(?:반도체|칩)|hbm|gpu|npu|칩셋|가속기|퓨리오사|리벨리온|국산.*반도체|반도체.*포럼/i.test(haystack)) return "ai-chip";
+  if (isExplicitAppleArticle(article)) return "apple";
   if (/네이버|naver|소버린|hyperclova|하이퍼클로바/i.test(haystack)) return "naver";
   if (/카카오|kakao|카나나|kanana/i.test(haystack)) return "kakao";
   if (/skt|sk텔레콤|sk\s*telecom|ai\s*팩토리|디지털\s*트윈/i.test(haystack)) return "skt";
@@ -1978,18 +2041,39 @@ function isMarketSpeculationArticle(article) {
   const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
   const marketFrame =
     /주가|증시|코스피|코스닥|특징주|테마주|관련주|수혜주|급등|상승세|투자자|목표가|매수|실적 기대|관심 집중|주목|기대 속/.test(haystack);
-  const weakBusinessAction = !/계약|공급|도입|출시|협력 체결|mou|공동 개발|정책|예산|사업 선정|전면 도입|국산화|발표|공개/.test(haystack);
-  return marketFrame && weakBusinessAction;
+  return marketFrame && !hasConcreteBusinessAction(article);
+}
+
+function hasConcreteBusinessAction(article) {
+  const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
+  return /계약|공급|도입|출시|런칭|상용화|협력 체결|mou|공동 개발|전략적 투자|투자 유치|추가 투자|인수|m&a|정책|예산|조달|사업 선정|국산화|전면 도입|공개|발표|파트너십|고객사|수주|구축/.test(
+    haystack
+  );
 }
 
 function isWeakTopNewsArticle(article) {
   const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
   const blogFrame = /naver blog|블로그/.test(haystack);
   const eventColorFrame = /말말말|깜짝\s*선물|화제의|뒷얘기|삼겹살|회동.*후일담|관심 집중/.test(haystack);
-  const hasConcreteBusinessAction = /계약|공급|도입|출시|협력 체결|mou|공동 개발|투자 유치|추가 투자|정책|예산|사업 선정|국산화|전면 도입/.test(
-    haystack
-  );
-  return isMarketSpeculationArticle(article) || (blogFrame && !hasConcreteBusinessAction) || (eventColorFrame && !hasConcreteBusinessAction);
+  const concreteAction = hasConcreteBusinessAction(article);
+  return isMarketSpeculationArticle(article) || (blogFrame && !concreteAction) || (eventColorFrame && !concreteAction);
+}
+
+function strategicImportanceScore(article) {
+  const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
+  let score = 0;
+  if (/과기정통부|정부|공공|정책|예산|조달|국산화|사업 선정|규제|개인정보보호위원회|kisa/.test(haystack)) score += 44;
+  if (/전략적 투자|투자 유치|추가 투자|인수|m&a|출자|펀딩/.test(haystack)) score += 42;
+  if (/전면 도입|업무에 본격 도입|고객사|수주|공급|계약|구축|상용화|출시|런칭/.test(haystack)) score += 38;
+  if (/협력 체결|mou|공동 개발|파트너십|동맹|연합/.test(haystack)) score += 30;
+  if (/ai\s*팩토리|gpu|npu|hbm|데이터센터|반도체|가속기|private cloud compute|온디바이스|apple intelligence|애플 인텔리전스/.test(haystack)) score += 24;
+  if (/openai|anthropic|google|microsoft|apple|nvidia|오픈ai|앤트로픽|구글|마이크로소프트|애플|엔비디아|삼성|네이버|카카오|sk텔레콤|skt/.test(haystack)) score += 16;
+
+  const researchOnly = /대학|kaist|카이스트|논문|연구진|개발/.test(haystack) && !hasConcreteBusinessAction(article);
+  if (researchOnly) score -= 24;
+  if (isWeakTopNewsArticle(article)) score -= 34;
+
+  return Math.max(-40, Math.min(110, score));
 }
 
 function pickDiverseArticles(candidates, limit = 5) {
@@ -2022,25 +2106,30 @@ function latestArticleScore(article, businessRelevance, generatedAt) {
   const koreaSourceBoost = trustedSource ? 18 : 0;
   const directCompanyBoost = relatedCompaniesForArticle(article).length ? 10 : 0;
   const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
-  const hotKoreaBoost = /젠슨|jensen|huang|엔비디아|nvidia|방한|ai 반도체|hbm|피지컬 ai|로보틱스|로봇|kisa|삼성전자|sk텔레콤|sk하이닉스/.test(haystack) ? 28 : 0;
+  const strategicScore = strategicImportanceScore(article);
+  const hotKoreaBoost = /ai 반도체|hbm|피지컬 ai|로보틱스|로봇|kisa|삼성전자|sk텔레콤|sk하이닉스|apple intelligence|애플 인텔리전스/.test(haystack) ? 16 : 0;
   const nvidiaVisitBoost =
     /(젠슨\s*황|jensen\s*huang|엔비디아|nvidia)/i.test(haystack) &&
-    /(방한|한국|korea|로보틱스|피지컬|ai\s*팩토리|hbm|삼성|sk|현대|네이버|lg)/i.test(haystack)
-      ? 52
+    /(방한|한국|korea|로보틱스|피지컬|ai\s*팩토리|hbm|삼성|sk|현대|네이버|lg)/i.test(haystack) &&
+    hasConcreteBusinessAction(article)
+      ? 24
       : 0;
   const titlePenalty = /deepfake|nudes|celebrity gossip|rumor/i.test(haystack) ? 22 : 0;
   const marketSpeculationPenalty = isMarketSpeculationArticle(article) ? 72 : 0;
   const weakTopNewsPenalty = isWeakTopNewsArticle(article) ? 46 : 0;
+  const lowImportancePenalty = strategicScore < 18 ? 30 : 0;
   return (
-    businessRelevance.score * 1.12 +
-    recencyScore +
+    businessRelevance.score * 0.86 +
+    strategicScore +
+    recencyScore * 0.65 +
     koreaSourceBoost +
     directCompanyBoost +
     hotKoreaBoost +
     nvidiaVisitBoost -
     titlePenalty -
     marketSpeculationPenalty -
-    weakTopNewsPenalty
+    weakTopNewsPenalty -
+    lowImportancePenalty
   );
 }
 
@@ -2049,18 +2138,22 @@ function buildHotAgendas(scoredTerms, generatedAt, articles) {
   const latestNewsCandidates = articles
     .map((article) => {
       const businessRelevance = businessRelevanceForArticle(article, generatedAt);
+      const strategicScore = strategicImportanceScore(article);
       return {
         article,
         businessRelevance,
+        strategicScore,
         latestScore: latestArticleScore(article, businessRelevance, generatedAt)
       };
     })
     .filter(
-      ({ article, businessRelevance }) =>
+      ({ article, businessRelevance, strategicScore }) =>
         article.link &&
         article.title &&
         isAiBusinessArticle(article) &&
-        businessRelevance.score >= 52
+        businessRelevance.score >= 52 &&
+        (strategicScore >= 18 || businessRelevance.score >= 82) &&
+        !isMarketSpeculationArticle(article)
     )
     .sort(
       (a, b) =>
@@ -2159,13 +2252,27 @@ function buildHotAgendas(scoredTerms, generatedAt, articles) {
 
   termAgendas.flatMap((agenda) => agenda.sources.map((source) => source.url)).forEach((url) => usedUrls.add(url));
   const rankedArticles = articles
-    .map((article) => ({
-      article,
-      businessRelevance: businessRelevanceForArticle(article, generatedAt)
-    }))
-    .filter(({ article, businessRelevance }) => article.link && article.title && isAiBusinessArticle(article) && businessRelevance.score >= 45)
+    .map((article) => {
+      const businessRelevance = businessRelevanceForArticle(article, generatedAt);
+      return {
+        article,
+        businessRelevance,
+        strategicScore: strategicImportanceScore(article),
+        latestScore: latestArticleScore(article, businessRelevance, generatedAt)
+      };
+    })
+    .filter(
+      ({ article, businessRelevance, strategicScore }) =>
+        article.link &&
+        article.title &&
+        isAiBusinessArticle(article) &&
+        businessRelevance.score >= 45 &&
+        (strategicScore >= 12 || businessRelevance.score >= 74) &&
+        !isMarketSpeculationArticle(article)
+    )
     .sort(
       (a, b) =>
+        b.latestScore - a.latestScore ||
         b.businessRelevance.score - a.businessRelevance.score ||
         b.article.publishedAt - a.article.publishedAt
     );
@@ -2250,7 +2357,11 @@ function buildCompanies(scoredTerms, generatedAt, articles = []) {
       })),
       heat: ranked.flatMap(({ heat }) => heat).slice(0, 12)
     };
-  }).sort((a, b) => companyPriority.indexOf(a.id) - companyPriority.indexOf(b.id));
+  }).sort((a, b) => {
+    const aPriority = companyPriority.indexOf(a.id);
+    const bPriority = companyPriority.indexOf(b.id);
+    return (aPriority === -1 ? 999 : aPriority) - (bPriority === -1 ? 999 : bPriority);
+  });
 }
 
 const businessKeywordDefinitions = [

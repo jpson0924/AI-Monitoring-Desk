@@ -1821,7 +1821,7 @@ function hotnessForArticle(article, generatedAt, businessRelevance) {
 function buildNewsAgenda(article, generatedAt, index, businessRelevance = businessRelevanceForArticle(article, generatedAt)) {
   const relatedCompanies = relatedCompaniesForArticle(article);
   const bucket = articleTopicBucket(article);
-  const pinned = bucket === "nvidia-korea";
+  const pinned = bucket === "nvidia-korea" && !isWeakTopNewsArticle(article);
   const summary = articleDetailSummary(article, businessRelevance);
   const reason = hotReasonForArticle(article, businessRelevance);
   const actionBrief = articleActionBrief(article);
@@ -1974,6 +1974,24 @@ function articleTopicBucket(article) {
   return cleanTitle(article.title).slice(0, 28).toLowerCase();
 }
 
+function isMarketSpeculationArticle(article) {
+  const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
+  const marketFrame =
+    /주가|증시|코스피|코스닥|특징주|테마주|관련주|수혜주|급등|상승세|투자자|목표가|매수|실적 기대|관심 집중|주목|기대 속/.test(haystack);
+  const weakBusinessAction = !/계약|공급|도입|출시|협력 체결|mou|공동 개발|정책|예산|사업 선정|전면 도입|국산화|발표|공개/.test(haystack);
+  return marketFrame && weakBusinessAction;
+}
+
+function isWeakTopNewsArticle(article) {
+  const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
+  const blogFrame = /naver blog|블로그/.test(haystack);
+  const eventColorFrame = /말말말|깜짝\s*선물|화제의|뒷얘기|삼겹살|회동.*후일담|관심 집중/.test(haystack);
+  const hasConcreteBusinessAction = /계약|공급|도입|출시|협력 체결|mou|공동 개발|투자 유치|추가 투자|정책|예산|사업 선정|국산화|전면 도입/.test(
+    haystack
+  );
+  return isMarketSpeculationArticle(article) || (blogFrame && !hasConcreteBusinessAction) || (eventColorFrame && !hasConcreteBusinessAction);
+}
+
 function pickDiverseArticles(candidates, limit = 5) {
   const selected = [];
   const selectedUrls = new Set();
@@ -1998,7 +2016,10 @@ function pickDiverseArticles(candidates, limit = 5) {
 function latestArticleScore(article, businessRelevance, generatedAt) {
   const hours = Math.max(1, Math.round((generatedAt.getTime() - article.publishedAt.getTime()) / 36e5));
   const recencyScore = Math.max(0, 36 - hours * 1.5);
-  const koreaSourceBoost = /AI Times|DigitalToday|Bloter|ZDNet Korea|Naver|Daum|연합뉴스|조선|중앙|매일경제|한국경제|전자신문|ZDNET Korea/i.test(article.source) ? 18 : 0;
+  const trustedSource =
+    /AI Times|DigitalToday|Bloter|ZDNet Korea|Naver|Daum|연합뉴스|조선|중앙|매일경제|한국경제|전자신문|ZDNET Korea/i.test(article.source) &&
+    !/Naver Blog|Blog|블로그/i.test(article.source);
+  const koreaSourceBoost = trustedSource ? 18 : 0;
   const directCompanyBoost = relatedCompaniesForArticle(article).length ? 10 : 0;
   const haystack = `${article.title} ${article.summary} ${article.source}`.toLowerCase();
   const hotKoreaBoost = /젠슨|jensen|huang|엔비디아|nvidia|방한|ai 반도체|hbm|피지컬 ai|로보틱스|로봇|kisa|삼성전자|sk텔레콤|sk하이닉스/.test(haystack) ? 28 : 0;
@@ -2008,7 +2029,19 @@ function latestArticleScore(article, businessRelevance, generatedAt) {
       ? 52
       : 0;
   const titlePenalty = /deepfake|nudes|celebrity gossip|rumor/i.test(haystack) ? 22 : 0;
-  return businessRelevance.score * 1.12 + recencyScore + koreaSourceBoost + directCompanyBoost + hotKoreaBoost + nvidiaVisitBoost - titlePenalty;
+  const marketSpeculationPenalty = isMarketSpeculationArticle(article) ? 72 : 0;
+  const weakTopNewsPenalty = isWeakTopNewsArticle(article) ? 46 : 0;
+  return (
+    businessRelevance.score * 1.12 +
+    recencyScore +
+    koreaSourceBoost +
+    directCompanyBoost +
+    hotKoreaBoost +
+    nvidiaVisitBoost -
+    titlePenalty -
+    marketSpeculationPenalty -
+    weakTopNewsPenalty
+  );
 }
 
 function buildHotAgendas(scoredTerms, generatedAt, articles) {

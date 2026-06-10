@@ -13,6 +13,8 @@ const shareHtmlPath = resolve(rootDir, "signal-desk-screen-share.html");
 const shareTextPath = resolve(rootDir, "signal-desk-screen-share.txt");
 const historyDir = resolve(rootDir, "history");
 const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
+const DAILY_UPDATE_HOUR_KST = 8;
+const DAILY_UPDATE_MINUTE_KST = 20;
 const colors = ["#0f8f82", "#3563c8", "#d68419", "#c54b40", "#3f8f4f", "#7a5a26"];
 
 const sources = [
@@ -1450,8 +1452,20 @@ function assetVersionFromGeneratedAt(value) {
 
 function nextKstMorning(date) {
   const shifted = new Date(date.getTime() + KST_OFFSET_MS);
-  const next = new Date(Date.UTC(shifted.getUTCFullYear(), shifted.getUTCMonth(), shifted.getUTCDate(), 8, 0, 0));
-  if (shifted.getUTCHours() >= 8) next.setUTCDate(next.getUTCDate() + 1);
+  const next = new Date(
+    Date.UTC(
+      shifted.getUTCFullYear(),
+      shifted.getUTCMonth(),
+      shifted.getUTCDate(),
+      DAILY_UPDATE_HOUR_KST,
+      DAILY_UPDATE_MINUTE_KST,
+      0
+    )
+  );
+  const pastToday =
+    shifted.getUTCHours() > DAILY_UPDATE_HOUR_KST ||
+    (shifted.getUTCHours() === DAILY_UPDATE_HOUR_KST && shifted.getUTCMinutes() >= DAILY_UPDATE_MINUTE_KST);
+  if (pastToday) next.setUTCDate(next.getUTCDate() + 1);
   return new Date(next.getTime() - KST_OFFSET_MS);
 }
 
